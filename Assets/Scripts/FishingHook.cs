@@ -14,7 +14,7 @@ public class FishingHook : MonoBehaviour {
 	const float lengthByDefault = 1.0f;
 	const float maxLengthByDefault = 5.0f;
 
-	enum HookState {General, Catch};
+	enum HookState {General, Catch, GoWithStuff};
 	HookState hookState;
 
 	delegate void HookBehaviourDelegate();
@@ -81,6 +81,10 @@ public class FishingHook : MonoBehaviour {
 				this.hookBehaviour = this.GeneralBehaviour;	
 				this.hookState = HookState.General;
 				break;
+			case HookState.GoWithStuff:
+				this.hookBehaviour = this.GoWithStuffBehaviour;	
+				this.hookState = HookState.GoWithStuff;	
+				break;
 		}
 	}
 
@@ -107,7 +111,26 @@ public class FishingHook : MonoBehaviour {
 		);
 	}
 
+	GameObject catchedStuff = null;
 
+	void OnTriggerEnter2D(Collider2D other) {
+		this.catchedStuff = other.gameObject;
+		this.ChangeState (HookState.GoWithStuff);
+	}
+
+	void GoWithStuffBehaviour() {
+		float step = (catchSpeed / 2) * Time.deltaTime;
+		this.transform.position = Vector3.MoveTowards (transform.position, this.sourceVector, step);
+		this.catchedStuff.transform.position = this.transform.position;
+
+		if (Vector3.Distance (this.transform.position, this.sourceVector) < 0.1f) {
+			this.directionHookMove = DirectionHookMove.forward;
+			this.transform.position = this.sourceVector;
+			GameObject.Destroy (this.catchedStuff);
+			this.catchedStuff = null;
+			this.ChangeState (HookState.General);
+		}
+	}
 
 	void CatchBehaviour() {
 		float step = catchSpeed * Time.deltaTime;
