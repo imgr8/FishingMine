@@ -3,6 +3,7 @@ using System.Collections;
 
 public class FishingHook : MonoBehaviour {
 
+	public GameObject boat;
 	public GameObject fishingHookCenter;
 	public float length = 0.0f;
 	public float maxLength = 5.0f;
@@ -65,12 +66,14 @@ public class FishingHook : MonoBehaviour {
 
 	Vector3 sourceVector;
 	Vector3 destinationVector; 
+	Vector3 boatStartPosition;
 
 	void ChangeState(HookState hookState) {
 		switch (hookState) {
 		case HookState.Catch:
-				this.destinationVector = (this.transform.position - this.fishingHookCenter.transform.position).normalized * this.maxLength;	
+			this.destinationVector = (this.transform.position - this.fishingHookCenter.transform.position).normalized * this.maxLength;	
 				this.sourceVector = this.transform.position;
+				this.boatStartPosition = this.boat.transform.position;
 				this.hookBehaviour = this.CatchBehaviour;
 				this.hookState = HookState.Catch;	
 				break;
