@@ -5,14 +5,22 @@ public class FishingHook : MonoBehaviour {
 
 	public GameObject fishingHookCenter;
 	public float length = 0.0f;
+	public float maxLength = 5.0f;
 	public float angleSpeed = 1.0f;
-	public float maxAngleDeviation = 60.0f;
+	public float maxAngleDeviation = 75.0f;
+	public 	float catchSpeed = 3.0f;
 
 	const float lengthByDefault = 1.0f;
+	const float maxLengthByDefault = 5.0f;
+
+	enum HookState {General, Catch};
+	HookState hookState;
 
 	delegate void HookBehaviourDelegate();
 	HookBehaviourDelegate hookBehaviour;
 
+	enum DirectionHookMove {forward, back};
+	DirectionHookMove directionHookMove;
 
 	// Use this for initialization
 	void Start () {
@@ -30,7 +38,13 @@ public class FishingHook : MonoBehaviour {
 			);
 		}
 
+		if (this.maxLength <= this.length) {
+			this.maxLength = FishingHook.maxLengthByDefault;
+		}
+
 		this.hookBehaviour = this.GeneralBehaviour;
+		this.hookState = HookState.General;
+		this.directionHookMove = DirectionHookMove.forward;
 	}
 
 	enum Direction {clockwise = 1, anticlockwise = -1};
@@ -42,7 +56,29 @@ public class FishingHook : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetMouseButtonDown (0) && this.hookState == HookState.General) {
+			this.ChangeState (HookState.Catch);
+		}
+
 		this.hookBehaviour.Invoke ();
+	}
+
+	Vector3 sourceVector;
+	Vector3 destinationVector; 
+
+	void ChangeState(HookState hookState) {
+		switch (hookState) {
+		case HookState.Catch:
+				this.destinationVector = (this.transform.position - this.fishingHookCenter.transform.position).normalized * this.maxLength;	
+				this.sourceVector = this.transform.position;
+				this.hookBehaviour = this.CatchBehaviour;
+				this.hookState = HookState.Catch;	
+				break;
+			case HookState.General:
+				this.hookBehaviour = this.GeneralBehaviour;	
+				this.hookState = HookState.General;
+				break;
+		}
 	}
 
 	void GeneralBehaviour() {
@@ -68,7 +104,24 @@ public class FishingHook : MonoBehaviour {
 		);
 	}
 
+
+
 	void CatchBehaviour() {
-		
+		float step = catchSpeed * Time.deltaTime;
+
+		if (this.directionHookMove == DirectionHookMove.forward) {
+			transform.position = Vector3.MoveTowards (transform.position, this.destinationVector, step);
+		} else if (this.directionHookMove == DirectionHookMove.back) {
+			transform.position = Vector3.MoveTowards (transform.position, this.sourceVector, step);
+		}
+
+		if (Vector3.Distance (this.transform.position, this.destinationVector) < 0.1f && this.directionHookMove == DirectionHookMove.forward) {
+			this.directionHookMove = DirectionHookMove.back;
+		} else if (Vector3.Distance (this.transform.position, this.sourceVector) < 0.1f && this.directionHookMove == DirectionHookMove.back) {
+			this.directionHookMove = DirectionHookMove.forward;
+			this.transform.position = this.sourceVector;
+			this.ChangeState (HookState.General);
+		}
 	}
+		
 }
