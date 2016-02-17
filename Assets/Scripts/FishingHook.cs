@@ -10,6 +10,10 @@ public class FishingHook : MonoBehaviour {
 
 	const float lengthByDefault = 1.0f;
 
+	delegate void HookBehaviourDelegate();
+	HookBehaviourDelegate hookBehaviour;
+
+
 	// Use this for initialization
 	void Start () {
 		if (Mathf.Approximately (this.length, 0.0f)) {
@@ -25,6 +29,8 @@ public class FishingHook : MonoBehaviour {
 				this.fishingHookCenter.transform.position.z
 			);
 		}
+
+		this.hookBehaviour = this.GeneralBehaviour;
 	}
 
 	enum Direction {clockwise = 1, anticlockwise = -1};
@@ -33,9 +39,13 @@ public class FishingHook : MonoBehaviour {
 
 	float angle = 0.0f;
 
+
 	// Update is called once per frame
 	void Update () {
+		this.hookBehaviour.Invoke ();
+	}
 
+	void GeneralBehaviour() {
 		if (angle > this.maxAngleDeviation && this.directionOfMovemnet == Direction.clockwise) {
 			this.directionOfMovemnet = Direction.anticlockwise;
 		} else if (angle <- this.maxAngleDeviation && this.directionOfMovemnet == Direction.anticlockwise) {
@@ -56,5 +66,9 @@ public class FishingHook : MonoBehaviour {
 			this.fishingHookCenter.transform.position.y + newYCoord, 
 			this.transform.position.z
 		);
+	}
+
+	void CatchBehaviour() {
+		
 	}
 }
