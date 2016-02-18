@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Крючок НЕ цепляет ничего обратным ходом!
+
 public class FishingHook : MonoBehaviour {
 
-	public GameObject boat;
+	public GameObject boat;	// Грузоподъемность
 	public GameObject fishingHookCenter;
 	public float length = 0.0f;
 	public float maxLength = 5.0f;
@@ -66,14 +68,14 @@ public class FishingHook : MonoBehaviour {
 
 	Vector3 sourceVector;
 	Vector3 destinationVector; 
-	Vector3 boatStartPosition;
+	Vector3 boatPositionWhenHookedThrowen;
 
 	void ChangeState(HookState hookState) {
 		switch (hookState) {
 		case HookState.Catch:
 			this.destinationVector = (this.transform.position - this.fishingHookCenter.transform.position).normalized * this.maxLength;	
 				this.sourceVector = this.transform.position;
-				this.boatStartPosition = this.boat.transform.position;
+				this.boatPositionWhenHookedThrowen = this.boat.transform.position;
 				this.hookBehaviour = this.CatchBehaviour;
 				this.hookState = HookState.Catch;	
 				break;
@@ -102,7 +104,7 @@ public class FishingHook : MonoBehaviour {
 		}
 
 		float newXCoord = this.length * Mathf.Sin (Mathf.Deg2Rad * this.angle);
-		float newYCoord = -Mathf.Sqrt(this.length * this.length - newXCoord * newXCoord);
+		float newYCoord = this.length * Mathf.Cos (Mathf.Deg2Rad * this.angle); //-Mathf.Sqrt(this.length * this.length - newXCoord * newXCoord);
 
 		this.transform.position = new Vector3 (
 			this.fishingHookCenter.transform.position.x + newXCoord, 
@@ -114,6 +116,10 @@ public class FishingHook : MonoBehaviour {
 	GameObject catchedStuff = null;
 
 	void OnTriggerEnter2D(Collider2D other) {
+		if (this.directionHookMove == DirectionHookMove.back) {	
+			return;	// Если крючок движется назад, то ничего не цепляем
+		}
+
 		this.catchedStuff = other.gameObject;
 		this.ChangeState (HookState.GoWithStuff);
 	}
@@ -133,14 +139,19 @@ public class FishingHook : MonoBehaviour {
 	}
 
 	void CatchBehaviour() {
+		Vector3 boatDeltaPosition = this.boatPositionWhenHookedThrowen - this.boat.transform.position;
+
 		float step = catchSpeed * Time.deltaTime;
 
 		if (this.directionHookMove == DirectionHookMove.forward) {
-			transform.position = Vector3.MoveTowards (transform.position, this.destinationVector, step);
+			transform.localPosition += this.destinationVector * Time.deltaTime * this.catchSpeed;
 		} else if (this.directionHookMove == DirectionHookMove.back) {
-			transform.position = Vector3.MoveTowards (transform.position, this.sourceVector, step);
+			transform.localPosition -= this.destinationVector * Time.deltaTime * this.catchSpeed;
 		}
 
+
+
+		/*
 		if (Vector3.Distance (this.transform.position, this.destinationVector) < 0.1f && this.directionHookMove == DirectionHookMove.forward) {
 			this.directionHookMove = DirectionHookMove.back;
 		} else if (Vector3.Distance (this.transform.position, this.sourceVector) < 0.1f && this.directionHookMove == DirectionHookMove.back) {
@@ -148,6 +159,7 @@ public class FishingHook : MonoBehaviour {
 			this.transform.position = this.sourceVector;
 			this.ChangeState (HookState.General);
 		}
+		*/
 	}
 		
 }
