@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Fish : MonoBehaviour, ICatchable {
 	public float weight = 1.0f;
+	public float speed = 1.0f;
 
 	public float Weight {
 		get {
@@ -20,5 +21,9 @@ public class Fish : MonoBehaviour, ICatchable {
 		get {
 			return this.gameObject;
 		}
+	}
+
+	void Update() {
+		this.transform.position += Vector3.left * Time.deltaTime * this.speed;
 	}
 }

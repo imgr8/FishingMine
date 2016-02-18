@@ -16,6 +16,12 @@ public class SimpleHook : MonoBehaviour, IHook {
 		}
 	}
 
+	ISpinning spinning;
+
+	public void SetOwner(ISpinning spinning) {
+		this.spinning = spinning;
+	}
+
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag ("Catchable")) {
 			if (this.onCatchStaff != null) {		
