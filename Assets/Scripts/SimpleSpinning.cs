@@ -29,7 +29,6 @@ public class SimpleSpinning : MonoBehaviour, ISpinning {
 	delegate void SpinningBehaviourDelegate();
 	SpinningBehaviourDelegate spinningBehaviour;
 
-	enum DirectionHookMove { forward, back };
 	DirectionHookMove directionHookMove;
 
 	enum Direction { clockwise = 1, anticlockwise = -1 };
@@ -78,9 +77,12 @@ public class SimpleSpinning : MonoBehaviour, ISpinning {
 			this.catchSpeed = SimpleSpinning.catchSpeedByDefault;
 		}
 
-		this.directionHookMove = DirectionHookMove.forward;
+		this.directionHookMove = DirectionHookMove.nowhere;
 
 		this.fishingHook = this.fishingHookGameObject.GetComponent<IHook> ();
+
+		this.fishingHook.SetOwner (this);
+
 		this.fishingHook.OnCatchStaff += (ICatchable obj) => {
 			this.catchedStuff = obj;
 			this.ChangeState(SpinningState.PullStuff);
@@ -89,6 +91,12 @@ public class SimpleSpinning : MonoBehaviour, ISpinning {
 
 	public void SetOwner(IFisher fisher) {
 		this.owner = fisher;
+	}
+
+	public	DirectionHookMove DirectionHookMove {
+		get {
+			return this.directionHookMove;
+		}
 	}
 
 	// Вращение крючка
@@ -127,6 +135,7 @@ public class SimpleSpinning : MonoBehaviour, ISpinning {
 	}
 		
 	public void TryCatch () {
+		this.directionHookMove = DirectionHookMove.forward;
 		this.ChangeState (SpinningState.TryCatch);	
 	}
 

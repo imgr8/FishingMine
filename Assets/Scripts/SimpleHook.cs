@@ -23,9 +23,15 @@ public class SimpleHook : MonoBehaviour, IHook {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
+		if (this.spinning.DirectionHookMove == DirectionHookMove.back || this.spinning.DirectionHookMove == DirectionHookMove.nowhere) {	// игнорируем ловлю на обратный ход, а также если просто рыбак в состоянии поиска
+			return;
+		}
+
 		if (other.CompareTag ("Catchable")) {
 			if (this.onCatchStaff != null) {		
-				this.onCatchStaff (other.GetComponent<ICatchable> ());
+				ICatchable catchedStaff = other.GetComponent<ICatchable> ();
+				catchedStaff.StopAction (); // Остановим действие, которое выполнял объект
+				this.onCatchStaff (catchedStaff);
 			}
 		}
 	}

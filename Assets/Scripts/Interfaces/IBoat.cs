@@ -9,5 +9,10 @@ public interface IBoat {
 
 	void PutStaff(ICatchable staff);
 
+	ISea Sea {
+		get;
+		set;
+	}
+
 	event Action OnOverload;
 }

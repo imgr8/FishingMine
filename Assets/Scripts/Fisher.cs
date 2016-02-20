@@ -12,6 +12,26 @@ public class Fisher : MonoBehaviour, IFisher {
 
 	FisherState fisherState;
 
+	public ISpinning Spinning {
+		get {
+			return this.spinning;
+		}
+
+		set {
+			this.spinning = value;
+		}
+	}
+
+	public IBoat Boat {
+		get {
+			return this.boat;
+		}
+
+		set {
+			this.boat = value;
+		}
+	}
+
 	float power = 1.0f;
 
 	public float Power {
