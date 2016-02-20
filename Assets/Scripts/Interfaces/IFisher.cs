@@ -4,6 +4,7 @@ using System.Collections;
 public interface IFisher {
 
 	void StartCatchFish ();
+	void StopCatchFish();
 
 	ISpinning Spinning {
 		get;

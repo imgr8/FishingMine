@@ -87,6 +87,10 @@ public class Fisher : MonoBehaviour, IFisher {
 		this.ChangeState (FisherState.LookingFor);
 	}
 
+	public void StopCatchFish () {
+		throw new UnityException ("Not realized");
+	}
+
 	void Update() {
 		if (Input.GetMouseButtonDown (0) && this.fisherState == FisherState.LookingFor) {
 			this.ChangeState (FisherState.TryCatch);

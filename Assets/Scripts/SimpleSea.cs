@@ -54,8 +54,15 @@ public class SimpleSea : MonoBehaviour, ISea {
 
 	public GameObject [] fishes;
 
+	public int totalStarAmount = 10;
+
+	int numOfStars = 0;
+
+	public GameObject [] stars;
+
 	public void MakeLive() {
 		this.FishGen ();
+		this.StarGen ();
 	}
 		
 	void FishGen() {
@@ -72,6 +79,24 @@ public class SimpleSea : MonoBehaviour, ISea {
 			newFish.GetComponent<ICatchable> ().SetAction ("SimpleFishBehaviour");
 
 			newFish.SetActive (true);
+		}
+
+	}
+
+	void StarGen() {
+		for (int i = 0; i < this.totalStarAmount; i++) {
+			GameObject newStar = GameObject.Instantiate (this.stars [Random.Range (0, this.numOfStars)]);
+
+			newStar.transform.position = new Vector3 (
+				Random.Range (this.center.x - this.width / 2, this.center.x + this.width / 2), 
+				Random.Range (this.center.y - this.depth / 4, this.center.y - this.depth / 2), 
+				newStar.transform.position.z
+			);
+
+			newStar.GetComponent<ICatchable> ().Sea = this;
+			newStar.GetComponent<ICatchable> ().SetAction ("SimpleStarBehaviour");
+
+			newStar.SetActive (true);
 		}
 
 	}
@@ -94,6 +119,7 @@ public class SimpleSea : MonoBehaviour, ISea {
 		}
 
 		this.numOfFishes = this.fishes.Length;
+		this.numOfStars = this.stars.Length;
 	}
 
 	void Start() {
