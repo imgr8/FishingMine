@@ -64,11 +64,11 @@ public class Fisher : MonoBehaviour, IFisher {
 		}
 
 		this.spinning.OnEndTryCatch += (ICatchable catchedStaff) => {
-			Debug.Log(catchedStaff);
-
+	
 			if (catchedStaff != null) {
-				this.boat.PutStaff(catchedStaff);
-				GameObject.Destroy(catchedStaff.GameObject);
+				catchedStaff.Use(this);
+				//this.boat.PutStaff(catchedStaff);
+				//GameObject.Destroy(catchedStaff.GameObject);
 			}
 
 			this.ChangeState(FisherState.LookingFor);
@@ -88,7 +88,7 @@ public class Fisher : MonoBehaviour, IFisher {
 	}
 
 	public void StopCatchFish () {
-		throw new UnityException ("Not realized");
+		this.ChangeState (FisherState.Nothing);
 	}
 
 	void Update() {
@@ -99,8 +99,9 @@ public class Fisher : MonoBehaviour, IFisher {
 
 	void ChangeState(FisherState fisherState) {
 		switch (fisherState) {
-			case FisherState.Nothing:
+		case FisherState.Nothing:
 				this.fisherState = FisherState.Nothing;
+				this.spinning.Nothing ();
 				break;
 			case FisherState.LookingFor:
 				this.fisherState = FisherState.LookingFor;

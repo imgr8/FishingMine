@@ -5,6 +5,7 @@ using System.Collections;
 public class Fish : MonoBehaviour, ICatchable {
 	public float weight = 1.0f;
 	public float speed = 1.0f;
+	public float price = 100;
 
 	public float Weight {
 		get {
@@ -14,7 +15,7 @@ public class Fish : MonoBehaviour, ICatchable {
 
 	public float Price {
 		get {
-			return 100;
+			return this.price;
 		}
 	}
 
@@ -34,6 +35,30 @@ public class Fish : MonoBehaviour, ICatchable {
 		get {
 			return this.sea;
 		}
+	}
+
+	public void Use(IFisher fisher) {
+		fisher.Boat.PutStaff (this);
+
+		if (this.onUsed != null) {
+			this.onUsed.Invoke (this);
+		}
+	}
+
+	event Action<ICatchable> onUsed;
+
+	public event Action<ICatchable> OnUsed {
+		add {
+			this.onUsed += value;
+		}
+
+		remove {
+			this.onUsed -= value;
+		}
+	}
+
+	public void WhenCatched() {
+		this.StopAction (); // Остановим действие, которое выполнял объект
 	}
 
 	IBehaviour behaviour;

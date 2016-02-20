@@ -40,8 +40,11 @@ public class SimpleSpinning : MonoBehaviour, ISpinning {
 	IFisher owner;
 
 	void Awake() {
+		this.startPivotPointHookPosition = this.fishingHookPivotPoint.transform.position; // Необходимо произвести здесь для корректной работы состояния Nothing
 		this.ChangeState (SpinningState.Nothing);	// Начальное состояние обязательно в Awake!!!
 	}
+
+	Vector3 startPivotPointHookPosition;
 
 	// Use this for initialization
 	void Start () {
@@ -174,6 +177,10 @@ public class SimpleSpinning : MonoBehaviour, ISpinning {
 
 	}
 		
+	public void Nothing() {
+		this.ChangeState (SpinningState.Nothing);	
+	}
+
 	public void PullStaff() {
 		this.ChangeState (SpinningState.PullStuff);	
 	}
@@ -215,11 +222,14 @@ public class SimpleSpinning : MonoBehaviour, ISpinning {
 
 	void ChangeState(SpinningState spinningState) {
 		switch (spinningState) {
-			case SpinningState.Nothing:
+		case SpinningState.Nothing:
 				this.spinningBehaviour = this.EmptyBehaviour;
 				this.spinningState = SpinningState.Nothing;
+				this.directionHookMove = DirectionHookMove.nowhere;
+				this.fishingHookGameObject.transform.position = this.fishingHookPivotPoint.transform.position;
+				this.fishingHookPivotPoint.transform.position = this.startPivotPointHookPosition;	
 				break;
-		case SpinningState.LookingFor:
+			case SpinningState.LookingFor:
 				this.spinningBehaviour = this.LookingForBehaviour;
 				this.catchedStuff = null;
 				this.spinningState = SpinningState.LookingFor;

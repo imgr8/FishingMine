@@ -8,6 +8,7 @@ public interface ISpinning {
 	void LookingFor ();
 	void TryCatch ();
 	void PullStaff();
+	void Nothing();
 
 	void SetOwner (IFisher fisher);
 

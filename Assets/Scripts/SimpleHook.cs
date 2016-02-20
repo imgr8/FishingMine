@@ -30,7 +30,7 @@ public class SimpleHook : MonoBehaviour, IHook {
 		if (other.CompareTag ("Catchable")) {
 			if (this.onCatchStaff != null) {		
 				ICatchable catchedStaff = other.GetComponent<ICatchable> ();
-				catchedStaff.StopAction (); // Остановим действие, которое выполнял объект
+				catchedStaff.WhenCatched ();
 				this.onCatchStaff (catchedStaff);
 			}
 		}

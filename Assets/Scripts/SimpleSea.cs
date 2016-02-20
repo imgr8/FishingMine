@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 // Каждое море может обладать своими уникальными параметрами
 // генерироваться компьютером
@@ -60,11 +61,13 @@ public class SimpleSea : MonoBehaviour, ISea {
 
 	public GameObject [] stars;
 
-	public void MakeLive() {
+	public void MakeLive(int param = 0, object data = null) {
 		this.FishGen ();
 		this.StarGen ();
 	}
 		
+	List<ICatchable> createdCatchableObjects = new List<ICatchable>();
+
 	void FishGen() {
 		for (int i = 0; i < this.totalFishAmount; i++) {
 			GameObject newFish = GameObject.Instantiate (this.fishes [Random.Range (0, this.numOfFishes)]);
@@ -75,8 +78,17 @@ public class SimpleSea : MonoBehaviour, ISea {
 				newFish.transform.position.z
 			);
 
-			newFish.GetComponent<ICatchable> ().Sea = this;
-			newFish.GetComponent<ICatchable> ().SetAction ("SimpleFishBehaviour");
+			ICatchable newCatchable = newFish.GetComponent<ICatchable> ();
+
+			newCatchable.Sea = this;
+			newCatchable.SetAction ("SimpleFishBehaviour");
+
+			this.createdCatchableObjects.Add (newCatchable);
+
+			newCatchable.OnUsed += (ICatchable obj) => {
+				this.createdCatchableObjects.Remove(obj);
+				GameObject.Destroy(obj.GameObject);
+			};
 
 			newFish.SetActive (true);
 		}
@@ -93,12 +105,28 @@ public class SimpleSea : MonoBehaviour, ISea {
 				newStar.transform.position.z
 			);
 
-			newStar.GetComponent<ICatchable> ().Sea = this;
-			newStar.GetComponent<ICatchable> ().SetAction ("SimpleStarBehaviour");
+			ICatchable newCatchable = newStar.GetComponent<ICatchable> (); 
+			newCatchable.Sea = this;
+			newCatchable.SetAction ("SimpleStarBehaviour");
+
+			this.createdCatchableObjects.Add (newCatchable);
+
+			newCatchable.OnUsed += (ICatchable obj) => {
+				this.createdCatchableObjects.Remove(obj);
+				GameObject.Destroy(obj.GameObject);
+			};
 
 			newStar.SetActive (true);
 		}
 
+	}
+
+	public void Clear() {
+		foreach (ICatchable catchable in this.createdCatchableObjects) {
+			GameObject.Destroy(catchable.GameObject);
+		}
+
+		this.createdCatchableObjects.Clear ();
 	}
 
 	// Use this for initialization

@@ -14,5 +14,6 @@ public interface IBoat {
 		set;
 	}
 
+	event Action<ICatchable> OnPutStaff;
 	event Action OnOverload;
 }

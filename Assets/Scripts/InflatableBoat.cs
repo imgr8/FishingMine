@@ -16,11 +16,16 @@ public class InflatableBoat : MonoBehaviour, IBoat {
 	public void PutStaff(ICatchable staff) {
 		this.capacity += staff.Weight;
 
+		if (this.onPutStaff != null) {
+			this.onPutStaff (staff);
+		}
+
 		if (this.capacity > this.maxCapacity) {
 			if (this.onOverload != null) {
 				this.onOverload.Invoke ();
 			}
 		}
+			
 	}
 
 	event Action onOverload;
@@ -35,6 +40,18 @@ public class InflatableBoat : MonoBehaviour, IBoat {
 		}
 	}
 		
+	event Action<ICatchable> onPutStaff;
+
+	public event Action<ICatchable> OnPutStaff {
+		add {
+			this.onPutStaff += value;
+		}
+
+		remove {
+			this.onPutStaff -= value;
+		}
+	}
+
 	ISea sea;
 
 	public ISea Sea {
