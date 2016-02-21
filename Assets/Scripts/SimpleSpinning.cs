@@ -8,6 +8,7 @@ public class SimpleSpinning : MonoBehaviour, ISpinning {
 	public GameObject fishingHookCenterOfRotation;	// Точка, центр, вращения (в рамках поставленной задачи может представлять конец удочки, место крепления лески.)
 	public GameObject fishingHookPivotPoint;		// Точка представляющая место элемента вращения (в рамках поставленной задачи может представлять конец удочки, место под плавок)
 	public GameObject fishingHookGameObject; // Должен быть типом IHook!
+	public GameObject finishPullPoint;
 
 	IHook fishingHook;
 
@@ -121,13 +122,15 @@ public class SimpleSpinning : MonoBehaviour, ISpinning {
 		}
 
 		if (this.directionOfMovemnet == Direction.clockwise) {
-			this.currentAngleDeviation += Time.deltaTime * this.angleSpeed;
+			this.currentAngleDeviation += Time.deltaTime * this.angleSpeed * Mathf.Cos(Mathf.Deg2Rad * this.currentAngleDeviation); // * Mathf.Cos(Mathf.Deg2Rad * this.currentAngleDeviation) - для эмуляции физического поведения, когда маятник теряет скорость в крайних точках
 		} else {
-			this.currentAngleDeviation -= Time.deltaTime * this.angleSpeed;
+			this.currentAngleDeviation -= Time.deltaTime * this.angleSpeed * Mathf.Cos(Mathf.Deg2Rad * this.currentAngleDeviation);
 		}
 
 		float newXCoord = this.length * Mathf.Sin (Mathf.Deg2Rad * this.currentAngleDeviation);
 		float newYCoord = -Mathf.Sqrt(this.length * this.length - newXCoord * newXCoord);
+
+		//= -Mathf.Sqrt(this.length * this.length - newXCoord * newXCoord);
 
 		this.fishingHookPivotPoint.transform.position = new Vector3 (
 			this.fishingHookCenterOfRotation.transform.position.x + newXCoord, 
@@ -195,7 +198,7 @@ public class SimpleSpinning : MonoBehaviour, ISpinning {
 		this.catchedStuff.GameObject.transform.position = this.fishingHookGameObject.transform.position;
 
 		if (Vector3.Distance (
-			this.fishingHookPivotPoint.transform.position, this.fishingHookGameObject.transform.position) < 0.1f) 
+			this.fishingHookCenterOfRotation.transform.position, this.fishingHookGameObject.transform.position) < 0.1f) 
 		{
 			this.directionHookMove = DirectionHookMove.forward;
 			this.fishingHookGameObject.transform.position = this.fishingHookPivotPoint.transform.position;
@@ -203,8 +206,6 @@ public class SimpleSpinning : MonoBehaviour, ISpinning {
 			if (this.onEndTryCatch != null) {
 				this.onEndTryCatch.Invoke (this.catchedStuff);
 			}
-
-			this.ChangeState (SpinningState.LookingFor);
 
 		}
 	}
@@ -227,7 +228,8 @@ public class SimpleSpinning : MonoBehaviour, ISpinning {
 				this.spinningState = SpinningState.Nothing;
 				this.directionHookMove = DirectionHookMove.nowhere;
 				this.fishingHookGameObject.transform.position = this.fishingHookPivotPoint.transform.position;
-				this.fishingHookPivotPoint.transform.position = this.startPivotPointHookPosition;	
+				this.fishingHookPivotPoint.transform.position = this.startPivotPointHookPosition;
+				this.currentAngleDeviation = 0;
 				break;
 			case SpinningState.LookingFor:
 				this.spinningBehaviour = this.LookingForBehaviour;

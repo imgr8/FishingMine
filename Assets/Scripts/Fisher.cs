@@ -7,6 +7,9 @@ public class Fisher : MonoBehaviour, IFisher {
 	public GameObject spinningGameObject;
 	public GameObject boatGameObject;
 
+	public float delayBetweenUsingCatchedStaff = 0.0f;  // Задержка между моментом, когда выловлен предмет и новым запуском удочки (может быть использована, 
+														// например, для показа надвиси и выловденного)
+
 	ISpinning spinning;
 	IBoat boat;
 
@@ -67,15 +70,25 @@ public class Fisher : MonoBehaviour, IFisher {
 	
 			if (catchedStaff != null) {
 				catchedStaff.Use(this);
-				//this.boat.PutStaff(catchedStaff);
-				//GameObject.Destroy(catchedStaff.GameObject);
+
+				StartCoroutine(StartAfterDelay());
+
+			} else {
+				this.ChangeState(FisherState.LookingFor);
 			}
 
-			this.ChangeState(FisherState.LookingFor);
 		};
 
 		this.ChangeState (FisherState.Nothing); // Началное состояние обязательно задается в Awake
 
+	}
+
+	IEnumerator StartAfterDelay() {
+		this.ChangeState(FisherState.Nothing);
+
+		yield return new WaitForSeconds (this.delayBetweenUsingCatchedStaff);
+
+		this.ChangeState(FisherState.LookingFor);
 	}
 
 	// Use this for initialization
