@@ -36,7 +36,7 @@ public class SimpleFishing : MonoBehaviour, IFishing {
 		}
 	}
 
-	float levelTimeAmount = 10.0f;
+	float levelTimeAmount = 60.0f;
 
 	float levelTimeRemainded = 0;
 
