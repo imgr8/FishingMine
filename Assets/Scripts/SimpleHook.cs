@@ -29,12 +29,10 @@ public class SimpleHook : MonoBehaviour, IHook {
 
 		if (other.CompareTag ("Catchable")) {
 			if (this.onCatchStaff != null) {		
-				ICatchable catchedStaff = other.GetComponent<ICatchable> ();
-				catchedStaff.WhenCatched ();
-				this.onCatchStaff (catchedStaff);
+				//ICatchable catchedStaff = other.GetComponent<ICatchable> ();
+				this.onCatchStaff (other.GetComponent<ICatchable> ().WhenCatched (this));
 			}
 		}
 	}
-
-
+		
 }

@@ -189,6 +189,26 @@ public class SimpleSpinning : MonoBehaviour, ISpinning {
 	}
 
 	void PullStaffBehaviour() {
+		if (this.catchedStuff == null) {	// Если движется нулевой подцеп (например после взрыва бомбы, или если рыба сорвалась, то просто возвращаем крючок)
+			this.fishingHookGameObject.transform.localPosition -= this.destinationNormalVector * Time.deltaTime * this.catchSpeed;
+			this.directionHookMove = DirectionHookMove.back;
+
+			if (Vector3.Distance (this.fishingHookPivotPoint.transform.position, this.fishingHookGameObject.transform.position) < 0.1f) 
+			{
+				this.directionHookMove = DirectionHookMove.forward;
+				this.fishingHookGameObject.transform.position = this.fishingHookPivotPoint.transform.position;
+
+				if (this.onEndTryCatch != null) {
+					this.onEndTryCatch.Invoke (this.catchedStuff);
+				}
+
+				this.ChangeState (SpinningState.LookingFor);
+
+			}
+
+			return;
+		}
+
 		this.directionHookMove = DirectionHookMove.back;
 
 		float resultCatchSpeed = this.catchSpeed * this.owner.Power / this.catchedStuff.Weight;

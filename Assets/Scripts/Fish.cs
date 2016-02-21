@@ -57,8 +57,9 @@ public class Fish : MonoBehaviour, ICatchable {
 		}
 	}
 
-	public void WhenCatched() {
+	public ICatchable WhenCatched(IHook hook) {
 		this.StopAction (); // Остановим действие, которое выполнял объект
+		return this;
 	}
 
 	public void Destroy() {
