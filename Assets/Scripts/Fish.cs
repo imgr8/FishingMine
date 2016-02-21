@@ -61,6 +61,14 @@ public class Fish : MonoBehaviour, ICatchable {
 		this.StopAction (); // Остановим действие, которое выполнял объект
 	}
 
+	public void Destroy() {
+		if (this.sea != null) {
+			this.sea.DestroyObject (this);
+		} else {
+			GameObject.Destroy (this.GameObject);
+		}
+	}
+
 	IBehaviour behaviour;
 
 	public void SetAction(string actionName, object data = null) {

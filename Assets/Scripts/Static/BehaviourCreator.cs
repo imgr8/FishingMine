@@ -9,11 +9,9 @@ public static class BehaviourCreator {
 		case "SimpleFishBehaviour":
 			behaviour = new SimpleFishBehaviour (catchable);
 			return behaviour;
-			break;
 		case "SimpleStarBehaviour":
 			behaviour = new SimpleStarBehaviour (catchable);
 			return behaviour;
-			break;
 		default:
 			return null;
 		}

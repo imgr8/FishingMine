@@ -129,6 +129,13 @@ public class SimpleSea : MonoBehaviour, ISea {
 		this.createdCatchableObjects.Clear ();
 	}
 
+	public void DestroyObject (ICatchable catchableObject) {
+		if (this.createdCatchableObjects.Contains (catchableObject)) {
+			this.createdCatchableObjects.Remove (catchableObject);
+			GameObject.Destroy (catchableObject.GameObject);
+		}
+	}
+
 	// Use this for initialization
 	void Awake () {
 		this.center = this.transform.position;
