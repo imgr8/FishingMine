@@ -2,11 +2,6 @@
 using System;
 using System.Collections;
 
-// PUTTABLE_IN_BOAT - объекты, которые необходимо погрузить в лодку,
-// BONUS_TEMPORARY_USE - бонус временного испольщования
-// BONUS_CONTINUOUS_USE - бонус, котороый можно испольщоват позже
-// DESTROYABLE - разрушаемые объекты
-
 public interface ICatchable {
 
 	float Weight {
