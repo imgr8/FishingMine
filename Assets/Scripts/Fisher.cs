@@ -51,6 +51,10 @@ public class Fisher : MonoBehaviour, IFisher {
 		}
 	}
 
+	public void ClearState() {
+		this.power = 1.0f;
+	}
+
 	void Awake() {
 		this.spinning = this.spinningGameObject.GetComponent<ISpinning> ();
 

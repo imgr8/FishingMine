@@ -12,6 +12,9 @@ public static class BehaviourCreator {
 		case "SimpleStarBehaviour":
 			behaviour = new SimpleStarBehaviour (catchable);
 			return behaviour;
+		case "SimpleSurpriseBottleBehaviour":
+			behaviour = new SimpleSurpriseBottleBehaviour (catchable);
+			return behaviour;
 		default:
 			return null;
 		}

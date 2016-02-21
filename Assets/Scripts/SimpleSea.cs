@@ -61,9 +61,16 @@ public class SimpleSea : MonoBehaviour, ISea {
 
 	public GameObject [] stars;
 
+	public int totalSurpriseAmount = 10;
+
+	int numOfSurprise = 0;
+
+	public GameObject [] surprise;
+
 	public void MakeLive(int param = 0, object data = null) {
 		this.FishGen ();
 		this.StarGen ();
+		this.SurpriseGen ();
 	}
 		
 	List<ICatchable> createdCatchableObjects = new List<ICatchable>();
@@ -121,6 +128,32 @@ public class SimpleSea : MonoBehaviour, ISea {
 
 	}
 
+	void SurpriseGen() {
+		for (int i = 0; i < this.totalSurpriseAmount; i++) {
+			GameObject newSurprise = GameObject.Instantiate (this.surprise [Random.Range (0, this.numOfSurprise)]);
+
+			newSurprise.transform.position = new Vector3 (
+				Random.Range (this.center.x - this.width / 2, this.center.x + this.width / 2), 
+				Random.Range (this.center.y - this.depth / 4, this.center.y - this.depth / 2), 
+				newSurprise.transform.position.z
+			);
+
+			ICatchable newCatchable = newSurprise.GetComponent<ICatchable> (); 
+			newCatchable.Sea = this;
+			newCatchable.SetAction ("SimpleSurpriseBottleBehaviour");
+
+			this.createdCatchableObjects.Add (newCatchable);
+
+			newCatchable.OnUsed += (ICatchable obj) => {
+				this.createdCatchableObjects.Remove(obj);
+				GameObject.Destroy(obj.GameObject);
+			};
+
+			newSurprise.SetActive (true);
+		}
+
+	}
+
 	public void Clear() {
 		foreach (ICatchable catchable in this.createdCatchableObjects) {
 			GameObject.Destroy(catchable.GameObject);
@@ -155,6 +188,7 @@ public class SimpleSea : MonoBehaviour, ISea {
 
 		this.numOfFishes = this.fishes.Length;
 		this.numOfStars = this.stars.Length;
+		this.numOfSurprise = this.surprise.Length;
 	}
 
 	void Start() {

@@ -50,6 +50,8 @@ public class SimpleFishing : MonoBehaviour, IFishing {
 
 		this.fisher = this.fisherGameObject.GetComponent<IFisher> ();
 
+		this.fisher.ClearState ();
+
 		if (this.fisher == null) {
 			throw new UnityException ("Fisher are not initialized");
 		}
@@ -95,11 +97,11 @@ public class SimpleFishing : MonoBehaviour, IFishing {
 			}
 		};
 
-		this.IfCondiotionPassedStartNextLevel ();
+		this.IfConditionPassedStartNextLevel ();
 			
 	}
 
-	void IfCondiotionPassedStartNextLevel() {
+	void IfConditionPassedStartNextLevel() {
 		if (this.NumLevel == 0) {
 			this.NextLevel ();
 		} else if (this.CheckConditions ()) {
@@ -111,8 +113,9 @@ public class SimpleFishing : MonoBehaviour, IFishing {
 
 	void FinishLevel() {
 		this.fisher.StopCatchFish ();
+		this.fisher.ClearState ();
 		this.sea.Clear ();
-		this.IfCondiotionPassedStartNextLevel ();
+		this.IfConditionPassedStartNextLevel ();
 	}
 		
 	bool CheckConditions() {
