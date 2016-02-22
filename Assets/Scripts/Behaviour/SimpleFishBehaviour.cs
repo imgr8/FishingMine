@@ -54,10 +54,10 @@ public class SimpleFishBehaviour : IBehaviour {
 
         else
         {
-
+            
             if (moveDirection == MoveDirection.Left && obj.position.x > startHorizontalPosition - deviation && obj.position.x > -sea.Width / 2)
                 obj.position += Vector3.left * Time.deltaTime * speed;
-            else if (moveDirection == MoveDirection.Left && (obj.position.x <= startHorizontalPosition - deviation || obj.position.x <= -sea.Width / 2))
+            else if (moveDirection == MoveDirection.Left &&( (obj.position.x <= startHorizontalPosition - deviation )|| (obj.position.x <= -sea.Width / 2)))
             {
                 moveDirection = MoveDirection.Right;
                 obj.transform.Rotate(new Vector3(0, 180, 0));

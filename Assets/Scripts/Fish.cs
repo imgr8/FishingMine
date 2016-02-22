@@ -5,7 +5,7 @@ using System.Collections;
 public class Fish : MonoBehaviour, ICatchable {
 	public float weight = 1.0f;
 	public float speed = 1.0f;
-	public float price = 100;
+	public int price = 100;
     public float deviation;
     public bool isDeviation;
 
@@ -15,7 +15,7 @@ public class Fish : MonoBehaviour, ICatchable {
 		}
 	}
 
-	public float Price {
+	public int Price {
 		get {
 			return this.price;
 		}

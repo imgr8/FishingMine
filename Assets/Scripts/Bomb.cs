@@ -10,7 +10,7 @@ public class Bomb : MonoBehaviour, ICatchable
     public float verticalDeviation = 1.0f;
     public float explodeRadius = 10.0f;
     public float weight = 1.0f;
-    public float price = 1.0f;
+    public int price = 0;
 
     public float Weight
     {
@@ -27,7 +27,7 @@ public class Bomb : MonoBehaviour, ICatchable
     }
 
 
-    public float Price
+    public int Price
     {
         get { return this.price; }
     }

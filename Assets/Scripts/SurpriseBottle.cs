@@ -3,11 +3,11 @@ using System;
 using System.Collections;
 
 public class SurpriseBottle : MonoBehaviour, ICatchable {
-	public float price = 0.0f;
+	public int price = 0;
 	public float weight = 1.0f;
 	public float speed = 1.0f;
 
-	public float Price {
+	public int Price {
 		get {
 			return this.price;
 		}

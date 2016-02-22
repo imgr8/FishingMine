@@ -8,9 +8,10 @@ public interface ICatchable {
 		get;
 	}
 
-	float Price {
-		get;
-	}
+    int Price
+    {
+        get;
+    }
 
 	GameObject GameObject {
 		get;

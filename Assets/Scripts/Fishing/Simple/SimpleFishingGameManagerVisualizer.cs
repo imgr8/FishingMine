@@ -7,6 +7,7 @@ public class SimpleFishingGameManagerVisualizer : MonoBehaviour {
 	public Text textForEarnedMoney;
 	public Text textForLevelNumber;
 	public Text textForTimeRemainded;
+    public Text textForRequiredMoney;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +19,11 @@ public class SimpleFishingGameManagerVisualizer : MonoBehaviour {
 		this.fishing.OnEarnedUpdate += (float money) => {
 			this.textForEarnedMoney.text = money.ToString();
 		};
+
+        this.fishing.OnRequiredUpdate += (float money) =>
+        {
+            this.textForRequiredMoney.text = money.ToString();
+        };
 
 		this.fishing.OnLevelUpdate += (ushort levelNum) => {
 			this.textForLevelNumber.text = levelNum.ToString();

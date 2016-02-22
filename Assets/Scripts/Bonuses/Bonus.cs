@@ -21,7 +21,7 @@ public abstract class Bonus : ICatchable {
 		get;
 	}
 
-	public virtual float Price {
+	public virtual int Price {
 		get {
 			return 0;
 		}
