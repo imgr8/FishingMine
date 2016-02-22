@@ -7,6 +7,8 @@ public class SimpleFishBehaviour : IBehaviour {
 	ISea sea;
 	Transform obj;
 	float speed;
+    float deviation;
+    float startHorizontalPosition;
 
 	enum MoveDirection {Right, Left};
 	MoveDirection moveDirection = MoveDirection.Right;
@@ -16,26 +18,58 @@ public class SimpleFishBehaviour : IBehaviour {
 		this.obj = obj.GameObject.transform;
 		this.sea = obj.Sea;
 		this.speed = obj.GameObject.GetComponent<Fish>().speed;
+        this.deviation = obj.GameObject.GetComponent<Fish>().deviation;
 
 		this.moveDirection = (UnityEngine.Random.Range (0, 2) == 1 ? MoveDirection.Right : MoveDirection.Left);
 
 		if (this.moveDirection == MoveDirection.Left) {
 			this.obj.transform.Rotate (new Vector3 (0, 180, 0));
+
+            startHorizontalPosition = obj.GameObject.transform.position.x;
 		}
 	}
 
 	public void Action() {
-		if (this.moveDirection == MoveDirection.Left && this.obj.position.x > -this.sea.Width / 2) {
-			obj.position += Vector3.left * Time.deltaTime * this.speed;
-		} else if (this.moveDirection == MoveDirection.Left && this.obj.position.x <= -this.sea.Width / 2) {
-			this.moveDirection = MoveDirection.Right;
-			this.obj.transform.Rotate (new Vector3 (0, 180, 0));
-		} else if (this.moveDirection == MoveDirection.Right && this.obj.position.x < this.sea.Width / 2) {
-			obj.position += Vector3.right * Time.deltaTime * this.speed;
-		} else if (this.moveDirection == MoveDirection.Right && this.obj.position.x >= this.sea.Width / 2) {
-			this.moveDirection = MoveDirection.Left;
-			this.obj.transform.Rotate (new Vector3 (0, 180, 0));
-		}
+        if (!obj.gameObject.GetComponent<Fish>().isDeviation)
+        {
+            if (this.moveDirection == MoveDirection.Left && this.obj.position.x > -this.sea.Width / 2)
+            {
+                obj.position += Vector3.left * Time.deltaTime * this.speed;
+            }
+            else if (this.moveDirection == MoveDirection.Left && this.obj.position.x <= -this.sea.Width / 2)
+            {
+                this.moveDirection = MoveDirection.Right;
+                this.obj.transform.Rotate(new Vector3(0, 180, 0));
+            }
+            else if (this.moveDirection == MoveDirection.Right && this.obj.position.x < this.sea.Width / 2)
+            {
+                obj.position += Vector3.right * Time.deltaTime * this.speed;
+            }
+            else if (this.moveDirection == MoveDirection.Right && this.obj.position.x >= this.sea.Width / 2)
+            {
+                this.moveDirection = MoveDirection.Left;
+                this.obj.transform.Rotate(new Vector3(0, 180, 0));
+            }
+        }
+
+        else
+        {
+
+            if (moveDirection == MoveDirection.Left && obj.position.x > startHorizontalPosition - deviation && obj.position.x > -sea.Width / 2)
+                obj.position += Vector3.left * Time.deltaTime * speed;
+            else if (moveDirection == MoveDirection.Left && (obj.position.x <= startHorizontalPosition - deviation || obj.position.x <= -sea.Width / 2))
+            {
+                moveDirection = MoveDirection.Right;
+                obj.transform.Rotate(new Vector3(0, 180, 0));
+            }
+            else if (moveDirection == MoveDirection.Right && obj.position.x < startHorizontalPosition + deviation && obj.position.x < sea.Width / 2)
+                obj.position += Vector3.right * Time.deltaTime * speed;
+            else if (moveDirection == MoveDirection.Right && (obj.position.x >= startHorizontalPosition + deviation || obj.position.x >= sea.Width / 2))
+            {
+                moveDirection = MoveDirection.Left;
+                obj.transform.Rotate(new Vector3(0, 180, 0));
+            }
+        }
 	}
 
 	float savedSpeed;

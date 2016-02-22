@@ -5,14 +5,19 @@ using System;
 
 public class Bomb : MonoBehaviour, ICatchable
 {
-
+    public float horizontalSpeed = 1.0f;
+    public float verticalSpeed = 1.0f;
+    public float verticalDeviation = 1.0f;
+    public float explodeRadius = 10.0f;
     public float weight = 1.0f;
+    public float price = 1.0f;
+
     public float Weight
     {
         get { return this.weight; }
     }
 
-    public float explodeRadius = 10.0f;
+   
     public float ExplodeRadius
     {
         get
@@ -21,7 +26,7 @@ public class Bomb : MonoBehaviour, ICatchable
         }
     }
 
-    public float price = 1.0f;
+
     public float Price
     {
         get { return this.price; }
@@ -48,9 +53,7 @@ public class Bomb : MonoBehaviour, ICatchable
         }
     }
 
-    public float horizontalSpeed = 1.0f;
-    public float verticalSpeed = 1.0f;
-    public float verticalDeviation = 1.0f;
+   
 
     public ICatchable WhenCatched(IHook hook)
     {
@@ -132,7 +135,7 @@ public class Bomb : MonoBehaviour, ICatchable
 
 			cathcableObjectsInSea.Clear();
 		}
-		state = State.Explode;
+	//	state = State.Explode;
         Destroy();
     }
 
@@ -146,18 +149,18 @@ public class Bomb : MonoBehaviour, ICatchable
         bombBehaviour = EmptyBehaviour;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (state == State.Normal)
-            return;
+    //void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if (state == State.Normal)
+    //        return;
 
-        if(other.CompareTag("Catchable"))
-        {
-            ICatchable catchable = other.GetComponent<ICatchable>();
-            catchable.Destroy();
-        }
-            
-    }
+    //    if (other.CompareTag("Catchable"))
+    //    {
+    //        ICatchable catchable = other.GetComponent<ICatchable>();
+    //        catchable.Destroy();
+    //    }
+
+    //}
     void Update()
     {
         bombBehaviour.Invoke();

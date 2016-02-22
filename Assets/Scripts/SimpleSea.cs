@@ -9,6 +9,7 @@ using System.Collections.Generic;
 
 public class SimpleSea : MonoBehaviour, ISea
 {
+    public bool isUseDeviationOnMove = true; // для теста, проверить какой тип движения лучше
 
     public float width = 10.0f;
 
@@ -104,6 +105,7 @@ public class SimpleSea : MonoBehaviour, ISea
 
             ICatchable newCatchable = newFish.GetComponent<ICatchable>();
 
+            newFish.GetComponent<Fish>().isDeviation = isUseDeviationOnMove;
             newCatchable.Sea = this;
             newCatchable.SetAction("SimpleFishBehaviour");
 

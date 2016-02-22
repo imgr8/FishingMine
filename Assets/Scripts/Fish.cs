@@ -6,6 +6,8 @@ public class Fish : MonoBehaviour, ICatchable {
 	public float weight = 1.0f;
 	public float speed = 1.0f;
 	public float price = 100;
+    public float deviation;
+    public bool isDeviation;
 
 	public float Weight {
 		get {
