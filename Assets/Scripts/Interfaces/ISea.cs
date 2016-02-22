@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 // Сущность море
 // по сути представляет из себя отдельную локацию
@@ -34,5 +35,7 @@ public interface ISea {
 
 	void DestroyObject (ICatchable catchableObject);	// Уничтожает выбранный объект в море
 
-	void Clear();	// Очистить мореот всех объектов								
+	void Clear();	// Очистить мореот всех объектов			
+
+	HashSet<ICatchable> GetAllCatchableObjectInSea();
 }
