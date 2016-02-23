@@ -1,8 +1,8 @@
-Prefabs/Folliage|5.882768:-5.022933:0
-Prefabs/Folliage|3.916835:-4.968824:0
-Prefabs/Folliage|-4.037075:-5.059005:0
-Prefabs/Folliage|-2.576153:-5.022933:0
-Prefabs/Treasure|0.3997996:-4.860608:0
-Prefabs/bombVerticalBehaviour|1.79:-4.39167:0
-Prefabs/bombVerticalBehaviour|0.3456917:-2.77:0
-Prefabs/bombVerticalBehaviour|-1.03:-4.39167:0
+Prefabs/bomb|-1.26:-4.27:0|0@1
+Prefabs/bomb|1.39:-4.27:0|0@1
+Prefabs/bomb|0.03:-2.61:0|0@1
+Prefabs/Treasure|0.03:-5.021982:0|
+Prefabs/Folliage|-2.359343:-5.021982:0|
+Prefabs/Folliage|-4.166045:-5.021982:0|
+Prefabs/Folliage|3.017747:-4.978965:0|
+Prefabs/Folliage|5.190093:-4.978965:0|

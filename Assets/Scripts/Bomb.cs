@@ -186,9 +186,22 @@ public class Bomb : MonoBehaviour, ICatchable, ISaveFromEditor
 		}
 	}
 
+	// Не использовать в качестве разделителя "|"
+	// 1 параметр Horizontal Speed (на само деле не важно какой главное при Load все правильно восстановить)
+	public string Save() {
+		string parameters = this.horizontalSpeed.ToString() + "@" + this.verticalSpeed.ToString();
 
-	public void Load(ISea sea) {
+		return parameters;
+	}
+
+	public void Load(ISea sea, string param) {
 		this.Sea = sea;
+
+		string [] parameters = param.Split (new char[]{ '@' });
+
+		this.horizontalSpeed = float.Parse(parameters [0]);
+		this.verticalSpeed = float.Parse(parameters [1]);
+
 		this.SetAction(this.DefaultAction);	// Поскольку море не знает об объекте, устанавливаем поведение по-умолчанию сами, в последствии море уже будет само контролировать поведение
 	}
 }

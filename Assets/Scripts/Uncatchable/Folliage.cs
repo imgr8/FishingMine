@@ -72,8 +72,11 @@ public class Folliage : MonoBehaviour, IUncatchable, ISaveFromEditor {
 		}
 	}
 
+	public string Save() {
+		return "";
+	}
 
-	public void Load(ISea sea) {
+	public void Load(ISea sea, string param = "") {
 		this.Sea = sea;
 	}
 }

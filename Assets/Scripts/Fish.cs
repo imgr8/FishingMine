@@ -131,9 +131,12 @@ public class Fish : MonoBehaviour, ICatchable, ISaveFromEditor {
 			return this.path;
 		}
 	}
+		
+	public string Save() {
+		return "";
+	}
 
-
-	public void Load(ISea sea) {
+	public void Load(ISea sea, string param) {
 		this.Sea = sea;
 		this.SetAction(this.DefaultAction);	// Поскольку море не знает об объекте, устанавливаем поведение по-умолчанию сами, в последствии море уже будет само контролировать поведение
 	}

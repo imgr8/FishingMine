@@ -92,7 +92,7 @@ public class SimpleSea : MonoBehaviour, ISea
 
     public void MakeLive(int param = 0, object data = null)
     {
-		this.levelLoader.LoadLevel ("levelGen_2");
+		this.levelLoader.LoadLevel ("levelGen_1");
 
 		return;
 

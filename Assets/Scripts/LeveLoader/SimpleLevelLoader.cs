@@ -28,7 +28,7 @@ public class SimpleLevelLoader : ILevelLoader {
 
 				newGameObject.transform.position = newPosition;
 
-				newGameObject.GetComponent<ISaveFromEditor> ().Load (sea);
+				newGameObject.GetComponent<ISaveFromEditor> ().Load (sea, splitLine[2]);
 
 				this.sea.AddObject (newGameObject);
 			}

@@ -36,7 +36,7 @@ public class LevelEditorWindow : EditorWindow
 					level += saveObject.Path + "|" + 
 						saveObject.GameObject.transform.position.x.ToString() + ":" + 
 						saveObject.GameObject.transform.position.y.ToString() + ":" +
-						saveObject.GameObject.transform.position.z.ToString() + "\n";
+						saveObject.GameObject.transform.position.z.ToString() + "|" + saveObject.Save() + "\n";
 				}
 			}
 
@@ -60,6 +60,8 @@ public class LevelEditorWindow : EditorWindow
 					Vector3 newPosition = new Vector3 (float.Parse(coordinates[0]), float.Parse(coordinates[1]), float.Parse(coordinates[2]));
 
 					newGameObject.transform.position = newPosition;
+
+					newGameObject.GetComponent<ISaveFromEditor> ().Load (null, splitLine [2]);
 				}
 			}
 
