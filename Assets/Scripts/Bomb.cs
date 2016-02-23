@@ -202,6 +202,6 @@ public class Bomb : MonoBehaviour, ICatchable, ISaveFromEditor
 		this.horizontalSpeed = float.Parse(parameters [0]);
 		this.verticalSpeed = float.Parse(parameters [1]);
 
-		this.SetAction(this.DefaultAction);	// Поскольку море не знает об объекте, устанавливаем поведение по-умолчанию сами, в последствии море уже будет само контролировать поведение
+		//this.SetAction(this.DefaultAction);	// Поскольку море не знает об объекте, устанавливаем поведение по-умолчанию сами, в последствии море уже будет само контролировать поведение
 	}
 }

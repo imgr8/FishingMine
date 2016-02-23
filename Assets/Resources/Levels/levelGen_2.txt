@@ -1,0 +1,6 @@
+Prefabs/bomb|2.89:-2.79:0|1@0
+Prefabs/bomb|2.89:0.48:0|1@0
+Prefabs/bomb|-3.477778:-1.215002:0|1@0
+Prefabs/Fishes/Gold Fish|-3.718166:-4.425368:0|
+Prefabs/Stars/Small Star|4.47:-4.55:0|
+Prefabs/Fishes/Yellow Fish|2.63093:-4.386975:0|
