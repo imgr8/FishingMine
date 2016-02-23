@@ -22,7 +22,7 @@ public class LevelEditorWindow : EditorWindow
 	void OnGUI()
 	{
 		GUILayout.Label ("Base Settings", EditorStyles.boldLabel);
-		this.fileSaveName = EditorGUILayout.TextField ("Text Field", this.fileSaveName);
+		this.fileSaveName = EditorGUILayout.TextField ("Имя уровня", this.fileSaveName);
 
 		if (GUILayout.Button ("Save", GUIStyle.none)) {
 			UnityEngine.Object[] objects = UnityEngine.Object.FindObjectsOfType(typeof(UnityEngine.Object));	//Resources.FindObjectsOfTypeAll (typeof(MonoScript));
@@ -46,6 +46,8 @@ public class LevelEditorWindow : EditorWindow
 		}
 
 		if (GUILayout.Button ("Load", GUIStyle.none)) {
+			this.Clear ();
+
 			string [] levelLines = System.IO.File.ReadAllLines (this.folderToSave + "/" + this.fileSaveName + ".txt");
 
 			for (int i = 0; i < levelLines.Length; i++) {
@@ -69,19 +71,23 @@ public class LevelEditorWindow : EditorWindow
 		}
 
 		if (GUILayout.Button ("Clear", GUIStyle.none)) {
-			UnityEngine.Object[] objects = UnityEngine.Object.FindObjectsOfType(typeof(UnityEngine.Object));	
-
-			for (int i = 0; i < objects.Length; i++) {
-				ISaveFromEditor saveObject = objects [i] as ISaveFromEditor;
-
-				if (saveObject != null) {
-					GameObject.DestroyImmediate (saveObject.GameObject);
-				}
-			}
-
-			Debug.Log ("Level have cleared");
+			this.Clear ();
 		}
 
+	}
+
+	void Clear() {
+		UnityEngine.Object[] objects = UnityEngine.Object.FindObjectsOfType(typeof(UnityEngine.Object));	
+
+		for (int i = 0; i < objects.Length; i++) {
+			ISaveFromEditor saveObject = objects [i] as ISaveFromEditor;
+
+			if (saveObject != null) {
+				GameObject.DestroyImmediate (saveObject.GameObject);
+			}
+		}
+
+		Debug.Log ("Level have cleared");
 	}
 
 	void SaveLevelToFile(string path, string level) {
