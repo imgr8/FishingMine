@@ -33,6 +33,9 @@ public interface ISea {
 	void MakeLive(int param = 0, object data = null);	// Каждое море (локация) может по-разному генерироваться, как автоматически, так и вручную. Возможна передача неких параметров
 														// Например, param может означать номер уровня.
 
+	void AddObject (ICatchable catchableObject);		// Добавляет выбранный объект в море
+	void AddObject (GameObject gameObject);				// Добавляет выбранный объект в море. Море должно проверить какой это объект, и если неподходящий - удалить
+
 	void DestroyObject (ICatchable catchableObject);	// Уничтожает выбранный объект в море
 
 	void Clear();	// Очистить мореот всех объектов			

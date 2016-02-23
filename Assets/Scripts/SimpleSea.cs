@@ -91,9 +91,13 @@ public class SimpleSea : MonoBehaviour, ISea
 
     public void MakeLive(int param = 0, object data = null)
     {
-        necessaryCostOfFish = (10 * param * param + 125 * param) - (10 * (param - 1) * (param - 1) + 125 * (param - 1)) + 50; // FIX вместо чисел использовать переменные. Для более удобного контроля и лучшей читамости. Например baseCoefficient
+		necessaryCostOfFish = (10 * param * param + 125 * param) - (10 * (param - 1) * (param - 1) + 125 * (param - 1)) + 50; // FIX вместо чисел использовать переменные. Для более удобного контроля и лучшей читамости. Например baseCoefficient
 
-        //this.FishGen();
+		this.levelLoader.LoadLevel ("levelGen_1");
+
+		return;
+
+		//this.FishGen();
         //this.StarGen();
         //BombGen();
         //this.SurpriseGen ();       
@@ -384,10 +388,14 @@ public class SimpleSea : MonoBehaviour, ISea
         folliageObjects.Clear();	// TODO вынести объекты типа folliage в отдельный тип Uncatchabel - по сути остальные объекты, которые нельзя выловить
     }
 
+	ILevelLoader levelLoader;
+
     // Use this for initialization
     void Awake()
     {
-        this.center = this.transform.position;
+		this.levelLoader = new SimpleLevelLoader (this);
+
+		this.center = this.transform.position;
 
         if (this.width == 0 || this.depth == 0)
         {
@@ -417,6 +425,40 @@ public class SimpleSea : MonoBehaviour, ISea
             GameObject.Destroy(catchableObject.GameObject);
         }
     }
+
+	public void AddObject (ICatchable catchableObject) {
+		if (!this.createdCatchableObjects.Contains(catchableObject))
+		{
+			this.createdCatchableObjects.Add(catchableObject);
+
+			catchableObject.OnUsed += (ICatchable obj) =>
+			{
+				this.createdCatchableObjects.Remove(obj);
+				GameObject.Destroy(obj.GameObject);
+			};
+		}
+	}
+
+	public void AddObject (GameObject newGameObject) {
+
+		if (newGameObject.GetComponent<ICatchable>() == null) {
+			return;
+		}
+
+		ICatchable catchable = newGameObject.GetComponent<ICatchable> ();
+
+		if (!this.createdCatchableObjects.Contains(catchable))
+		{
+			this.createdCatchableObjects.Add(catchable);
+
+			catchable.OnUsed += (ICatchable obj) =>
+			{
+				this.createdCatchableObjects.Remove(obj);
+				GameObject.Destroy(obj.GameObject);
+			};
+
+		}
+	}
 
     void Start()
     {

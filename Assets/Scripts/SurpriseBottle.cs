@@ -119,4 +119,9 @@ public class SurpriseBottle : MonoBehaviour, ICatchable, ISaveFromEditor {
 		}
 	}
 
+	public void Load(ISea sea) {
+		this.Sea = sea;
+		this.SetAction("SimpleSurpriseBottleBehaviour");	// Поскольку море не знает об объекте, устанавливаем поведение по-умолчанию сами, в последствии море уже будет само контролировать поведение
+	}
+
 }

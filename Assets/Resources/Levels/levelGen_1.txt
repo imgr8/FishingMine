@@ -1,0 +1,8 @@
+Prefabs/Fishes/Blue Fish|-1.207984:-2.589909:0
+Prefabs/Bottle|3.46:0.2348371:0
+Prefabs/Bottle|-1.77:1.92:0
+Prefabs/Bottle|-6.13:-0.2:0
+Prefabs/Bottle|-6.13:1.62:0
+Prefabs/Bottle|5.73:1.62:0
+Prefabs/Bottle|0.73:-1.68:0
+Prefabs/Bottle|7.1:2.25:0
