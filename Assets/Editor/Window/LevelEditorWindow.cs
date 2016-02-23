@@ -32,7 +32,6 @@ public class LevelEditorWindow : EditorWindow
 			for (int i = 0; i < objects.Length; i++) {
 				ISaveFromEditor saveObject = objects [i] as ISaveFromEditor;
 				if (saveObject != null) {
-					//Debug.Log("Path: " + (objects[i] as ISaveFromEditor).Path);
 					level += saveObject.Path + "|" + 
 						saveObject.GameObject.transform.position.x.ToString() + ":" + 
 						saveObject.GameObject.transform.position.y.ToString() + ":" +

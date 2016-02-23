@@ -123,19 +123,6 @@ public class Bomb : MonoBehaviour, ICatchable, ISaveFromEditor
     }
     void Explode()
     {
-        //GameObject.GetComponent<CircleCollider2D>().radius = explodeRadius;
-
-		// Дим, я понял у тебя был какой-то код, который уничтожал окружающие предметы, я сейчас честно говоря уже устал 7 утра ))) просто не хочу бросать недострой
-		// смотри если хочешь воостанови свою логику. Или оставь у тебя я как понял цепляет коллайдер.
-		// Я внес небольшое изменение в ISea о котором говорил, чтобы он возвращал объекты
-		// и вернув объекты сравниваю расстояние до бомбы. Если меньше explodeRadius, то взрываем
-		// В общем смотри или оставь или верни свой. Нет проблем у тебя все работало.
-		// Мой код тебя тоже с циклом пусть не смущает, поскольку внутри Unity коллайдеры будут сравниваться примерно также.
-
-		// Да и еще совет если хочешь сделать детонацию, то введи некий параметр для бомбы, чтобы обозначить была она детонирована крючком от удочки
-		// тогда просто Destroy, если же она была детонирована детонацией ))), то пускай Destroy (бомбы) вызовет Explode. А в Explode установи этот параметр,
-		// чтобы не было бесконечного цикла. И детонация готова. Я не делаю, сам на свое усмотрение делай. Думаю понял что я имел ввиду )
-
 		if (this.sea != null) {
 			HashSet<ICatchable> cathcableObjectsInSea = this.sea.GetAllCatchableObjectInSea ();	// Возвращается копия!
 
@@ -147,7 +134,7 @@ public class Bomb : MonoBehaviour, ICatchable, ISaveFromEditor
 
 			cathcableObjectsInSea.Clear();
 		}
-	//	state = State.Explode;
+
         Destroy();
     }
 
@@ -161,18 +148,6 @@ public class Bomb : MonoBehaviour, ICatchable, ISaveFromEditor
 		this.SetAction(this.DefaultAction);	
     }
 
-    //void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    if (state == State.Normal)
-    //        return;
-
-    //    if (other.CompareTag("Catchable"))
-    //    {
-    //        ICatchable catchable = other.GetComponent<ICatchable>();
-    //        catchable.Destroy();
-    //    }
-
-    //}
     void Update()
     {
         bombBehaviour.Invoke();
@@ -202,6 +177,5 @@ public class Bomb : MonoBehaviour, ICatchable, ISaveFromEditor
 		this.horizontalSpeed = float.Parse(parameters [0]);
 		this.verticalSpeed = float.Parse(parameters [1]);
 
-		//this.SetAction(this.DefaultAction);	// Поскольку море не знает об объекте, устанавливаем поведение по-умолчанию сами, в последствии море уже будет само контролировать поведение
 	}
 }

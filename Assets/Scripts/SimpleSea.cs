@@ -85,14 +85,12 @@ public class SimpleSea : MonoBehaviour, ISea
     public GameObject treasure;
     public GameObject folliage;
     
-	//List<GameObject> folliageObjects = new List<GameObject>();
-
     int necessaryCostOfFish = 0;
     int currentCostOfFish = 0;
 
     public void MakeLive(int param = 0, object data = null)
     {
-		this.levelLoader.LoadLevel ("levelGen_2");
+		this.levelLoader.LoadLevel ("levelGen_1");
 
 		return;
 
@@ -125,7 +123,6 @@ public class SimpleSea : MonoBehaviour, ISea
 
             newFish.GetComponent<Fish>().isDeviation = isUseDeviationOnMove;
             newCatchable.Sea = this;
-            //newCatchable.SetAction("SimpleFishBehaviour");
 
             this.createdCatchableObjects.Add(newCatchable);
 
@@ -153,7 +150,6 @@ public class SimpleSea : MonoBehaviour, ISea
 
             ICatchable newCatchable = newStar.GetComponent<ICatchable>();
             newCatchable.Sea = this;
-            //newCatchable.SetAction("SimpleStarBehaviour");
 
             this.createdCatchableObjects.Add(newCatchable);
 
@@ -183,7 +179,6 @@ public class SimpleSea : MonoBehaviour, ISea
             ICatchable newCatchable = newBomb.GetComponent<ICatchable>();
 
             newCatchable.Sea = this;
-            //newCatchable.SetAction("SimpleBombBehaviour");
             createdCatchableObjects.Add(newCatchable);
         }
     }
@@ -201,7 +196,6 @@ public class SimpleSea : MonoBehaviour, ISea
 
             ICatchable newCatchable = newSurprise.GetComponent<ICatchable>();
             newCatchable.Sea = this;
-            //newCatchable.SetAction("SimpleSurpriseBottleBehaviour");
 
             this.createdCatchableObjects.Add(newCatchable);
 
@@ -242,8 +236,7 @@ public class SimpleSea : MonoBehaviour, ISea
             newFish.GetComponent<Fish>().speed += levelNum / 15;
             currentCostOfFish += newFish.GetComponent<Fish>().Price;
 
-            //newCatchable.SetAction("SimpleFishBehaviour");
-            createdCatchableObjects.Add(newCatchable);
+			createdCatchableObjects.Add(newCatchable);
 
             newCatchable.OnUsed += (ICatchable obj) =>
             {
@@ -267,7 +260,6 @@ public class SimpleSea : MonoBehaviour, ISea
 
             ICatchable newCatchable = newStar.GetComponent<ICatchable>();
             newCatchable.Sea = this;
-            //newCatchable.SetAction("SimpleStarBehaviour");
 
             this.createdCatchableObjects.Add(newCatchable);
 
@@ -295,7 +287,7 @@ public class SimpleSea : MonoBehaviour, ISea
             ICatchable newCatchable = newBomb.GetComponent<ICatchable>();
 
             newCatchable.Sea = this;
-            //newCatchable.SetAction("SimpleBombBehaviour");
+
             createdCatchableObjects.Add(newCatchable);
         }
     }
@@ -313,7 +305,6 @@ public class SimpleSea : MonoBehaviour, ISea
 
             ICatchable newCatchable = newSurprise.GetComponent<ICatchable>();
             newCatchable.Sea = this;
-            //newCatchable.SetAction("SimpleSurpriseBottleBehaviour");
 
             this.createdCatchableObjects.Add(newCatchable);
 
@@ -345,7 +336,7 @@ public class SimpleSea : MonoBehaviour, ISea
 
             newTreasure.GetComponent<Treasure>().price = Random.Range(150, 301);
             newCatchable.Sea = this;
-            //newCatchable.SetAction("SimpleBombBehaviour");
+
             createdCatchableObjects.Add(newCatchable);
 
             newCatchable.OnUsed += (ICatchable obj) =>

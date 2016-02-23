@@ -10,8 +10,6 @@ public class SimpleLevelLoader : ILevelLoader {
 	}
 
 	public void LoadLevel (string levelName) {
-		Object obj = Resources.Load (this.folderPath + "/" + levelName);
-
 		TextAsset level = Resources.Load (this.folderPath + "/" + levelName) as TextAsset;
 		string[] levelLines = level.text.Split (new char [] { '\n' });
 
