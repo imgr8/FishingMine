@@ -91,7 +91,7 @@ public class SimpleSea : MonoBehaviour, ISea
 
     public void MakeLive(int param = 0, object data = null)
     {
-        necessaryCostOfFish = (10 * param * param + 125 * param) - (10 * (param - 1) * (param - 1) + 125 * (param - 1)) + 50;
+        necessaryCostOfFish = (10 * param * param + 125 * param) - (10 * (param - 1) * (param - 1) + 125 * (param - 1)) + 50; // FIX вместо чисел использовать переменные. Для более удобного контроля и лучшей читамости. Например baseCoefficient
 
         //this.FishGen();
         //this.StarGen();
@@ -381,7 +381,7 @@ public class SimpleSea : MonoBehaviour, ISea
         foreach (GameObject fol in folliageObjects)
             Destroy(fol);
 
-        folliageObjects.Clear();
+        folliageObjects.Clear();	// TODO вынести объекты типа folliage в отдельный тип Uncatchabel - по сути остальные объекты, которые нельзя выловить
     }
 
     // Use this for initialization

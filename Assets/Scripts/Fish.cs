@@ -2,7 +2,7 @@
 using System;
 using System.Collections;
 
-public class Fish : MonoBehaviour, ICatchable {
+public class Fish : MonoBehaviour, ICatchable, ISaveFromEditor {
 	public float weight = 1.0f;
 	public float speed = 1.0f;
 	public int price = 100;
@@ -110,4 +110,13 @@ public class Fish : MonoBehaviour, ICatchable {
 	void Update() {
 		fishBehaviour.Invoke ();	
 	}
+
+	public string path;
+
+	public string Path {
+		get {
+			return this.path;
+		}
+	}
+
 }

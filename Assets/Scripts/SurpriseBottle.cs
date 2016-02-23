@@ -2,7 +2,7 @@
 using System;
 using System.Collections;
 
-public class SurpriseBottle : MonoBehaviour, ICatchable {
+public class SurpriseBottle : MonoBehaviour, ICatchable, ISaveFromEditor {
 	public int price = 0;
 	public float weight = 1.0f;
 	public float speed = 1.0f;
@@ -110,4 +110,13 @@ public class SurpriseBottle : MonoBehaviour, ICatchable {
 	void Update() {
 		fishBehaviour.Invoke ();	
 	}
+
+	public string path;
+
+	public string Path {
+		get {
+			return this.path;
+		}
+	}
+
 }
