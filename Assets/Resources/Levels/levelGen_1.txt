@@ -1,15 +1,8 @@
-Prefabs/Treasure|6.232742:-4.028543:0
-Prefabs/Folliage|3.605265:-4.170022:0
-Prefabs/Bottle|1.422438:-3.462625:0
-Prefabs/bomb|-1.103982:-3.644527:0
-Prefabs/Stars/Small Star|-3.509134:-3.887063:0
-Prefabs/Stars/Medium Star|-5.08562:-4.250867:0
-Prefabs/Stars/Large Star|-6.763163:-3.907275:0
-Prefabs/Fishes/Yellow Fish|3.544631:-0.471343:0
-Prefabs/Fishes/Turtle|1.543707:-1.32022:0
-Prefabs/Fishes/Small Yellow Fish|-0.578486:-0.471343:0
-Prefabs/Fishes/Small Green Fish|-1.710323:-0.9766271:0
-Prefabs/Fishes/Red Fish|-3.145329:-0.3500752:0
-Prefabs/Fishes/Gold Fish|-5.166466:-0.6330342:0
-Prefabs/Fishes/BW Fish|-6.500415:-0.2692297:0
-Prefabs/Fishes/Blue Fish|-7.894999:-0.7947248:0
+Prefabs/Folliage|5.882768:-5.022933:0
+Prefabs/Folliage|3.916835:-4.968824:0
+Prefabs/Folliage|-4.037075:-5.059005:0
+Prefabs/Folliage|-2.576153:-5.022933:0
+Prefabs/Treasure|0.3997996:-4.860608:0
+Prefabs/bombVerticalBehaviour|1.79:-4.39167:0
+Prefabs/bombVerticalBehaviour|0.3456917:-2.77:0
+Prefabs/bombVerticalBehaviour|-1.03:-4.39167:0

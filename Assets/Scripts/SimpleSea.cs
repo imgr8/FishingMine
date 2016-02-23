@@ -92,16 +92,11 @@ public class SimpleSea : MonoBehaviour, ISea
 
     public void MakeLive(int param = 0, object data = null)
     {
-		necessaryCostOfFish = (10 * param * param + 125 * param) - (10 * (param - 1) * (param - 1) + 125 * (param - 1)) + 50; // FIX вместо чисел использовать переменные. Для более удобного контроля и лучшей читамости. Например baseCoefficient
+		this.levelLoader.LoadLevel ("levelGen_2");
 
-		//this.levelLoader.LoadLevel ("levelGen_1");
+		return;
 
-		//return;
-
-		//this.FishGen();
-        //this.StarGen();
-        //BombGen();
-        //this.SurpriseGen ();       
+		//necessaryCostOfFish = (10 * param * param + 125 * param) - (10 * (param - 1) * (param - 1) + 125 * (param - 1)) + 50; // FIX вместо чисел использовать переменные. Для более удобного контроля и лучшей читамости. Например baseCoefficient
 
         FishGenNew(param);
         StarGenNew(param);
