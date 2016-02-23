@@ -2,7 +2,7 @@
 using System;
 using System.Collections;
 
-public class SurpriseBottle : MonoBehaviour, ICatchable {
+public class SurpriseBottle : MonoBehaviour, ICatchable, ISaveFromEditor {
 	public int price = 0;
 	public float weight = 1.0f;
 	public float speed = 1.0f;
@@ -74,9 +74,21 @@ public class SurpriseBottle : MonoBehaviour, ICatchable {
 
 	IBehaviour behaviour;
 
+	public string defaultAction = "";
+
+	public string DefaultAction {
+		get {
+			return this.defaultAction;
+		}
+	}
+
 	public void SetAction(string actionName, object data = null) {
 		this.behaviour = BehaviourCreator.CreateBehaviour (actionName, this, data);
-		this.fishBehaviour = this.behaviour.Action;
+		if (this.behaviour != null) {
+			this.fishBehaviour = this.behaviour.Action;
+		} else {
+			this.fishBehaviour = this.EmptyBehaviour;
+		}
 	}
 
 	public void ChangeAction (object data) {
@@ -103,11 +115,28 @@ public class SurpriseBottle : MonoBehaviour, ICatchable {
 		// Пустое поведение
 	}
 
-	void Awake() {
-		this.fishBehaviour = this.EmptyBehaviour;
+	void Start() {
+		this.SetAction (this.DefaultAction);
 	}
 
 	void Update() {
 		fishBehaviour.Invoke ();	
+	}
+
+	public string path;
+
+	public string Path {
+		get {
+			return this.path;
+		}
+	}
+
+	public void Load(ISea sea, string param = "") {
+		this.Sea = sea;
+		//this.SetAction(this.DefaultAction);	// Поскольку море не знает об объекте, устанавливаем поведение по-умолчанию сами, в последствии море уже будет само контролировать поведение
+	}
+
+	public string Save() {
+		return "";
 	}
 }

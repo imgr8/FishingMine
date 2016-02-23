@@ -54,6 +54,14 @@ public abstract class Bonus : ICatchable {
 	public abstract void Use(IFisher fisher);	 
 	public abstract event Action<ICatchable> OnUsed;
 
+	public string defaultAction = "";
+
+	public string DefaultAction {
+		get {
+			return this.defaultAction;
+		}
+	}
+
 	public virtual void SetAction (string actionName, object data = null) {
 	
 	}

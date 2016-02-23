@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public class Bomb : MonoBehaviour, ICatchable
+public class Bomb : MonoBehaviour, ICatchable, ISaveFromEditor
 {
     public float horizontalSpeed = 1.0f;
     public float verticalSpeed = 1.0f;
@@ -68,6 +68,14 @@ public class Bomb : MonoBehaviour, ICatchable
         //по идее, не реализовывает, до рыбака так и не дойдёт
     }
 
+	public string defaultAction = "";
+
+	public string DefaultAction {
+		get {
+			return this.defaultAction;
+		}
+	}
+
     event Action<ICatchable> onUsed;
     public event Action<ICatchable> OnUsed
     {
@@ -80,7 +88,11 @@ public class Bomb : MonoBehaviour, ICatchable
     public void SetAction(string actionName, object data = null)
     {
         behaviour = BehaviourCreator.CreateBehaviour(actionName, this, data);
-        bombBehaviour = behaviour.Action;
+		if (behaviour != null) {
+			bombBehaviour = behaviour.Action;
+		} else {
+			bombBehaviour = EmptyBehaviour;		
+		}
     }
 
     public void ChangeAction(object data)
@@ -144,9 +156,9 @@ public class Bomb : MonoBehaviour, ICatchable
         
     }
 
-    void Awake()
+    void Start()
     {
-        bombBehaviour = EmptyBehaviour;
+		this.SetAction(this.DefaultAction);	
     }
 
     //void OnTriggerEnter2D(Collider2D other)
@@ -165,4 +177,31 @@ public class Bomb : MonoBehaviour, ICatchable
     {
         bombBehaviour.Invoke();
     }
+
+	public string path;
+
+	public string Path {
+		get {
+			return this.path;
+		}
+	}
+
+	// Не использовать в качестве разделителя "|"
+	// 1 параметр Horizontal Speed (на само деле не важно какой главное при Load все правильно восстановить)
+	public string Save() {
+		string parameters = this.horizontalSpeed.ToString() + "@" + this.verticalSpeed.ToString();
+
+		return parameters;
+	}
+
+	public void Load(ISea sea, string param) {
+		this.Sea = sea;
+
+		string [] parameters = param.Split (new char[]{ '@' });
+
+		this.horizontalSpeed = float.Parse(parameters [0]);
+		this.verticalSpeed = float.Parse(parameters [1]);
+
+		//this.SetAction(this.DefaultAction);	// Поскольку море не знает об объекте, устанавливаем поведение по-умолчанию сами, в последствии море уже будет само контролировать поведение
+	}
 }

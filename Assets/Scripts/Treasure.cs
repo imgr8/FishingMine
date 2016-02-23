@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 
-public class Treasure : MonoBehaviour, ICatchable {
+public class Treasure : MonoBehaviour, ICatchable, ISaveFromEditor {
 
     public float weight;
     public int price;
@@ -77,6 +77,14 @@ public class Treasure : MonoBehaviour, ICatchable {
         }
     }
 
+	public string defaultAction = "";
+
+	public string DefaultAction {
+		get {
+			return this.defaultAction;
+		}
+	}
+
     public void SetAction(string actionName, object data = null)
     {
         
@@ -96,4 +104,21 @@ public class Treasure : MonoBehaviour, ICatchable {
     {
         
     }
+
+	public string path;
+
+	public string Path {
+		get {
+			return this.path;
+		}
+	}
+
+	public string Save() {
+		return "";
+	}
+
+	public void Load(ISea sea, string param = "") {
+		this.Sea = sea;
+		this.SetAction("SimpleFishBehaviour");	// Поскольку море не знает об объекте, устанавливаем поведение по-умолчанию сами, в последствии море уже будет само контролировать поведение
+	}
 }
