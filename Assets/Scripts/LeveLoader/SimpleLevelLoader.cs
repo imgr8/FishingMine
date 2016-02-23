@@ -9,11 +9,17 @@ public class SimpleLevelLoader : ILevelLoader {
 		this.sea = sea;
 	}
 
-	public void LoadLevel (string levelName) {
+	public ILevel LoadLevel (string levelName) {
 		TextAsset level = Resources.Load (this.folderPath + "/" + levelName) as TextAsset;
 		string[] levelLines = level.text.Split (new char [] { '\n' });
 
-		for (int i = 0; i < levelLines.Length; i++) {
+		if (levelLines.Length < 2) {
+			return null;
+		}
+
+		ILevel levelLogic = LevelLogicLoader.Load (levelLines [0]);
+
+		for (int i = 1; i < levelLines.Length; i++) {
 			string line = levelLines [i].Trim ();
 
 			if (line != "") {
@@ -31,5 +37,7 @@ public class SimpleLevelLoader : ILevelLoader {
 				this.sea.AddObject (newGameObject);
 			}
 		}
+
+		return levelLogic;
 	}
 }

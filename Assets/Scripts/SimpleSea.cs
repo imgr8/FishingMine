@@ -88,11 +88,13 @@ public class SimpleSea : MonoBehaviour, ISea
     int necessaryCostOfFish = 0;
     int currentCostOfFish = 0;
 
-    public void MakeLive(int param = 0, object data = null)
+    public void MakeLive(int? prm = null, object data = null)
     {
-		this.levelLoader.LoadLevel ("levelGen_1");
+		if (prm == null) {
+			return;
+		}
 
-		return;
+		int param = (int)prm;
 
 		necessaryCostOfFish = (10 * param * param + 125 * param) - (10 * (param - 1) * (param - 1) + 125 * (param - 1)) + 50; // FIX вместо чисел использовать переменные. Для более удобного контроля и лучшей читамости. Например baseCoefficient
 
@@ -396,14 +398,10 @@ public class SimpleSea : MonoBehaviour, ISea
 
 		this.createdUncatchableObjects.Clear();
 	}
-
-	ILevelLoader levelLoader;
-
+		
     // Use this for initialization
     void Awake()
     {
-		this.levelLoader = new SimpleLevelLoader (this);
-
 		this.center = this.transform.position;
 
         if (this.width == 0 || this.depth == 0)

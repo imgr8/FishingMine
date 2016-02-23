@@ -6,6 +6,7 @@ using System.Collections;
 public class LevelEditorWindow : EditorWindow
 {
 	string fileSaveName = "levelGen_1";
+	string levelLogicName = "SimpleLevel";
 	string folderToSave = "Assets/Resources/Levels";	// Обязательно папка Assets/Resources!
 	bool groupEnabled;
 	bool myBool = true;
@@ -22,12 +23,15 @@ public class LevelEditorWindow : EditorWindow
 	void OnGUI()
 	{
 		GUILayout.Label ("Base Settings", EditorStyles.boldLabel);
-		this.fileSaveName = EditorGUILayout.TextField ("Имя уровня", this.fileSaveName);
+		this.fileSaveName = EditorGUILayout.TextField ("Level name", this.fileSaveName);
+		this.levelLogicName = EditorGUILayout.TextField ("Level Logic", this.levelLogicName);
 
 		if (GUILayout.Button ("Save", GUIStyle.none)) {
 			UnityEngine.Object[] objects = UnityEngine.Object.FindObjectsOfType(typeof(UnityEngine.Object));	//Resources.FindObjectsOfTypeAll (typeof(MonoScript));
 
 			string level = "";
+
+			level += this.levelLogicName + "\n";
 
 			for (int i = 0; i < objects.Length; i++) {
 				ISaveFromEditor saveObject = objects [i] as ISaveFromEditor;
@@ -49,7 +53,7 @@ public class LevelEditorWindow : EditorWindow
 
 			string [] levelLines = System.IO.File.ReadAllLines (this.folderToSave + "/" + this.fileSaveName + ".txt");
 
-			for (int i = 0; i < levelLines.Length; i++) {
+			for (int i = 1; i < levelLines.Length; i++) {
 				string line = levelLines [i].Trim ();
 
 				if (line != "") {

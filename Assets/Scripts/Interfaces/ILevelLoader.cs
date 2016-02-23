@@ -3,6 +3,6 @@ using System.Collections;
 
 public interface ILevelLoader {
 
-	void LoadLevel (string path);
+	ILevel LoadLevel (string path);
 
 }

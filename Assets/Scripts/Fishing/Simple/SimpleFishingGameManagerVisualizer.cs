@@ -3,7 +3,8 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class SimpleFishingGameManagerVisualizer : MonoBehaviour {
-	public SimpleFishing fishing;
+	public GameObject fishingGameObject;
+	IFishing fishing;
 	public Text textForEarnedMoney;
 	public Text textForLevelNumber;
 	public Text textForTimeRemainded;
@@ -11,6 +12,7 @@ public class SimpleFishingGameManagerVisualizer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		this.fishing = this.fishingGameObject.GetComponent<IFishing> ();
 
 		if (this.fishing == null) {
 			throw new UnityException ("Fishing have not initialized");
