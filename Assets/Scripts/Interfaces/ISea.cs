@@ -34,11 +34,16 @@ public interface ISea {
 														// Например, param может означать номер уровня.
 
 	void AddObject (ICatchable catchableObject);		// Добавляет выбранный объект в море
+	void AddObject (IUncatchable uncatchableObject);		// Добавляет выбранный объект в море
 	void AddObject (GameObject gameObject);				// Добавляет выбранный объект в море. Море должно проверить какой это объект, и если неподходящий - удалить
 
 	void DestroyObject (ICatchable catchableObject);	// Уничтожает выбранный объект в море
+	void DestroyObject (IUncatchable uncatchableObject);	// Уничтожает выбранный объект в море
 
-	void Clear();	// Очистить мореот всех объектов			
+	void Clear();	// Очистить море от всех объектов			
+	void ClearAllCatchable();	// Очистить море от всех Catchable объектов	
+	void ClearAllUncatchable();	// Очистить море от всех Uncatchable объектов	
 
 	HashSet<ICatchable> GetAllCatchableObjectInSea();
+	HashSet<IUncatchable> GetAllUncatchableObjectInSea();
 }

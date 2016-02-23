@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public class Bomb : MonoBehaviour, ICatchable
+public class Bomb : MonoBehaviour, ICatchable, ISaveFromEditor
 {
     public float horizontalSpeed = 1.0f;
     public float verticalSpeed = 1.0f;
@@ -68,6 +68,14 @@ public class Bomb : MonoBehaviour, ICatchable
         //по идее, не реализовывает, до рыбака так и не дойдёт
     }
 
+	public string defaultAction = "";
+
+	public string DefaultAction {
+		get {
+			return this.defaultAction;
+		}
+	}
+
     event Action<ICatchable> onUsed;
     public event Action<ICatchable> OnUsed
     {
@@ -80,7 +88,11 @@ public class Bomb : MonoBehaviour, ICatchable
     public void SetAction(string actionName, object data = null)
     {
         behaviour = BehaviourCreator.CreateBehaviour(actionName, this, data);
-        bombBehaviour = behaviour.Action;
+		if (behaviour != null) {
+			bombBehaviour = behaviour.Action;
+		} else {
+			bombBehaviour = EmptyBehaviour;		
+		}
     }
 
     public void ChangeAction(object data)
@@ -144,9 +156,9 @@ public class Bomb : MonoBehaviour, ICatchable
         
     }
 
-    void Awake()
+    void Start()
     {
-        bombBehaviour = EmptyBehaviour;
+		this.SetAction(this.DefaultAction);	
     }
 
     //void OnTriggerEnter2D(Collider2D other)
@@ -165,4 +177,18 @@ public class Bomb : MonoBehaviour, ICatchable
     {
         bombBehaviour.Invoke();
     }
+
+	public string path;
+
+	public string Path {
+		get {
+			return this.path;
+		}
+	}
+
+
+	public void Load(ISea sea) {
+		this.Sea = sea;
+		this.SetAction(this.DefaultAction);	// Поскольку море не знает об объекте, устанавливаем поведение по-умолчанию сами, в последствии море уже будет само контролировать поведение
+	}
 }

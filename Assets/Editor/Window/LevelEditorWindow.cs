@@ -40,13 +40,13 @@ public class LevelEditorWindow : EditorWindow
 				}
 			}
 
-			this.SaveLevelToFile (this.folderToSave + "/" + this.fileSaveName, level);
+			this.SaveLevelToFile (this.folderToSave + "/" + this.fileSaveName + ".txt", level);
 
 			Debug.Log ("Level have saved");
 		}
 
 		if (GUILayout.Button ("Load", GUIStyle.none)) {
-			string [] levelLines = System.IO.File.ReadAllLines (this.folderToSave + "/" + this.fileSaveName);
+			string [] levelLines = System.IO.File.ReadAllLines (this.folderToSave + "/" + this.fileSaveName + ".txt");
 
 			for (int i = 0; i < levelLines.Length; i++) {
 				string line = levelLines [i].Trim ();

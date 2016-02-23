@@ -74,9 +74,21 @@ public class Fish : MonoBehaviour, ICatchable, ISaveFromEditor {
 
 	IBehaviour behaviour;
 
+	public string defaultAction = "SimpleFishBehaviour";
+
+	public string DefaultAction {
+		get {
+			return this.defaultAction;
+		}
+	}
+
 	public void SetAction(string actionName, object data = null) {
 		this.behaviour = BehaviourCreator.CreateBehaviour (actionName, this, data);
-		this.fishBehaviour = this.behaviour.Action;
+		if (behaviour != null) {
+			this.fishBehaviour = this.behaviour.Action;
+		} else {
+			this.fishBehaviour = this.EmptyBehaviour;
+		}
 	}
 		
 	public void ChangeAction (object data) {
@@ -103,8 +115,9 @@ public class Fish : MonoBehaviour, ICatchable, ISaveFromEditor {
 		// Пустое поведение
 	}
 
-	void Awake() {
-		this.fishBehaviour = this.EmptyBehaviour;
+	void Start() {
+		//this.fishBehaviour = this.EmptyBehaviour;
+		this.SetAction(this.defaultAction);
 	}
 
 	void Update() {
@@ -122,7 +135,7 @@ public class Fish : MonoBehaviour, ICatchable, ISaveFromEditor {
 
 	public void Load(ISea sea) {
 		this.Sea = sea;
-		this.SetAction("SimpleFishBehaviour");	// Поскольку море не знает об объекте, устанавливаем поведение по-умолчанию сами, в последствии море уже будет само контролировать поведение
+		this.SetAction(this.DefaultAction);	// Поскольку море не знает об объекте, устанавливаем поведение по-умолчанию сами, в последствии море уже будет само контролировать поведение
 	}
 
 }
