@@ -7,6 +7,12 @@ public static class LevelLogicLoader {
 		switch (name) {
 		case "SimpleLevel":
 			return new SimpleLevel ();
+		case "MyLevel_OnMoney_1":
+			return new MyLevel_OnMoney_1 ();
+		case "MyLevel_OnDestroy_1":
+			return new MyLevel_OnDestroy_1 ();
+		case "MyLevel_OnCertainCatch_1":
+			return new MyLevel_OnCertainCatch_1 ();
 		default:
 			return null;
 		}

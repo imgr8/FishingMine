@@ -27,6 +27,12 @@ public abstract class Bonus : ICatchable {
 		}
 	}
 
+	public virtual string Name {
+		get {
+			return "Bonus";
+		}
+	}
+
 	public virtual GameObject GameObject {
 		get {
 			return null;

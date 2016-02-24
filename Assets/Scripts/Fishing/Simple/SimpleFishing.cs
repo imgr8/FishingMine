@@ -33,7 +33,7 @@ public class SimpleFishing : MonoBehaviour, IFishing
 
     ushort numLevel = 0;
 
-    ushort NumLevel
+    public ushort NumLevel
     {
         set
         {

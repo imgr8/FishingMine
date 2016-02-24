@@ -36,7 +36,7 @@ public class SimpleFishingWithManual : MonoBehaviour, IFishing {
 
 	ushort numLevel = 0;
 
-	ushort NumLevel
+	public ushort NumLevel
 	{
 		set
 		{
@@ -147,11 +147,13 @@ public class SimpleFishingWithManual : MonoBehaviour, IFishing {
 		}
 		else
 		{
-			//this.GameOver();
-			numLevel--;
+			this.GameOver();
+
+			/*numLevel--;
 			earned -= earnedInCurrentLevel;
 			this.onEarnedUpdate.Invoke(this.earned);
 			NextLevel();
+			*/
 		}
 	}
 
@@ -188,8 +190,8 @@ public class SimpleFishingWithManual : MonoBehaviour, IFishing {
 		earnedInCurrentLevel = 0;
 		this.NumLevel++;
 
-		this.currentManualLevel = this.levelLoader.LoadLevel ("levelGen_4", null);
-		this.currentManualLevel.Init (this, this.sea, this.fisher, this.NumLevel, null);
+		this.currentManualLevel = this.levelLoader.LoadLevel ("MyLevel_OnCertainCatch_1", null);
+		this.currentManualLevel.Init (this, this.sea, this.fisher, null);
 
 		this.sea.MakeLive (null);
 		/*
@@ -220,6 +222,8 @@ public class SimpleFishingWithManual : MonoBehaviour, IFishing {
 	{
 		this.numLevel = 0;
 		this.earned = 0;
+		this.fisher.ClearState ();
+		Debug.Log ("Game Over");
 	}
 
 	event Action<float> onChangeLevelTime;

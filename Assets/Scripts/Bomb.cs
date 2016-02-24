@@ -11,6 +11,13 @@ public class Bomb : MonoBehaviour, ICatchable, ISaveFromEditor
     public float explodeRadius = 10.0f;
     public float weight = 1.0f;
     public int price = 0;
+	public string name = "Bomb";
+
+	public string Name {
+		get {
+			return this.name;
+		}
+	}
 
     public float Weight
     {

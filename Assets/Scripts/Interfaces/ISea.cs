@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -40,10 +41,25 @@ public interface ISea {
 	void DestroyObject (ICatchable catchableObject);	// Уничтожает выбранный объект в море
 	void DestroyObject (IUncatchable uncatchableObject);	// Уничтожает выбранный объект в море
 
+	event Action<ICatchable> OnDestroyCatchableObject;	// Событие происходит, когда уничтожается ICatchable объект
+	event Action<IUncatchable> OnDestroyUncatchableObject;	// Событие происходит, когда уничтожается Iuncatchable объект
+
 	void Clear();	// Очистить море от всех объектов			
 	void ClearAllCatchable();	// Очистить море от всех Catchable объектов	
 	void ClearAllUncatchable();	// Очистить море от всех Uncatchable объектов	
 
+	int CountOfCatchableObjects {
+		get;
+	}
+
+	int CountOfUncatchableObjects {
+		get;
+	}
+
+	int CountOfAllObjects {
+		get;
+	}
+		
 	HashSet<ICatchable> GetAllCatchableObjectInSea();
 	HashSet<IUncatchable> GetAllUncatchableObjectInSea();
 }

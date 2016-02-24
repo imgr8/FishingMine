@@ -6,6 +6,13 @@ public class Treasure : MonoBehaviour, ICatchable, ISaveFromEditor {
 
     public float weight;
     public int price;
+	public string name = "Treasure";
+
+	public string Name {
+		get {
+			return this.name;
+		}
+	}
 
     public float Weight
     {

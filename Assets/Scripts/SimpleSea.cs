@@ -130,8 +130,9 @@ public class SimpleSea : MonoBehaviour, ISea
 
             newCatchable.OnUsed += (ICatchable obj) =>
             {
-                this.createdCatchableObjects.Remove(obj);
-                GameObject.Destroy(obj.GameObject);
+                //this.createdCatchableObjects.Remove(obj);
+                //GameObject.Destroy(obj.GameObject);
+				this.DestroyObject(obj);
             };
 
             newFish.SetActive(true);
@@ -157,8 +158,9 @@ public class SimpleSea : MonoBehaviour, ISea
 
             newCatchable.OnUsed += (ICatchable obj) =>
             {
-                this.createdCatchableObjects.Remove(obj);
-                GameObject.Destroy(obj.GameObject);
+                //this.createdCatchableObjects.Remove(obj);
+                //GameObject.Destroy(obj.GameObject);
+				this.DestroyObject(obj);
             };
 
             newStar.SetActive(true);
@@ -203,8 +205,9 @@ public class SimpleSea : MonoBehaviour, ISea
 
             newCatchable.OnUsed += (ICatchable obj) =>
             {
-                this.createdCatchableObjects.Remove(obj);
-                GameObject.Destroy(obj.GameObject);
+                //this.createdCatchableObjects.Remove(obj);
+                //GameObject.Destroy(obj.GameObject);
+				this.DestroyObject(obj);
             };
 
             newSurprise.SetActive(true);
@@ -242,8 +245,9 @@ public class SimpleSea : MonoBehaviour, ISea
 
             newCatchable.OnUsed += (ICatchable obj) =>
             {
-                createdCatchableObjects.Remove(obj);
-                GameObject.Destroy(obj.GameObject);
+                //createdCatchableObjects.Remove(obj);
+                //GameObject.Destroy(obj.GameObject);
+				this.DestroyObject(obj);
             };
         }
         print(currentCostOfFish);
@@ -267,8 +271,9 @@ public class SimpleSea : MonoBehaviour, ISea
 
             newCatchable.OnUsed += (ICatchable obj) =>
             {
-                this.createdCatchableObjects.Remove(obj);
-                GameObject.Destroy(obj.GameObject);
+                //this.createdCatchableObjects.Remove(obj);
+                //GameObject.Destroy(obj.GameObject);
+				this.DestroyObject(obj);
             };
 
 
@@ -312,8 +317,9 @@ public class SimpleSea : MonoBehaviour, ISea
 
             newCatchable.OnUsed += (ICatchable obj) =>
             {
-                this.createdCatchableObjects.Remove(obj);
-                GameObject.Destroy(obj.GameObject);
+                //this.createdCatchableObjects.Remove(obj);
+                //GameObject.Destroy(obj.GameObject);
+				this.DestroyObject(obj);
             };
         }
     }
@@ -343,8 +349,9 @@ public class SimpleSea : MonoBehaviour, ISea
 
             newCatchable.OnUsed += (ICatchable obj) =>
             {
-                createdCatchableObjects.Remove(obj);
-                GameObject.Destroy(obj.GameObject);
+                //createdCatchableObjects.Remove(obj);
+                //GameObject.Destroy(obj.GameObject);
+				this.DestroyObject(obj);
             };
         }
     }
@@ -429,7 +436,13 @@ public class SimpleSea : MonoBehaviour, ISea
         if (this.createdCatchableObjects.Contains(catchableObject))
         {
             this.createdCatchableObjects.Remove(catchableObject);
-            GameObject.Destroy(catchableObject.GameObject);
+
+			if (this.onDestroyCatchableObject != null) {
+				this.onDestroyCatchableObject.Invoke (catchableObject);
+			}
+
+			GameObject.Destroy(catchableObject.GameObject);
+
         }
     }
 
@@ -438,6 +451,11 @@ public class SimpleSea : MonoBehaviour, ISea
 		if (this.createdUncatchableObjects.Contains(uncatchableObject))
 		{
 			this.createdUncatchableObjects.Remove(uncatchableObject);
+
+			if (this.onDestroyUncatchableObject != null) {
+				this.onDestroyUncatchableObject.Invoke (uncatchableObject);
+			}
+
 			GameObject.Destroy(uncatchableObject.GameObject);
 		}
 	}
@@ -449,8 +467,9 @@ public class SimpleSea : MonoBehaviour, ISea
 
 			catchableObject.OnUsed += (ICatchable obj) =>
 			{
-				this.createdCatchableObjects.Remove(obj);
-				GameObject.Destroy(obj.GameObject);
+				//this.createdCatchableObjects.Remove(obj);
+				//GameObject.Destroy(obj.GameObject);
+				this.DestroyObject(obj);
 			};
 		}
 	}
@@ -476,8 +495,9 @@ public class SimpleSea : MonoBehaviour, ISea
 				this.createdCatchableObjects.Add (catchable);
 
 				catchable.OnUsed += (ICatchable obj) => {
-					this.createdCatchableObjects.Remove (obj);
-					GameObject.Destroy (obj.GameObject);
+					//this.createdCatchableObjects.Remove (obj);
+					//GameObject.Destroy (obj.GameObject);
+					this.DestroyObject(obj);
 				};
 
 			}
@@ -526,4 +546,45 @@ public class SimpleSea : MonoBehaviour, ISea
 		return copy;
 	}
 
+	public int CountOfCatchableObjects {
+		get {
+			return this.createdCatchableObjects.Count;
+		}
+	}
+
+	public int CountOfUncatchableObjects {
+		get {
+			return this.createdUncatchableObjects.Count;
+		}
+	}
+
+	public int CountOfAllObjects {
+		get {
+			return (this.createdCatchableObjects.Count + this.createdUncatchableObjects.Count);
+		}
+	}
+
+	event System.Action<ICatchable> onDestroyCatchableObject;
+
+	public event System.Action<ICatchable> OnDestroyCatchableObject {	// Событие происходит, когда уничтожается ICatchable объект
+		add {
+			this.onDestroyCatchableObject += value;
+		}
+
+		remove {
+			this.onDestroyCatchableObject -= value;
+		}
+	}
+
+	event System.Action<IUncatchable> onDestroyUncatchableObject;
+
+	public event System.Action<IUncatchable> OnDestroyUncatchableObject {	// Событие происходит, когда уничтожается Iuncatchable объект
+		add {
+			this.onDestroyUncatchableObject += value;
+		}
+
+		remove {
+			this.onDestroyUncatchableObject -= value;
+		}
+	}
 }

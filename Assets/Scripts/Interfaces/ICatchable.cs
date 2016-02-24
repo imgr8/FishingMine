@@ -16,6 +16,10 @@ public interface ICatchable : IActionable {
 	GameObject GameObject {
 		get;
 	}
+
+	string Name {
+		get;
+	}
 		
 	ISea Sea {	// Каждый предмет в море должен быть осведомлен о море, в котором он находится
 		get;

@@ -6,6 +6,13 @@ public class SurpriseBottle : MonoBehaviour, ICatchable, ISaveFromEditor {
 	public int price = 0;
 	public float weight = 1.0f;
 	public float speed = 1.0f;
+	public string name = "SurpriseBottle";
+
+	public string Name {
+		get {
+			return this.name;		
+		}
+	}
 
 	public int Price {
 		get {

@@ -11,6 +11,13 @@ public class Fish : MonoBehaviour, ICatchable, ISaveFromEditor {
     public float deviation;
     public bool isDeviation;
 	public InitialLook initialLook = InitialLook.None;
+	public string name = "Fish";
+
+	public string Name {
+		get {
+			return this.name;
+		}
+	}
 
 	public InitialLook InitialLook {
 		get {
