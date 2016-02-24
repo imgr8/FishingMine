@@ -8,6 +8,7 @@ public class LevelEditorWindow : EditorWindow
 	string fileSaveName = "levelGen_1";
 	string levelLogicName = "SimpleLevel";
 	string folderToSave = "Assets/Resources/Levels";	// Обязательно папка Assets/Resources!
+	string levelDifficult = "none";
 	bool groupEnabled;
 	bool myBool = true;
 	float myFloat = 1.23f;
@@ -25,9 +26,16 @@ public class LevelEditorWindow : EditorWindow
 		GUILayout.Label ("Base Settings", EditorStyles.boldLabel);
 		this.fileSaveName = EditorGUILayout.TextField ("Level name", this.fileSaveName);
 		this.levelLogicName = EditorGUILayout.TextField ("Level Logic", this.levelLogicName);
+		this.levelDifficult = EditorGUILayout.TextField ("Level difficulty", this.levelDifficult);
 
 		if (GUILayout.Button ("Save", GUIStyle.none)) {
 			UnityEngine.Object[] objects = UnityEngine.Object.FindObjectsOfType(typeof(UnityEngine.Object));	//Resources.FindObjectsOfTypeAll (typeof(MonoScript));
+
+			string directory = this.levelDifficult.ToString();
+
+			if (!System.IO.Directory.Exists (this.folderToSave + "/" + directory)) {
+				System.IO.Directory.CreateDirectory (this.folderToSave + "/" + directory);
+			}
 
 			string level = "";
 
@@ -39,11 +47,17 @@ public class LevelEditorWindow : EditorWindow
 					level += saveObject.Path + "|" + 
 						saveObject.GameObject.transform.position.x.ToString() + ":" + 
 						saveObject.GameObject.transform.position.y.ToString() + ":" +
-						saveObject.GameObject.transform.position.z.ToString() + "|" + saveObject.Save() + "\n";
+						saveObject.GameObject.transform.position.z.ToString() + "|" + 
+
+						saveObject.GameObject.transform.rotation.eulerAngles.x.ToString() + ":" + 
+						saveObject.GameObject.transform.rotation.eulerAngles.y.ToString() + ":" +
+						saveObject.GameObject.transform.rotation.eulerAngles.z.ToString() + "|" + 
+
+						saveObject.Save() + "\n";
 				}
 			}
 
-			this.SaveLevelToFile (this.folderToSave + "/" + this.fileSaveName + ".txt", level);
+			this.SaveLevelToFile (this.folderToSave + "/" + directory + "/" + this.fileSaveName + ".txt", level);
 
 			Debug.Log ("Level have saved");
 		}
@@ -51,7 +65,7 @@ public class LevelEditorWindow : EditorWindow
 		if (GUILayout.Button ("Load", GUIStyle.none)) {
 			this.Clear ();
 
-			string [] levelLines = System.IO.File.ReadAllLines (this.folderToSave + "/" + this.fileSaveName + ".txt");
+			string [] levelLines = System.IO.File.ReadAllLines (this.folderToSave + "/" + this.levelDifficult.ToString() + "/" + this.fileSaveName + ".txt");
 
 			for (int i = 1; i < levelLines.Length; i++) {
 				string line = levelLines [i].Trim ();
@@ -66,7 +80,13 @@ public class LevelEditorWindow : EditorWindow
 
 					newGameObject.transform.position = newPosition;
 
-					newGameObject.GetComponent<ISaveFromEditor> ().Load (null, splitLine [2]);
+					string [] euler = splitLine [2].Split (new char []{':'});
+
+					Vector3 newEulerAngle = new Vector3 (float.Parse(euler[0]), float.Parse(euler[1]), float.Parse(euler[2]));
+
+					newGameObject.transform.Rotate(newEulerAngle);
+
+					newGameObject.GetComponent<ISaveFromEditor> ().Load (null, splitLine [3]);
 				}
 			}
 

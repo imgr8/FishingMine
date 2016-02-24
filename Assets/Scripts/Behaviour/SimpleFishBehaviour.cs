@@ -20,13 +20,23 @@ public class SimpleFishBehaviour : IBehaviour {
 		this.speed = obj.GameObject.GetComponent<Fish>().speed;
         this.deviation = obj.GameObject.GetComponent<Fish>().deviation;
 
-		this.moveDirection = (UnityEngine.Random.Range (0, 2) == 1 ? MoveDirection.Right : MoveDirection.Left);
+		InitialLook initialLook = obj.GameObject.GetComponent<Fish> ().InitialLook;
 
-		if (this.moveDirection == MoveDirection.Left) {
-			this.obj.transform.Rotate (new Vector3 (0, 180, 0));
+		if (initialLook == InitialLook.None) {
+			this.moveDirection = (UnityEngine.Random.Range (0, 2) == 1 ? MoveDirection.Right : MoveDirection.Left);
 
-            startHorizontalPosition = obj.GameObject.transform.position.x;
+			if (this.moveDirection == MoveDirection.Left) {	// Предполагается, что рыба смотрит направо, если это не так, то ее надо перевернуть, или задать направление, через InitialLook
+				this.obj.transform.Rotate (new Vector3 (0, 180, 0));
+			}
+		} else {
+			if (initialLook == InitialLook.Left) {
+				this.moveDirection = MoveDirection.Left;
+			} else if (initialLook == InitialLook.Right) {
+				this.moveDirection = MoveDirection.Right;
+			}
 		}
+
+		startHorizontalPosition = obj.GameObject.transform.position.x;
 	}
 
 	public void Action() {

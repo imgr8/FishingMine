@@ -31,7 +31,7 @@ public interface ISea {
 	}
 
 	void MakeLive(int? param = null, object data = null);	// Каждое море (локация) может по-разному генерироваться, как автоматически, так и вручную. Возможна передача неких параметров
-														// Например, param может означать номер уровня.
+															// Например, param может означать номер уровня.
 
 	void AddObject (ICatchable catchableObject);		// Добавляет выбранный объект в море
 	void AddObject (IUncatchable uncatchableObject);		// Добавляет выбранный объект в море

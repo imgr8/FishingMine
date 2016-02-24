@@ -8,7 +8,7 @@ public class SimpleLevel : ILevel {
 	ISea sea;
 	IFisher fisher;
 
-	void Init (IFishing fishing, ISea sea, IFisher fisher, ushort levelNum = 0, Action method = null) {
+	public void Init (IFishing fishing, ISea sea, IFisher fisher, ushort levelNum = 0, Action method = null) {
 		this.fishing = fishing;
 		this.sea = sea;
 		this.fisher = fisher;
@@ -16,6 +16,10 @@ public class SimpleLevel : ILevel {
 
 	public bool Passed() {
 		return true;
+	}
+
+	public void Unload() {
+		
 	}
 
 }

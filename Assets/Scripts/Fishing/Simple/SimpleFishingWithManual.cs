@@ -165,6 +165,9 @@ public class SimpleFishingWithManual : MonoBehaviour, IFishing {
 
 	bool CheckConditions()
 	{
+		if (this.currentManualLevel != null) {
+			return this.currentManualLevel.Passed ();
+		}
 		/*if (earned >= required)
 			return true;
 
@@ -178,10 +181,16 @@ public class SimpleFishingWithManual : MonoBehaviour, IFishing {
 
 	void NextLevel()
 	{
+		if (this.currentManualLevel != null) {
+			this.currentManualLevel.Unload();
+		}
+
 		earnedInCurrentLevel = 0;
 		this.NumLevel++;
 
-		this.currentManualLevel = this.levelLoader.LoadLevel ("levelGen_1");
+		this.currentManualLevel = this.levelLoader.LoadLevel ("levelGen_4", null);
+		this.currentManualLevel.Init (this, this.sea, this.fisher, this.NumLevel, null);
+
 		this.sea.MakeLive (null);
 		/*
 		if (this.NumLevel % 2 == 0) {

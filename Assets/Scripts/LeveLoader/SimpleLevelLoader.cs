@@ -9,8 +9,10 @@ public class SimpleLevelLoader : ILevelLoader {
 		this.sea = sea;
 	}
 
-	public ILevel LoadLevel (string levelName) {
-		TextAsset level = Resources.Load (this.folderPath + "/" + levelName) as TextAsset;
+	public ILevel LoadLevel (string levelName, int? levelDifficulty = null) {
+		string difDir = (levelDifficulty == null) ? "none" : levelDifficulty.ToString();
+
+		TextAsset level = Resources.Load (this.folderPath + "/" + difDir + "/" + levelName) as TextAsset;
 		string[] levelLines = level.text.Split (new char [] { '\n' });
 
 		if (levelLines.Length < 2) {
@@ -32,7 +34,13 @@ public class SimpleLevelLoader : ILevelLoader {
 
 				newGameObject.transform.position = newPosition;
 
-				newGameObject.GetComponent<ISaveFromEditor> ().Load (sea, splitLine[2]);
+				string [] euler = splitLine [2].Split (new char []{':'});
+
+				Vector3 newEulerAngle = new Vector3 (float.Parse(euler[0]), float.Parse(euler[1]), float.Parse(euler[2]));
+
+				newGameObject.transform.Rotate(newEulerAngle);
+
+				newGameObject.GetComponent<ISaveFromEditor> ().Load (this.sea, splitLine [3]);
 
 				this.sea.AddObject (newGameObject);
 			}

@@ -1,9 +1,0 @@
-SimpleLevel
-Prefabs/Folliage|3.811257:-5.109949:0|
-Prefabs/Folliage|2.577121:-5.032816:0|
-Prefabs/Folliage|-3.93:-5.08:0|
-Prefabs/Folliage|-2.667956:-5.058527:0|
-Prefabs/Treasure|-0.04541749:-5.058527:0|
-Prefabs/bomb|1.5:-4.6:0|0@1
-Prefabs/bomb|-0.05:-2.98:0|0@1
-Prefabs/bomb|-1.66522:-4.6:0|0@1
