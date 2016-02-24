@@ -1,0 +1,36 @@
+MyLevel_Bonus_1
+Prefabs/Treasure|7.513608:-5.016691:0|0:0:0|
+Prefabs/Treasure|-7.896124:-4.992347:0|0:0:0|
+Prefabs/Fishes/Turtle|1.159832:-1.851975:0|0:0:0|2@6@100@0.75
+Prefabs/Fishes/Red Fish|7.148447:1.43446:0|0:180:0|2@2@30@2
+Prefabs/Fishes/Small Yellow Fish|-3.39249:0.2902936:0|0:180:0|2@1@20@4
+Prefabs/Bottle|8.073519:-2.777046:0|0:0:0|
+Prefabs/Bottle|4.178484:-0.6834651:0|0:0:0|
+Prefabs/Bottle|-5.266976:-3.385645:0|0:0:0|
+Prefabs/Folliage|8.584742:-5.211443:0|0:0:0|
+Prefabs/Folliage|-8.334316:-5.089723:0|0:0:0|
+Prefabs/Folliage|7.391887:-5.211443:0|0:0:0|
+Prefabs/Folliage|-4.098465:-5.114067:0|0:0:0|
+Prefabs/Folliage|-0.08171117:-5.138411:0|0:0:0|
+Prefabs/Folliage|-1.4:-5.114067:0|0:0:0|
+Prefabs/Treasure|0.551232:-5.02:0|0:0:0|
+Prefabs/bomb|-7.847437:0.168574:0|0:0:0|1@1
+Prefabs/bomb|-6.898021:-2.728358:0|0:0:0|0@1
+Prefabs/bomb|5.03:-3.434333:0|0:0:0|0@1
+Prefabs/bomb|2.620469:1.142333:0|0:0:0|1@1
+Prefabs/bomb|-2.637828:-1.194688:0|0:0:0|1@1
+Prefabs/Stars/Small Star|8.219584:-3.239582:0|0:0:0|2@1@10@1
+Prefabs/Stars/Large Star|-7.360557:-1.340752:0|0:0:0|2@1@10@1
+Prefabs/Stars/Small Star|-1.542349:-1.632879:0|0:0:0|2@1@10@1
+Prefabs/Stars/Medium Star|5.541746:-3.872525:0|0:0:0|2@1@10@1
+Prefabs/Stars/Large Star|-4.268874:-3.750805:0|0:0:0|2@1@10@1
+Prefabs/Fishes/BW Fish|3.180382:-2.046727:0|0:0:0|2@3@85@1
+Prefabs/Fishes/Gold Fish|4.811427:1.19102:0|0:0:0|2@3@40@1.5
+Prefabs/Fishes/Gold Fish|6.296409:-1.219032:0|0:180:0|2@3@40@1.5
+Prefabs/Fishes/Yellow Fish|-7.141461:1.896996:0|0:0:0|2@1@25@6
+Prefabs/Fishes/Yellow Fish|-0.6659659:-3.458677:0|0:0:0|2@1@25@3
+Prefabs/Fishes/Turtle|7.09976:-0.07486582:0|0:0:0|2@6@100@0.75
+Prefabs/Fishes/BW Fish|-5.096568:-1.705911:0|0:0:0|2@3@85@1
+Prefabs/Fishes/Blue Fish|6.61288:-3.093518:0|0:180:0|2@5@60@0.75
+Prefabs/Fishes/Blue Fish|-5.65648:0.7528291:0|0:0:0|2@5@60@0.75
+Prefabs/Fishes/Blue Fish|-7.482278:-3.750805:0|0:0:0|2@5@60@0.75
