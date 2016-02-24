@@ -226,7 +226,7 @@ public class SimpleSpinning : MonoBehaviour, ISpinning {
 			if (this.onEndTryCatch != null) {
 				this.onEndTryCatch.Invoke (this.catchedStuff);
 			}
-
+				
 		}
 	}
 
@@ -254,6 +254,7 @@ public class SimpleSpinning : MonoBehaviour, ISpinning {
 			case SpinningState.LookingFor:
 				this.spinningBehaviour = this.LookingForBehaviour;
 				this.catchedStuff = null;
+				this.directionHookMove = DirectionHookMove.nowhere;	
 				this.spinningState = SpinningState.LookingFor;
 				break;
 			case SpinningState.TryCatch:
