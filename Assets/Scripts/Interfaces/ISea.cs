@@ -44,6 +44,9 @@ public interface ISea {
 	event Action<ICatchable> OnDestroyCatchableObject;	// Событие происходит, когда уничтожается ICatchable объект
 	event Action<IUncatchable> OnDestroyUncatchableObject;	// Событие происходит, когда уничтожается Iuncatchable объект
 
+	void OnEveryCatchableObject (Action<ICatchable> foo);
+	void OnEveryUncatchableObject (Action<IUncatchable> foo);
+
 	void Clear();	// Очистить море от всех объектов			
 	void ClearAllCatchable();	// Очистить море от всех Catchable объектов	
 	void ClearAllUncatchable();	// Очистить море от всех Uncatchable объектов	

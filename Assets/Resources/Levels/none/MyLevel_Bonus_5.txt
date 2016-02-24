@@ -1,0 +1,6 @@
+MyLevel_Bonus_1
+Prefabs/Fishes/Yellow Fish|1.237953:-1.26795:0|0:0:0|2@1@25@0
+Prefabs/Fishes/Small Green Fish|-1.37:-1.199259:0|0:0:0|2@1@15@0
+Prefabs/Fishes/Small Green Fish|1.07:-3.36304:0|0:0:0|2@1@15@0
+Prefabs/Fishes/Blue Fish|-1.509706:-3.225657:0|0:0:0|2@5@60@0
+Prefabs/bomb|0.03585133:-2.40136:0|0:0:0|0@0

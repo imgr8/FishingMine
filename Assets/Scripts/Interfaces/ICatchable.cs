@@ -21,6 +21,10 @@ public interface ICatchable : IActionable {
 		get;
 	}
 		
+	void ChangeWeight (float ratio = 1.0f); // 1.0f - исходный вес, 0.75f - уменьшить вес, 1.25f - увеличить вес
+	void ChangePrice (float ratio = 1.0f);
+	void ChangeSpeed (float ratio = 1.0f);
+
 	ISea Sea {	// Каждый предмет в море должен быть осведомлен о море, в котором он находится
 		get;
 		set;

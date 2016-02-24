@@ -147,8 +147,6 @@ public class SimpleSpinning : MonoBehaviour, ISpinning {
 
 	void TryCatchBehaviour() {
 
-		float step = catchSpeed * Time.deltaTime;
-
 		if (this.directionHookMove == DirectionHookMove.forward) {
 			this.fishingHookGameObject.transform.localPosition += this.destinationNormalVector * Time.deltaTime * this.catchSpeed;
 		} else if (this.directionHookMove == DirectionHookMove.back) {

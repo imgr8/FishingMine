@@ -16,20 +16,27 @@ using System.Collections;
 // лучшая детализация, но на уровне поставленной задачи, данная реализация весьма работоспособна
 
 public abstract class Bonus : ICatchable {
+	protected float weight = 0;
 
-	public abstract float Weight {
-		get;
-	}
-
-	public virtual int Price {
+	public virtual float Weight {
 		get {
-			return 0;
+			return this.weight;		
 		}
 	}
 
+	protected int price = 0;
+
+	public virtual int Price {
+		get {
+			return this.price;
+		}
+	}
+
+	protected string name = "Bonus";
+
 	public virtual string Name {
 		get {
-			return "Bonus";
+			return this.name;
 		}
 	}
 
@@ -39,14 +46,38 @@ public abstract class Bonus : ICatchable {
 		}
 	}
 
+	ISea sea = null;
+
 	public virtual ISea Sea {	
 		get {
-			return null;
+			return this.sea;
 		}
 
 		set {
-
+			this.sea = value;
 		}
+	}
+
+	public virtual void ChangeWeight (float ratio = 1.0f) {
+		if (ratio < 0) {
+			ratio = 1.0f;
+		}
+
+		this.weight *= ratio;	
+	}
+
+	public virtual void ChangePrice (float ratio = 1.0f) {
+		if (ratio < 0) {
+			ratio = 1.0f;
+		}
+
+		int tmp = (int)(this.price * ratio);
+
+		this.price = tmp;	
+	}
+
+	public virtual void ChangeSpeed (float ratio = 1.0f) {
+		
 	}
 
 	public virtual void Destroy() {

@@ -11,11 +11,11 @@ public class Bomb : MonoBehaviour, ICatchable, ISaveFromEditor
     public float explodeRadius = 10.0f;
     public float weight = 1.0f;
     public int price = 0;
-	public string name = "Bomb";
+	public string name_ = "Bomb";
 
 	public string Name {
 		get {
-			return this.name;
+			return this.name_;
 		}
 	}
 
@@ -38,6 +38,33 @@ public class Bomb : MonoBehaviour, ICatchable, ISaveFromEditor
     {
         get { return this.price; }
     }
+
+	public void ChangeWeight (float ratio = 1.0f) {
+		if (ratio < 0) {
+			ratio = 1.0f;
+		}
+
+		this.weight *= ratio;	
+	}
+
+	public void ChangePrice (float ratio = 1.0f) {
+		if (ratio < 0) {
+			ratio = 1.0f;
+		}
+
+		int tmp = (int)(this.price * ratio);
+
+		this.price = tmp;	
+	}
+
+	public void ChangeSpeed (float ratio = 1.0f) {
+		if (ratio < 0) {
+			ratio = 1.0f;
+		}
+
+		this.horizontalSpeed *= ratio;
+		this.verticalSpeed *= ratio;
+	}
 
     enum State { Normal, Explode };
     State state = State.Normal;
@@ -119,7 +146,7 @@ public class Bomb : MonoBehaviour, ICatchable, ISaveFromEditor
         if (behaviour != null)
             behaviour.Resume();
     }
-    // Дим я добавил код сюда, это чтобы как раз леска возвращалась правильно назад
+
 	public void Destroy()
     {
 		if (this.sea != null) {
@@ -131,6 +158,7 @@ public class Bomb : MonoBehaviour, ICatchable, ISaveFromEditor
     void Explode()
     {
 		if (this.sea != null) {
+
 			HashSet<ICatchable> cathcableObjectsInSea = this.sea.GetAllCatchableObjectInSea ();	// Возвращается копия!
 
 			foreach (ICatchable catchable in cathcableObjectsInSea) {
@@ -140,6 +168,7 @@ public class Bomb : MonoBehaviour, ICatchable, ISaveFromEditor
 			}
 
 			cathcableObjectsInSea.Clear();
+	
 		}
 
         Destroy();

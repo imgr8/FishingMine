@@ -587,4 +587,16 @@ public class SimpleSea : MonoBehaviour, ISea
 			this.onDestroyUncatchableObject -= value;
 		}
 	}
+
+	public void OnEveryCatchableObject (System.Action<ICatchable> foo) {	// В этой функции нельзя удалять!
+		foreach (ICatchable catchable in this.createdCatchableObjects) {
+			foo (catchable);
+		}
+	}
+
+	public void OnEveryUncatchableObject (System.Action<IUncatchable> foo) {	// В этой функции нельзя удалять!
+		foreach (IUncatchable uncatchable in this.createdUncatchableObjects) {
+			foo (uncatchable);
+		}
+	}
 }

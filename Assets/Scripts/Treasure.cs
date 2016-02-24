@@ -6,11 +6,11 @@ public class Treasure : MonoBehaviour, ICatchable, ISaveFromEditor {
 
     public float weight;
     public int price;
-	public string name = "Treasure";
+	public string name_ = "Treasure";
 
 	public string Name {
 		get {
-			return this.name;
+			return this.name_;
 		}
 	}
 
@@ -83,6 +83,28 @@ public class Treasure : MonoBehaviour, ICatchable, ISaveFromEditor {
             this.onUsed.Invoke(this);
         }
     }
+
+	public void ChangeWeight (float ratio = 1.0f) {
+		if (ratio < 0) {
+			ratio = 1.0f;
+		}
+
+		this.weight *= ratio;	
+	}
+
+	public void ChangePrice (float ratio = 1.0f) {
+		if (ratio < 0) {
+			ratio = 1.0f;
+		}
+
+		int tmp = (int)(this.price * ratio);
+
+		this.price = tmp;	
+	}
+
+	public void ChangeSpeed (float ratio = 1.0f) {
+
+	}
 
 	public string defaultAction = "";
 

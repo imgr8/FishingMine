@@ -11,11 +11,11 @@ public class Fish : MonoBehaviour, ICatchable, ISaveFromEditor {
     public float deviation;
     public bool isDeviation;
 	public InitialLook initialLook = InitialLook.None;
-	public string name = "Fish";
+	public string name_ = "Fish";
 
 	public string Name {
 		get {
-			return this.name;
+			return this.name_;
 		}
 	}
 
@@ -41,6 +41,32 @@ public class Fish : MonoBehaviour, ICatchable, ISaveFromEditor {
 		get {
 			return this.gameObject;
 		}
+	}
+
+	public void ChangeWeight (float ratio = 1.0f) {
+		if (ratio < 0) {
+			ratio = 1.0f;
+		}
+
+		this.weight *= ratio;	
+	}
+
+	public void ChangePrice (float ratio = 1.0f) {
+		if (ratio < 0) {
+			ratio = 1.0f;
+		}
+
+		int tmp = (int)(this.price * ratio);
+
+		this.price = tmp;	
+	}
+
+	public void ChangeSpeed (float ratio = 1.0f) {
+		if (ratio < 0) {
+			ratio = 1.0f;
+		}
+
+		this.speed *= ratio;
 	}
 
 	ISea sea;

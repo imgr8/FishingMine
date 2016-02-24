@@ -6,11 +6,11 @@ public class SurpriseBottle : MonoBehaviour, ICatchable, ISaveFromEditor {
 	public int price = 0;
 	public float weight = 1.0f;
 	public float speed = 1.0f;
-	public string name = "SurpriseBottle";
+	public string name_ = "SurpriseBottle";
 
 	public string Name {
 		get {
-			return this.name;		
+			return this.name_;		
 		}
 	}
 
@@ -45,9 +45,9 @@ public class SurpriseBottle : MonoBehaviour, ICatchable, ISaveFromEditor {
 	}
 
 	public void Use(IFisher fisher) {
-		//fisher.Boat.PutStaff (this);
-		PowerBonus powerBonus = new PowerBonus();
-		powerBonus.Use (fisher);
+
+		SlowSpeedBonus slowSpeedBonus = new SlowSpeedBonus (this.sea, 0.5f);
+		slowSpeedBonus.Use (fisher);
 
 		if (this.onUsed != null) {
 			this.onUsed.Invoke (this);
@@ -114,6 +114,32 @@ public class SurpriseBottle : MonoBehaviour, ICatchable, ISaveFromEditor {
 		if (this.behaviour != null) {
 			this.behaviour.Resume ();
 		}
+	}
+
+	public void ChangeWeight (float ratio = 1.0f) {
+		if (ratio < 0) {
+			ratio = 1.0f;
+		}
+
+		this.weight *= ratio;	
+	}
+
+	public void ChangePrice (float ratio = 1.0f) {
+		if (ratio < 0) {
+			ratio = 1.0f;
+		}
+
+		int tmp = (int)(this.price * ratio);
+
+		this.price = tmp;	
+	}
+
+	public void ChangeSpeed (float ratio = 1.0f) {
+		if (ratio < 0) {
+			ratio = 1.0f;
+		}
+
+		this.speed *= ratio;
 	}
 
 	Action fishBehaviour;
