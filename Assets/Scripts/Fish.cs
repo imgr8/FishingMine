@@ -2,26 +2,15 @@
 using System;
 using System.Collections;
 
-public enum InitialLook { Right, Left, None };
-
-public class Fish : MonoBehaviour, ICatchable, ISaveFromEditor {
+public class Fish : MonoBehaviour, ICatchable, IMovable, ISaveFromEditor {
 	public float weight = 1.0f;
-	public float speed = 1.0f;
 	public int price = 100;
-    public float deviation;
-    public bool isDeviation;
-	public InitialLook initialLook = InitialLook.None;
-	public string name_ = "Fish";
+
+	public string objectName = "Fish";
 
 	public string Name {
 		get {
-			return this.name_;
-		}
-	}
-
-	public InitialLook InitialLook {
-		get {
-			return this.initialLook;
+			return this.objectName;
 		}
 	}
 
@@ -61,14 +50,6 @@ public class Fish : MonoBehaviour, ICatchable, ISaveFromEditor {
 		this.price = tmp;	
 	}
 
-	public void ChangeSpeed (float ratio = 1.0f) {
-		if (ratio < 0) {
-			ratio = 1.0f;
-		}
-
-		this.speed *= ratio;
-	}
-
 	ISea sea;
 
 	public ISea Sea {
@@ -102,7 +83,7 @@ public class Fish : MonoBehaviour, ICatchable, ISaveFromEditor {
 	}
 
 	public ICatchable WhenCatched(IHook hook) {
-		this.StopAction (); // Остановим действие, которое выполнял объект
+		this.MoveBehaviour.StopMove();
 		return this;
 	}
 
@@ -114,56 +95,25 @@ public class Fish : MonoBehaviour, ICatchable, ISaveFromEditor {
 		}
 	}
 
-	IBehaviour behaviour;
+	IMove moveBehaviour;
 
-	public string defaultAction = "SimpleFishBehaviour";
-
-	public string DefaultAction {
+	public IMove MoveBehaviour {
 		get {
-			return this.defaultAction;
+			return this.moveBehaviour;
 		}
-	}
 
-	public void SetAction(string actionName, object data = null) {
-		this.behaviour = BehaviourCreator.CreateBehaviour (actionName, this, data);
-		if (behaviour != null) {
-			this.fishBehaviour = this.behaviour.Action;
-		} else {
-			this.fishBehaviour = this.EmptyBehaviour;
+		set {
+			this.moveBehaviour = value;
 		}
-	}
-		
-	public void ChangeAction (object data) {
-		if (this.behaviour != null) {
-			this.behaviour.Change(data);
-		}
-	}
-
-	public void StopAction () {
-		if (this.behaviour != null) {
-			this.behaviour.Stop ();
-		}
-	}
-
-	public void ResumeAction() {
-		if (this.behaviour != null) {
-			this.behaviour.Resume ();
-		}
-	}
-		
-	Action fishBehaviour;
-
-	void EmptyBehaviour () {
-		// Пустое поведение
 	}
 
 	void Start() {
-		//this.fishBehaviour = this.EmptyBehaviour;
-		this.SetAction(this.defaultAction);
+		this.moveBehaviour = this.GetComponent<IMove> ();
+		this.moveBehaviour.Init (this.sea);
 	}
 
 	void Update() {
-		fishBehaviour.Invoke ();	
+		this.moveBehaviour.Move ();
 	}
 
 	public string path;
@@ -175,8 +125,9 @@ public class Fish : MonoBehaviour, ICatchable, ISaveFromEditor {
 	}
 		
 	public string Save() {
+		
 		string parameters = "";
-
+		/*
 		short initParam = 0;	// None by default
 
 		if (this.initialLook == InitialLook.Left) {
@@ -189,11 +140,12 @@ public class Fish : MonoBehaviour, ICatchable, ISaveFromEditor {
 		this.Weight.ToString () + "@" +
 		this.Price.ToString () + "@" +
 		this.speed.ToString ();
-
+*/
 		return parameters;
 	}
 
 	public void Load(ISea sea, string param) {
+		/*
 		this.Sea = sea;
 
 		string [] parameters = param.Split (new char [] { '@' });
@@ -211,6 +163,7 @@ public class Fish : MonoBehaviour, ICatchable, ISaveFromEditor {
 		this.weight = float.Parse (parameters [1], System.Globalization.NumberStyles.Any);
 		this.price = int.Parse (parameters [2]);
 		this.speed = float.Parse (parameters[3], System.Globalization.NumberStyles.Any);
+		*/
 	}
 
 }

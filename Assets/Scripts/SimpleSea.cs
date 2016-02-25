@@ -123,7 +123,6 @@ public class SimpleSea : MonoBehaviour, ISea
 
             ICatchable newCatchable = newFish.GetComponent<ICatchable>();
 
-            newFish.GetComponent<Fish>().isDeviation = isUseDeviationOnMove;
             newCatchable.Sea = this;
 
             this.createdCatchableObjects.Add(newCatchable);
@@ -235,10 +234,9 @@ public class SimpleSea : MonoBehaviour, ISea
 
             ICatchable newCatchable = newFish.GetComponent<ICatchable>();
 
-            newFish.GetComponent<Fish>().isDeviation = isUseDeviationOnMove;
             newCatchable.Sea = this;
-            newFish.GetComponent<Fish>().deviation = Random.Range(minFishDeviation, width);
-            newFish.GetComponent<Fish>().speed += levelNum / 15;
+    
+//            newFish.GetComponent<Fish>().speed += levelNum / 15;
             currentCostOfFish += newFish.GetComponent<Fish>().Price;
 
 			createdCatchableObjects.Add(newCatchable);

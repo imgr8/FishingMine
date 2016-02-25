@@ -67,7 +67,7 @@ public class SurpriseBottle : MonoBehaviour, ICatchable, ISaveFromEditor {
 	}
 
 	public ICatchable WhenCatched(IHook hook) {
-		this.StopAction (); // Остановим действие, которое выполнял объект
+		//this.StopAction (); // Остановим действие, которое выполнял объект
 		return this;
 	}
 
@@ -76,43 +76,6 @@ public class SurpriseBottle : MonoBehaviour, ICatchable, ISaveFromEditor {
 			this.sea.DestroyObject (this);
 		} else {
 			GameObject.Destroy (this.GameObject);
-		}
-	}
-
-	IBehaviour behaviour;
-
-	public string defaultAction = "";
-
-	public string DefaultAction {
-		get {
-			return this.defaultAction;
-		}
-	}
-
-	public void SetAction(string actionName, object data = null) {
-		this.behaviour = BehaviourCreator.CreateBehaviour (actionName, this, data);
-		if (this.behaviour != null) {
-			this.fishBehaviour = this.behaviour.Action;
-		} else {
-			this.fishBehaviour = this.EmptyBehaviour;
-		}
-	}
-
-	public void ChangeAction (object data) {
-		if (this.behaviour != null) {
-			this.behaviour.Change(data);
-		}
-	}
-
-	public void StopAction () {
-		if (this.behaviour != null) {
-			this.behaviour.Stop ();
-		}
-	}
-
-	public void ResumeAction() {
-		if (this.behaviour != null) {
-			this.behaviour.Resume ();
 		}
 	}
 
@@ -134,26 +97,12 @@ public class SurpriseBottle : MonoBehaviour, ICatchable, ISaveFromEditor {
 		this.price = tmp;	
 	}
 
-	public void ChangeSpeed (float ratio = 1.0f) {
-		if (ratio < 0) {
-			ratio = 1.0f;
-		}
-
-		this.speed *= ratio;
-	}
-
-	Action fishBehaviour;
-
-	void EmptyBehaviour () {
-		// Пустое поведение
-	}
-
 	void Start() {
-		this.SetAction (this.DefaultAction);
+		
 	}
 
 	void Update() {
-		fishBehaviour.Invoke ();	
+
 	}
 
 	public string path;

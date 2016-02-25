@@ -57,7 +57,7 @@ public class SlowSpeedBonus : Bonus {
 
 	public override void Use(IFisher fisher) {
 		this.sea.OnEveryCatchableObject ((obj) => {
-			obj.ChangeSpeed(this.changeSpeedCoefficient);
+			//obj.ChangeSpeed(this.changeSpeedCoefficient);
 		});
 
 		if (this.onUsed != null) {

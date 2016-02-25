@@ -57,14 +57,6 @@ public class Bomb : MonoBehaviour, ICatchable, ISaveFromEditor
 		this.price = tmp;	
 	}
 
-	public void ChangeSpeed (float ratio = 1.0f) {
-		if (ratio < 0) {
-			ratio = 1.0f;
-		}
-
-		this.horizontalSpeed *= ratio;
-		this.verticalSpeed *= ratio;
-	}
 
     enum State { Normal, Explode };
     State state = State.Normal;
@@ -88,18 +80,31 @@ public class Bomb : MonoBehaviour, ICatchable, ISaveFromEditor
     }
 
    
-
     public ICatchable WhenCatched(IHook hook)
     {
-        StopAction();
+        //StopAction();
         Explode();
 
         return null;
     }
 
+	event Action<ICatchable> onUsed;
+
+	public event Action<ICatchable> OnUsed {
+		add {
+			this.onUsed += value;		
+		}
+
+		remove {
+			this.onUsed -= value;
+		}
+	}
+
     public void Use(IFisher fisher)
     {
-        //по идее, не реализовывает, до рыбака так и не дойдёт
+		if (this.onUsed != null) {
+			this.onUsed.Invoke (this);
+		}
     }
 
 	public string defaultAction = "";
@@ -110,44 +115,7 @@ public class Bomb : MonoBehaviour, ICatchable, ISaveFromEditor
 		}
 	}
 
-    event Action<ICatchable> onUsed;
-    public event Action<ICatchable> OnUsed
-    {
-        add { this.onUsed += value; }
-        remove { this.onUsed -= value; }
-    }
-
-    Action bombBehaviour;
-    IBehaviour behaviour;
-    public void SetAction(string actionName, object data = null)
-    {
-        behaviour = BehaviourCreator.CreateBehaviour(actionName, this, data);
-		if (behaviour != null) {
-			bombBehaviour = behaviour.Action;
-		} else {
-			bombBehaviour = EmptyBehaviour;		
-		}
-    }
-
-    public void ChangeAction(object data)
-    {
-        if (behaviour != null)
-            behaviour.Change(data);
-    }
-
-    public void StopAction()
-    {
-        if (behaviour != null)
-            behaviour.Stop();
-    }
-
-    public void ResumeAction()
-    {
-        if (behaviour != null)
-            behaviour.Resume();
-    }
-
-	public void Destroy()
+  	public void Destroy()
     {
 		if (this.sea != null) {
 			this.sea.DestroyObject (this);
@@ -181,12 +149,12 @@ public class Bomb : MonoBehaviour, ICatchable, ISaveFromEditor
 
     void Start()
     {
-		this.SetAction(this.DefaultAction);	
+		
     }
 
     void Update()
     {
-        bombBehaviour.Invoke();
+      
     }
 
 	public string path;

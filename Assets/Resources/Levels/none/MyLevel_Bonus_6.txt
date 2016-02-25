@@ -1,0 +1,2 @@
+MyLevel_Bonus_1
+Prefabs/Fishes/Blue Fish|-0.812186:-0.8543373:0|0:0:0|2@5@60@0.75
