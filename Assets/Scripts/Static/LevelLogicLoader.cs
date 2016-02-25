@@ -4,6 +4,7 @@ using System.Collections;
 public static class LevelLogicLoader {
 
 	public static ILevel Load(string name) {
+		name = name.Trim ();
 		switch (name) {
 		case "MyLevel_Bonus_1":
 			return new MyLevel_Bonus_1 ();
