@@ -37,6 +37,7 @@ public class Bomb : MonoBehaviour, ICatchable, ISaveFromEditor
     public int Price
     {
         get { return this.price; }
+      
     }
 
 	public void ChangeWeight (float ratio = 1.0f) {

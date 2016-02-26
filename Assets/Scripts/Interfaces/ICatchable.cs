@@ -11,6 +11,7 @@ public interface ICatchable : IActionable {
     int Price
     {
         get;
+       
     }
 
 	GameObject GameObject {

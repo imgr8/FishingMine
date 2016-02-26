@@ -94,7 +94,7 @@ public class SimpleFishBehaviour : IBehaviour {
 	}
 
 	public void Change(object data = null) {
-		//this.speed = speed;
+		this.speed = (float)data;
 	}
 }
 

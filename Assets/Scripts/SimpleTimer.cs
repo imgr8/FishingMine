@@ -6,6 +6,12 @@ public class SimpleTimer : MonoBehaviour, ITimer {
 	float time = 0;		// общее время, прошедшее от начала запуска таймера
 	float msgTime = 0;	// время интервала между вызовами сообщения
 	float seconds = 0;	// общее время таймера
+     float extraTime = 0; //добавочное время
+    public float ExtraTime
+    {
+        get { return extraTime; }
+        set { this.extraTime = value; }
+    }
 
 	public void StartTimer(float seconds, float msgTime) {
 		if (IsInvoking ("Timer")) {
@@ -75,7 +81,7 @@ public class SimpleTimer : MonoBehaviour, ITimer {
 	void Timer() {
 		time += msgTime;
 
-		if (time >= this.seconds) {
+		if (time >= this.seconds + extraTime) {
 			CancelInvoke ("Timer");
 
 			if (this.onTimerEnd != null) {

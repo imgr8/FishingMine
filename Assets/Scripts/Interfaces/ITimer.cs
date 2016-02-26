@@ -2,6 +2,7 @@
 
 public interface ITimer {
 
+    float ExtraTime { get; set; }
 	void StartTimer(float seconds, float msgTime);
 	void Pause();
 	void Resume();

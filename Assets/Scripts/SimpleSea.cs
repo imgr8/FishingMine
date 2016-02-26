@@ -300,13 +300,13 @@ public class SimpleSea : MonoBehaviour, ISea
     }
     void SurpriceGenNew(int levelNum)
     {
-        for (int i = 0; i < 1 + Mathf.Floor(levelNum/5); i++)
+        for (int i = 0; i < 8 + Mathf.Floor(levelNum/5); i++)
         {
             GameObject newSurprise = GameObject.Instantiate(this.surprises[Random.Range(0, this.numOfSurprise)]);
 
             newSurprise.transform.position = new Vector3(
                 Random.Range(this.center.x - this.width / 2, this.center.x + this.width / 2),
-                Random.Range(this.center.y - this.depth / 4, this.center.y - this.depth / 2),
+                Random.Range(this.center.y - this.depth / 4, this.center.y ),//- this.depth / 2),
                 newSurprise.transform.position.z
             );
 

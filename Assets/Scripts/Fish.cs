@@ -35,6 +35,7 @@ public class Fish : MonoBehaviour, ICatchable, ISaveFromEditor {
 		get {
 			return this.price;
 		}
+  
 	}
 
 	public GameObject GameObject {
@@ -67,6 +68,7 @@ public class Fish : MonoBehaviour, ICatchable, ISaveFromEditor {
 		}
 
 		this.speed *= ratio;
+        behaviour.Change(speed);
 	}
 
 	ISea sea;
@@ -131,6 +133,7 @@ public class Fish : MonoBehaviour, ICatchable, ISaveFromEditor {
 		} else {
 			this.fishBehaviour = this.EmptyBehaviour;
 		}
+        
 	}
 		
 	public void ChangeAction (object data) {

@@ -35,7 +35,7 @@ public class Fisher : MonoBehaviour, IFisher {
 		}
 	}
 
-	float power = 1.0f;
+	public float power = 1.0f;
 
 	public float Power {
 		get {

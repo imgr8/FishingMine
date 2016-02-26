@@ -46,8 +46,19 @@ public class SurpriseBottle : MonoBehaviour, ICatchable, ISaveFromEditor {
 
 	public void Use(IFisher fisher) {
 
-		SlowSpeedBonus slowSpeedBonus = new SlowSpeedBonus (this.sea, 0.5f);
-		slowSpeedBonus.Use (fisher);
+        int randomizer = UnityEngine.Random.Range(0, 4);
+        ICatchable bonus;
+        switch(randomizer)
+        {
+            case 0: bonus = new SlowSpeedBonus(sea, 0.5f); break;
+            case 1: bonus = new PowerBonus(); break;
+            case 2: bonus = new FortuneBonus(sea,1.5f); break;
+            case 3: bonus = new DelayBonus(25); break;
+            default: bonus = null; break;
+        }
+
+        bonus.Use(fisher);
+		
 
 		if (this.onUsed != null) {
 			this.onUsed.Invoke (this);

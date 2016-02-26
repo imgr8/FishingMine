@@ -17,6 +17,8 @@ public interface IFishing {
 		set;
 	}
 
+    void ExtraTime(float time);
+
 	event Action<object> OnStateUpdate;	// уведомление о произошедших изменениях, в частности может быть использовано Visualizer'ом, чтобы обновить представление информации
 	event Action<float> OnEarnedUpdate;
 	event Action<ushort> OnLevelUpdate;

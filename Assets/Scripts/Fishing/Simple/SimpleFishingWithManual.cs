@@ -12,7 +12,7 @@ public class SimpleFishingWithManual : MonoBehaviour, IFishing {
 
 	public GameObject timerGameObject;
 	ITimer timer;
-
+    float extraTime;
 	ILevelLoader levelLoader;
 
 	float earnedInCurrentLevel = 0; // заработанное в текущем уровне, чтоб в случае поражения, начать заново текущий уровень аннулируя все заработанное этом уровне
@@ -121,7 +121,7 @@ public class SimpleFishingWithManual : MonoBehaviour, IFishing {
 
 		this.timer.OnTimerBeep += (float time) =>
 		{
-			this.levelTimeRemainded = this.levelTimeAmount - time;
+			this.levelTimeRemainded = this.levelTimeAmount - time + extraTime;
 
 			if (this.onChangeLevelTime != null)
 			{
@@ -134,7 +134,11 @@ public class SimpleFishingWithManual : MonoBehaviour, IFishing {
 		this.IfConditionPassedStartNextLevel();
 
 	}
-
+    public void ExtraTime(float time)
+    {
+        this.extraTime += time;
+        timer.ExtraTime += time;
+    }
 	void IfConditionPassedStartNextLevel()
 	{
 		if (this.NumLevel == 0)
@@ -190,7 +194,7 @@ public class SimpleFishingWithManual : MonoBehaviour, IFishing {
 		earnedInCurrentLevel = 0;
 		this.NumLevel++;
 
-		this.currentManualLevel = this.levelLoader.LoadLevel ("MyLevel_Bonus_4", null);
+		this.currentManualLevel = this.levelLoader.LoadLevel ("MyLevel_Bonus_3", null);
 		this.currentManualLevel.Init (this, this.sea, this.fisher, null);
 
 		this.sea.MakeLive (null);
