@@ -245,6 +245,10 @@ public class SimpleFishingWithManual : MonoBehaviour, IFishing {
         }
     }
 
+    public void BuyHook()
+    {
+
+    }
 
 	event Action<float> onChangeLevelTime;
 
@@ -334,6 +338,19 @@ public class SimpleFishingWithManual : MonoBehaviour, IFishing {
         remove
         {
             this.onPowerCostUpdate -= value;
+        }
+    }
+    event Action<int> onHookSpeedUpdate;
+    public event Action<int> OnHookSpeedUpdate
+    {
+        add
+        {
+            this.onHookSpeedUpdate += value;
+        }
+
+        remove
+        {
+            this.onHookSpeedUpdate -= value;
         }
     }
 

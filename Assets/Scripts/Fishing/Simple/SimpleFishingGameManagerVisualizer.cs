@@ -10,6 +10,7 @@ public class SimpleFishingGameManagerVisualizer : MonoBehaviour {
 	public Text textForTimeRemainded;
     public Text textForRequiredMoney;
     public Text textForPowerCost;
+    public Text textForHookCost;
 
 	// Use this for initialization
 	void Start () {
@@ -36,11 +37,14 @@ public class SimpleFishingGameManagerVisualizer : MonoBehaviour {
 			this.textForTimeRemainded.text = time.ToString();
 		};
 
-        this.fishing.OnPowerCostUpdate += (int cost) =>
-        {
+        this.fishing.OnPowerCostUpdate += (int cost) =>  {
             this.textForPowerCost.text = cost.ToString();
         };
 
+        this.fishing.OnHookSpeedUpdate += (int cost) =>
+        {
+            this.textForHookCost.text = cost.ToString();
+        };
 	}
 
 }

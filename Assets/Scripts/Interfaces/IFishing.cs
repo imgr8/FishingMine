@@ -20,6 +20,7 @@ public interface IFishing {
 
     void ExtraTime(float time);
     void BuyPower();
+    void BuyHook();
     void NextLevel();
 
 	event Action<object> OnStateUpdate;	// уведомление о произошедших изменениях, в частности может быть использовано Visualizer'ом, чтобы обновить представление информации
@@ -28,4 +29,5 @@ public interface IFishing {
 	event Action<float> OnChangeLevelTime;
     event Action<float> OnRequiredUpdate;
     event Action<int> OnPowerCostUpdate;
+    event Action<int> OnHookSpeedUpdate;
 }

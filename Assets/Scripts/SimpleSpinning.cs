@@ -16,7 +16,19 @@ public class SimpleSpinning : MonoBehaviour, ISpinning {
 	public float maxLength = 5.0f;					// Максимальная длина
 	public float angleSpeed = 1.0f;
 	public float maxAngleDeviation = 75.0f;
+
 	public float catchSpeed = 3.0f;
+    public float CatchSpeed
+    {
+        get { return catchSpeed; }
+        set { this.catchSpeed = value; }
+    }
+     int catchSpeedLevel = 1;
+     public int CatchSpeedLevel
+     {
+         get { return catchSpeedLevel; }
+         set { this.catchSpeedLevel = value; }
+     }
 
 	const float lengthByDefault = 1.0f;
 	const float maxLengthByDefault = 5.0f;
@@ -209,7 +221,7 @@ public class SimpleSpinning : MonoBehaviour, ISpinning {
 
 		this.directionHookMove = DirectionHookMove.back;
 
-		float resultCatchSpeed = this.catchSpeed * (this.owner.Power + this.owner.ExtraPower) / this.catchedStuff.Weight;
+		float resultCatchSpeed = (this.owner.Power + this.owner.ExtraPower) / this.catchedStuff.Weight;
 
 		this.fishingHookGameObject.transform.localPosition -= this.destinationNormalVector * Time.deltaTime * resultCatchSpeed;
 

@@ -5,6 +5,9 @@ using System;
 public enum DirectionHookMove { nowhere, forward, back };	// nowhere - если рыбак просто в состоянии поиска
 
 public interface ISpinning {
+    float CatchSpeed { get; set; }
+    int CatchSpeedLevel { get; set; }
+
 	void LookingFor ();
 	void TryCatch ();
 	void PullStaff();

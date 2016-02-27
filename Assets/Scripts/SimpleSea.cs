@@ -250,7 +250,7 @@ public class SimpleSea : MonoBehaviour, ISea
 				this.DestroyObject(obj);
             };
         }
-        print(currentCostOfFish);
+      
     }
     void StarGenNew(int levelNum)
     {

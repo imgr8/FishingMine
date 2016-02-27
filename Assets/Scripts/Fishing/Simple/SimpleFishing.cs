@@ -209,7 +209,7 @@ public class SimpleFishing : MonoBehaviour, IFishing
     }
 
     int startPowerCost = 60;
-    float powerGrowth = 0.4f;
+    float powerGrowth = 5f;
     public void BuyPower()
     {
         if (earned >= startPowerCost * Fisher.PowerLevel)
@@ -219,6 +219,20 @@ public class SimpleFishing : MonoBehaviour, IFishing
             this.onEarnedUpdate.Invoke(this.earned);           
             Fisher.PowerLevel++;
             this.onPowerCostUpdate.Invoke(this.startPowerCost * Fisher.PowerLevel);
+        }
+    }
+
+    int startHookCost = 60;
+    float hookSpeedGrowth = 10f;
+    public void BuyHook()
+    {
+        if (earned >= startHookCost * Fisher.Spinning.CatchSpeedLevel)
+        {
+            earned -= startHookCost * Fisher.Spinning.CatchSpeedLevel;
+            fisher.Spinning.CatchSpeed += hookSpeedGrowth;
+            this.onEarnedUpdate.Invoke(this.earned);
+            Fisher.Spinning.CatchSpeedLevel++;
+            this.onHookSpeedUpdate.Invoke(this.startHookCost * Fisher.Spinning.CatchSpeedLevel);
         }
     }
 
@@ -299,7 +313,6 @@ public class SimpleFishing : MonoBehaviour, IFishing
     }
 
     event Action<int> onPowerCostUpdate;
-
     public event Action<int> OnPowerCostUpdate
     {
         add
@@ -310,6 +323,20 @@ public class SimpleFishing : MonoBehaviour, IFishing
         remove
         {
             this.onPowerCostUpdate -= value;
+        }
+    }
+
+    event Action<int> onHookSpeedUpdate;
+    public event Action<int> OnHookSpeedUpdate
+    {
+        add
+        {
+            this.onHookSpeedUpdate += value;
+        }
+
+        remove
+        {
+            this.onHookSpeedUpdate -= value;
         }
     }
 }

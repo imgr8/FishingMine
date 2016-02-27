@@ -25,8 +25,13 @@ public class MainFishing : MonoBehaviour {
     {
         fishing.BuyPower();
     }
+    public void BuyHook()
+    {
+        fishing.BuyHook();
+    }
     public void Play()
     {
         fishing.NextLevel();
     }
+
 }
