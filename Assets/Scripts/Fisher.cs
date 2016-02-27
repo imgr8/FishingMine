@@ -51,8 +51,21 @@ public class Fisher : MonoBehaviour, IFisher {
 		}
 	}
 
+    int powerLevel = 1;
+    public int PowerLevel
+    {
+        get { return this.powerLevel; }
+        set { this.powerLevel = value; }
+    }
+     public float extraPower = 0f;
+     public float ExtraPower
+     {
+         get { return this.extraPower; }
+         set { this.extraPower = value; }
+     }
+
 	public void ClearState() {
-		this.power = 1.0f;
+		this.extraPower = 0f;
 	}
 
 	void Awake() {

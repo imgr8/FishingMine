@@ -17,11 +17,15 @@ public interface IFishing {
 		set;
 	}
 
+
     void ExtraTime(float time);
+    void BuyPower();
+    void NextLevel();
 
 	event Action<object> OnStateUpdate;	// уведомление о произошедших изменениях, в частности может быть использовано Visualizer'ом, чтобы обновить представление информации
 	event Action<float> OnEarnedUpdate;
 	event Action<ushort> OnLevelUpdate;
 	event Action<float> OnChangeLevelTime;
-	event Action<float> OnRequiredUpdate;
+    event Action<float> OnRequiredUpdate;
+    event Action<int> OnPowerCostUpdate;
 }

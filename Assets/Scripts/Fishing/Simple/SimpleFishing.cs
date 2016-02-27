@@ -5,7 +5,12 @@ using System.Collections;
 public class SimpleFishing : MonoBehaviour, IFishing
 {
     public GameObject fisherGameObject;
+    public GameObject shopPanel;
     IFisher fisher;
+    public IFisher Fisher
+    {
+        get { return this.fisher; }
+    }
 
     public GameObject seaGameObject;
     ISea sea;
@@ -145,7 +150,8 @@ public class SimpleFishing : MonoBehaviour, IFishing
         }
         else if (this.CheckConditions())
         {
-            this.NextLevel();
+            shopPanel.SetActive(true);
+            //this.NextLevel();
         }
         else
         {
@@ -172,7 +178,7 @@ public class SimpleFishing : MonoBehaviour, IFishing
         else return false;
     }
 
-    void NextLevel()
+    public void NextLevel()
     {
         earnedInCurrentLevel = 0;
         timer.ExtraTime = 0;
@@ -191,12 +197,29 @@ public class SimpleFishing : MonoBehaviour, IFishing
 
         if (this.onRequiredUpdate != null)
             this.onRequiredUpdate.Invoke(this.required);
+
+
+        shopPanel.SetActive(false);
     }
 
     void GameOver()
     {
         this.numLevel = 0;
         this.earned = 0;
+    }
+
+    int startPowerCost = 60;
+    float powerGrowth = 0.4f;
+    public void BuyPower()
+    {
+        if (earned >= startPowerCost * Fisher.PowerLevel)
+        {
+            earned -= startPowerCost * Fisher.PowerLevel;
+            Fisher.Power += powerGrowth;
+            this.onEarnedUpdate.Invoke(this.earned);           
+            Fisher.PowerLevel++;
+            this.onPowerCostUpdate.Invoke(this.startPowerCost * Fisher.PowerLevel);
+        }
     }
 
     event Action<float> onChangeLevelTime;
@@ -275,4 +298,18 @@ public class SimpleFishing : MonoBehaviour, IFishing
         }
     }
 
+    event Action<int> onPowerCostUpdate;
+
+    public event Action<int> OnPowerCostUpdate
+    {
+        add
+        {
+            this.onPowerCostUpdate += value;
+        }
+
+        remove
+        {
+            this.onPowerCostUpdate -= value;
+        }
+    }
 }

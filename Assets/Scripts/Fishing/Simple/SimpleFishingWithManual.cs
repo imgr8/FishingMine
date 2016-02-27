@@ -6,6 +6,10 @@ public class SimpleFishingWithManual : MonoBehaviour, IFishing {
 
 	public GameObject fisherGameObject;
 	IFisher fisher;
+    public IFisher Fisher
+    {
+        get { return this.fisher; }
+    }
 
 	public GameObject seaGameObject;
 	ISea sea;
@@ -185,7 +189,7 @@ public class SimpleFishingWithManual : MonoBehaviour, IFishing {
 
 	ILevel currentManualLevel = null;
 
-	void NextLevel()
+	public void NextLevel()
 	{
 		if (this.currentManualLevel != null) {
 			this.currentManualLevel.Unload();
@@ -229,6 +233,18 @@ public class SimpleFishingWithManual : MonoBehaviour, IFishing {
 		this.fisher.ClearState ();
 		Debug.Log ("Game Over");
 	}
+
+    int startPowerCost = 60;
+    float powerGrowth = 0.4f;
+    public void BuyPower()
+    {
+        if (earned >= startPowerCost * Fisher.PowerLevel)
+        {
+            earned -= startPowerCost * Fisher.PowerLevel;
+            Fisher.Power += powerGrowth;
+        }
+    }
+
 
 	event Action<float> onChangeLevelTime;
 
@@ -305,5 +321,20 @@ public class SimpleFishingWithManual : MonoBehaviour, IFishing {
 			this.onStateUpdate -= value;
 		}
 	}
+
+    event Action<int> onPowerCostUpdate;
+
+    public event Action<int> OnPowerCostUpdate
+    {
+        add
+        {
+            this.onPowerCostUpdate += value;
+        }
+
+        remove
+        {
+            this.onPowerCostUpdate -= value;
+        }
+    }
 
 }

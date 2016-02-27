@@ -20,6 +20,12 @@ public interface IFisher {
 		get;
 		set;
 	}
+    int PowerLevel
+    {
+        get;
+        set;
+    }
+    float ExtraPower { get; set; }
 
 	void ClearState();	// Установить состояние рыбака в начальное, например, чтобы убрать влияние временных бонусов в начале уровня
 		

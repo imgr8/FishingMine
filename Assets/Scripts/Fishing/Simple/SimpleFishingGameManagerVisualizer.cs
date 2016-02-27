@@ -9,6 +9,7 @@ public class SimpleFishingGameManagerVisualizer : MonoBehaviour {
 	public Text textForLevelNumber;
 	public Text textForTimeRemainded;
     public Text textForRequiredMoney;
+    public Text textForPowerCost;
 
 	// Use this for initialization
 	void Start () {
@@ -34,6 +35,11 @@ public class SimpleFishingGameManagerVisualizer : MonoBehaviour {
 		this.fishing.OnChangeLevelTime += (float time) => {
 			this.textForTimeRemainded.text = time.ToString();
 		};
+
+        this.fishing.OnPowerCostUpdate += (int cost) =>
+        {
+            this.textForPowerCost.text = cost.ToString();
+        };
 
 	}
 

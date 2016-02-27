@@ -5,7 +5,8 @@ using System.Collections;
 
 public class MainFishing : MonoBehaviour {
 	public GameObject fishingGameObject;
-
+   
+    IFishing fishing;
 	// Use this for initialization
 	void Start () {
 		for (int i = 0; i < this.transform.childCount; i++) {
@@ -17,6 +18,15 @@ public class MainFishing : MonoBehaviour {
 		}
 
 		this.fishingGameObject.SetActive (true);
+        fishing = fishingGameObject.GetComponent<IFishing>();
 	}
 
+    public void BuyPower()
+    {
+        fishing.BuyPower();
+    }
+    public void Play()
+    {
+        fishing.NextLevel();
+    }
 }

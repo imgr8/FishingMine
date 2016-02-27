@@ -5,7 +5,7 @@ using System.Collections;
 public class PowerBonus : Bonus {
  
 	public override void Use(IFisher fisher) {
-		fisher.Power++;
+		fisher.ExtraPower += 0.5f;
 		Debug.Log ("Power Up");
 
 		if (this.onUsed != null) {

@@ -209,7 +209,7 @@ public class SimpleSpinning : MonoBehaviour, ISpinning {
 
 		this.directionHookMove = DirectionHookMove.back;
 
-		float resultCatchSpeed = this.catchSpeed * this.owner.Power / this.catchedStuff.Weight;
+		float resultCatchSpeed = this.catchSpeed * (this.owner.Power + this.owner.ExtraPower) / this.catchedStuff.Weight;
 
 		this.fishingHookGameObject.transform.localPosition -= this.destinationNormalVector * Time.deltaTime * resultCatchSpeed;
 
