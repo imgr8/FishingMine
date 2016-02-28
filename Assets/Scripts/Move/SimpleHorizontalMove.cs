@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum MoveDirection {Right, Left, Random};
-public enum InitialLook { Right, Left, Up, Bottom, None }
+public enum MoveDirection {Right, Left, Up, Down, Random};
+public enum InitialLook { Right, Left, Up, Down, None }
 
 public class SimpleHorizontalMove : MonoBehaviour, IMove {
 

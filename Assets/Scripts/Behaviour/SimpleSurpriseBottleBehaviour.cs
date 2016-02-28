@@ -15,7 +15,7 @@ public class SimpleSurpriseBottleBehaviour : IBehaviour {
 		this.catchable = obj;
 		this.obj = obj.GameObject.transform;
 		this.sea = obj.Sea;
-		this.speed = obj.GameObject.GetComponent<SurpriseBottle>().speed;
+		//this.speed = obj.GameObject.GetComponent<SurpriseBottle>().speed;
 
 		this.moveDirection = (UnityEngine.Random.Range (0, 2) == 1 ? MoveDirection.Right : MoveDirection.Left);
 

@@ -17,7 +17,8 @@ public class SimpleBombBehaviour : IBehaviour {
 
     public SimpleBombBehaviour(ICatchable obj)
     {
-        this.catchable = obj;
+        /*
+		this.catchable = obj;
         this.sea = obj.Sea;
         this.obj = obj.GameObject.transform;
 
@@ -28,7 +29,7 @@ public class SimpleBombBehaviour : IBehaviour {
 
         moveHorizontalDirection = (Random.Range(0, 2) == 0 ? MoveHorizontalDirection.Left : MoveHorizontalDirection.Right);
         moveVerticalDirection = (Random.Range(0, 2) == 0 ? MoveVerticalDirection.Down : MoveVerticalDirection.Up);
-
+*/
 
     }
 
