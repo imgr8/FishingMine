@@ -18,7 +18,7 @@ public class SimpleHorizontalMove : MonoBehaviour, IMove, ISaveComponent {
 			this.moveDirection = (Random.Range (0, 2) == 0) ? MoveDirection.Left : MoveDirection.Right;
 		}
 
-		if (this.initLook != InitialLook.Right || this.initLook != InitialLook.Left) {
+		if (this.initLook != InitialLook.Right && this.initLook != InitialLook.Left) {
 			this.initLook = InitialLook.None;
 		}
 

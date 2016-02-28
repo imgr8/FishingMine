@@ -6,8 +6,8 @@ public class SurpriseBottle : AMCatchable, ISaveFromEditor {
 
 	public override void Use(IFisher fisher) {
 
-		SlowSpeedBonus slowSpeedBonus = new SlowSpeedBonus (this.sea, 0.5f);
-		slowSpeedBonus.Use (fisher);
+		PowerBonus powerUp = new PowerBonus ();
+		powerUp.Use (fisher, this.sea, null);
 
 		base.Use (fisher);
 	}
