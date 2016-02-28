@@ -24,30 +24,26 @@ public class Fish : AMCatchable, IMovable, ISaveFromEditor {
 		
 	public string Save() {
 		
-		string parameters = "";
-		/*
-		short initParam = 0;	// None by default
+		string parameters = this.Name + "@" + this.weight + "@" + this.price + "\n";
 
-		if (this.initialLook == InitialLook.Left) {
-			initParam = 1;
-		} else {
-			initParam = 2;
+		ISaveComponent [] saveComponents = this.GetComponents<ISaveComponent> ();
+	
+		foreach (ISaveComponent saveComponent in saveComponents) {
+			parameters += "<component>\n";
+			parameters += saveComponent.Save ();
+			parameters += "\n<\\component>";
 		}
 
-		parameters = initParam.ToString () + "@" +
-		this.Weight.ToString () + "@" +
-		this.Price.ToString () + "@" +
-		this.speed.ToString ();
-*/
 		return parameters;
 	}
 
 	public void Load(ISea sea, string param) {
-		/*
+		
 		this.Sea = sea;
 
-		string [] parameters = param.Split (new char [] { '@' });
 
+		string [] parameters = param.Split (new char [] { '@' });
+		/*
 		int initLook = int.Parse (parameters [0]);
 
 		if (initLook == 0) {
@@ -57,11 +53,11 @@ public class Fish : AMCatchable, IMovable, ISaveFromEditor {
 		} else {
 			this.initialLook = InitialLook.Right;
 		}
+		*/
 
+		this.objectName = parameters [0];
 		this.weight = float.Parse (parameters [1], System.Globalization.NumberStyles.Any);
 		this.price = int.Parse (parameters [2]);
-		this.speed = float.Parse (parameters[3], System.Globalization.NumberStyles.Any);
-		*/
 	}
 
 }

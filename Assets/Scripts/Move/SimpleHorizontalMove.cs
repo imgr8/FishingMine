@@ -4,7 +4,7 @@ using System.Collections;
 public enum MoveDirection {Right, Left, Up, Down, Random};
 public enum InitialLook { Right, Left, Up, Down, None }
 
-public class SimpleHorizontalMove : MonoBehaviour, IMove {
+public class SimpleHorizontalMove : MonoBehaviour, IMove, ISaveComponent {
 
 	public MoveDirection moveDirection = MoveDirection.Right;
 	public InitialLook initLook = InitialLook.Right;
@@ -16,6 +16,10 @@ public class SimpleHorizontalMove : MonoBehaviour, IMove {
 
 		if (this.moveDirection == MoveDirection.Random) {
 			this.moveDirection = (Random.Range (0, 2) == 0) ? MoveDirection.Left : MoveDirection.Right;
+		}
+
+		if (this.initLook != InitialLook.Right || this.initLook != InitialLook.Left) {
+			this.initLook = InitialLook.None;
 		}
 
 		if (this.initLook == InitialLook.Right && this.moveDirection == MoveDirection.Left ||
@@ -63,7 +67,10 @@ public class SimpleHorizontalMove : MonoBehaviour, IMove {
 		else if (this.moveDirection == MoveDirection.Left && this.transform.position.x <= -this.sea.Width / 2)
 		{
 			this.moveDirection = MoveDirection.Right;
-			this.transform.Rotate(new Vector3(0, 180, 0));
+
+			if (this.initLook != InitialLook.None) {
+				this.transform.Rotate (new Vector3 (0, 180, 0));
+			}
 		}
 		else if (this.moveDirection == MoveDirection.Right && this.transform.position.x < this.sea.Width / 2)
 		{
@@ -72,7 +79,10 @@ public class SimpleHorizontalMove : MonoBehaviour, IMove {
 		else if (this.moveDirection == MoveDirection.Right && this.transform.position.x >= this.sea.Width / 2)
 		{
 			this.moveDirection = MoveDirection.Left;
-			this.transform.Rotate(new Vector3(0, 180, 0));
+
+			if (this.initLook != InitialLook.None) {
+				this.transform.Rotate (new Vector3 (0, 180, 0));
+			}
 		}
 	}
 
@@ -87,5 +97,28 @@ public class SimpleHorizontalMove : MonoBehaviour, IMove {
 		this.horizontalSpeed = this.savedHorizontalSpeed;
 	}
 
+	// Не использовать как разделитель | или @
+	public string Save() {
+		string parameters = "SimpleHorizontalMove\n";
 
+		switch (this.initLook) {
+			case InitialLook.Left:
+				parameters += "0";
+				break;
+			case InitialLook.Right:
+				parameters += "1";
+				break;
+			case InitialLook.None:
+				parameters += "2";
+				break;
+		}
+
+		parameters += "/" + this.horizontalSpeed.ToString ();
+
+		return parameters;
+	}
+
+	public void Load(string data) {
+		
+	}
 }

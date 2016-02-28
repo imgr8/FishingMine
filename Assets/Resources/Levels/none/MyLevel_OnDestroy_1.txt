@@ -1,4 +1,0 @@
-MyLevel_OnDestroy_1
-Prefabs/bomb|-0.1593589:-4.226546:0|0:0:0|1@1
-Prefabs/Fishes/Turtle|3.54689:-2.359276:0|0:0:0|2@6@100@0.75
-Prefabs/Fishes/Blue Fish|-1.828586:0.1587102:0|0:0:0|2@5@60@0.75

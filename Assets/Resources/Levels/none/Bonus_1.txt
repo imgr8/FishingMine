@@ -1,0 +1,11 @@
+MyLevel_Bonus_1
+<object>
+Prefabs/Fishes/Blue Fish|-2.495677:0.6704679:0|0:0:0
+<data>
+Fish@5@60
+<component>
+SimpleHorizontalMove
+1/1
+<\component>
+<\data>
+<\object>
