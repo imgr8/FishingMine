@@ -12,7 +12,7 @@ public class SimpleSea : MonoBehaviour, ISea
     public float minFishDeviation;
 
     public bool isUseDeviationOnMove = true; // для теста, проверить какой тип движения лучше
-
+    public float bottomHigh; //высота песчаного дна. Будет использоваться при создании водорослей и сундуков, что те были не на одном уровне, а по высоте дна
     public float width = 10.0f;
 
     public float Width
@@ -80,23 +80,24 @@ public class SimpleSea : MonoBehaviour, ISea
     int numOfSurprise = 0;
 
     public GameObject[] surprises;
-
+    public Sprite[] folliages;
     public GameObject bomb;
     public GameObject treasure;
     public GameObject folliage;
-    
+
     int necessaryCostOfFish = 0;
     int currentCostOfFish = 0;
 
     public void MakeLive(int? prm = null, object data = null)
     {
-		if (prm == null) {
-			return;
-		}
+        if (prm == null)
+        {
+            return;
+        }
 
-		int param = (int)prm;
+        int param = (int)prm;
 
-		necessaryCostOfFish = (10 * param * param + 125 * param) - (10 * (param - 1) * (param - 1) + 125 * (param - 1)) + 50; // FIX вместо чисел использовать переменные. Для более удобного контроля и лучшей читамости. Например baseCoefficient
+        necessaryCostOfFish = (10 * param * param + 125 * param) - (10 * (param - 1) * (param - 1) + 125 * (param - 1)) + 50; // FIX вместо чисел использовать переменные. Для более удобного контроля и лучшей читамости. Например baseCoefficient
 
         FishGenNew(param);
         StarGenNew(param);
@@ -107,7 +108,7 @@ public class SimpleSea : MonoBehaviour, ISea
     }
 
     HashSet<ICatchable> createdCatchableObjects = new HashSet<ICatchable>();
-	HashSet<IUncatchable> createdUncatchableObjects = new HashSet<IUncatchable>();
+    HashSet<IUncatchable> createdUncatchableObjects = new HashSet<IUncatchable>();
 
     void FishGen()
     {
@@ -132,7 +133,7 @@ public class SimpleSea : MonoBehaviour, ISea
             {
                 //this.createdCatchableObjects.Remove(obj);
                 //GameObject.Destroy(obj.GameObject);
-				this.DestroyObject(obj);
+                this.DestroyObject(obj);
             };
 
             newFish.SetActive(true);
@@ -160,7 +161,7 @@ public class SimpleSea : MonoBehaviour, ISea
             {
                 //this.createdCatchableObjects.Remove(obj);
                 //GameObject.Destroy(obj.GameObject);
-				this.DestroyObject(obj);
+                this.DestroyObject(obj);
             };
 
             newStar.SetActive(true);
@@ -207,7 +208,7 @@ public class SimpleSea : MonoBehaviour, ISea
             {
                 //this.createdCatchableObjects.Remove(obj);
                 //GameObject.Destroy(obj.GameObject);
-				this.DestroyObject(obj);
+                this.DestroyObject(obj);
             };
 
             newSurprise.SetActive(true);
@@ -229,7 +230,7 @@ public class SimpleSea : MonoBehaviour, ISea
 
             newFish.transform.position = new Vector3(
                 Random.Range(this.center.x - this.width / 2, this.center.x + this.width / 2),
-                Random.Range(this.center.y - this.depth / 2, this.center.y + this.depth / 2),
+                Random.Range(this.center.y - this.depth / 2 + 0.5f, this.center.y + this.depth / 2),
                 newFish.transform.position.z
             );
 
@@ -241,16 +242,16 @@ public class SimpleSea : MonoBehaviour, ISea
             newFish.GetComponent<Fish>().speed += levelNum / 15;
             currentCostOfFish += newFish.GetComponent<Fish>().Price;
 
-			createdCatchableObjects.Add(newCatchable);
+            createdCatchableObjects.Add(newCatchable);
 
             newCatchable.OnUsed += (ICatchable obj) =>
             {
                 //createdCatchableObjects.Remove(obj);
                 //GameObject.Destroy(obj.GameObject);
-				this.DestroyObject(obj);
+                this.DestroyObject(obj);
             };
         }
-      
+
     }
     void StarGenNew(int levelNum)
     {
@@ -260,7 +261,7 @@ public class SimpleSea : MonoBehaviour, ISea
 
             newStar.transform.position = new Vector3(
                 Random.Range(this.center.x - this.width / 2, this.center.x + this.width / 2),
-                Random.Range(this.center.y - this.depth / 4, this.center.y - this.depth / 2),
+                Random.Range(this.center.y - this.depth / 4 + 0.5f, this.center.y - this.depth / 2),
                 newStar.transform.position.z
             );
 
@@ -273,7 +274,7 @@ public class SimpleSea : MonoBehaviour, ISea
             {
                 //this.createdCatchableObjects.Remove(obj);
                 //GameObject.Destroy(obj.GameObject);
-				this.DestroyObject(obj);
+                this.DestroyObject(obj);
             };
 
 
@@ -287,7 +288,7 @@ public class SimpleSea : MonoBehaviour, ISea
 
             newBomb.transform.position = new Vector3(
                 Random.Range(this.center.x - this.width / 2, this.center.x + this.width / 2),
-                Random.Range(this.center.y - this.depth / 2, this.center.y + this.depth / 2),
+                Random.Range(this.center.y - this.depth / 2 + 1f, this.center.y + this.depth / 2),
                 newBomb.transform.position.z
             );
 
@@ -300,13 +301,13 @@ public class SimpleSea : MonoBehaviour, ISea
     }
     void SurpriceGenNew(int levelNum)
     {
-        for (int i = 0; i < 8 + Mathf.Floor(levelNum/5); i++)
+        for (int i = 0; i < 8 + Mathf.Floor(levelNum / 5); i++)
         {
             GameObject newSurprise = GameObject.Instantiate(this.surprises[Random.Range(0, this.numOfSurprise)]);
 
             newSurprise.transform.position = new Vector3(
                 Random.Range(this.center.x - this.width / 2, this.center.x + this.width / 2),
-                Random.Range(this.center.y - this.depth / 4, this.center.y ),//- this.depth / 2),
+                Random.Range(this.center.y - this.depth / 2, this.center.y),//- this.depth / 2),
                 newSurprise.transform.position.z
             );
 
@@ -319,12 +320,17 @@ public class SimpleSea : MonoBehaviour, ISea
             {
                 //this.createdCatchableObjects.Remove(obj);
                 //GameObject.Destroy(obj.GameObject);
-				this.DestroyObject(obj);
+                this.DestroyObject(obj);
             };
         }
     }
     void TreasureGen(int levelNum)
     {
+        float yPos1 = center.y - depth / 2;
+        float yPos2 = center.y - depth / 2 + bottomHigh / 2;
+        float yPos3 = center.y - depth / 2 + bottomHigh;
+        float yPos;
+
         int maxTreasureCount;
         if (levelNum < 7) maxTreasureCount = 1;
         else if (levelNum < 15) maxTreasureCount = 2;
@@ -332,11 +338,19 @@ public class SimpleSea : MonoBehaviour, ISea
 
         for (int i = 0; i < maxTreasureCount; i++)
         {
+            switch (Random.Range(0, 3))
+            {
+                case 0: yPos = yPos1; break;
+                case 1: yPos = yPos2; break;
+                case 2: yPos = yPos3; break;
+                default: yPos = 0; break;
+            }
+
             GameObject newTreasure = Instantiate(treasure);
 
             newTreasure.transform.position = new Vector3(
                 Random.Range(this.center.x - this.width / 2, this.center.x + this.width / 2),
-                center.y - depth / 2,
+                yPos,
                 newTreasure.transform.position.z
             );
 
@@ -351,22 +365,54 @@ public class SimpleSea : MonoBehaviour, ISea
             {
                 //createdCatchableObjects.Remove(obj);
                 //GameObject.Destroy(obj.GameObject);
-				this.DestroyObject(obj);
+                this.DestroyObject(obj);
             };
+
+            if (yPos == yPos1)
+                newTreasure.GetComponent<SpriteRenderer>().sortingOrder = 4;
+            if (yPos == yPos2)
+                newTreasure.GetComponent<SpriteRenderer>().sortingOrder = 2;
+            if (yPos == yPos3)
+                newTreasure.GetComponent<SpriteRenderer>().sortingOrder = 1; 
         }
     }
     void FolliageGen()
     {
-        for(int i=0; i< 7;i++)
+        float yPos1 = center.y - depth / 2;
+        float yPos2 = center.y - depth / 2 + bottomHigh / 2;
+        float yPos3 = center.y - depth / 2 + bottomHigh;
+        float yPos;
+        
+
+
+
+        for (int i = 0; i < 20; i++)
         {
+            switch (Random.Range(0, 3))
+            {
+                case 0: yPos = yPos1; break;
+                case 1: yPos = yPos2; break;
+                case 2: yPos = yPos3; break;
+                default: yPos = 0; break;
+            }
+
             GameObject newFolliage = Instantiate(folliage);
             newFolliage.transform.position = new Vector3(
                 Random.Range(this.center.x - this.width / 2, this.center.x + this.width / 2),
-                center.y - depth / 2,
+                yPos,
                 newFolliage.transform.position.z
             );
 
-			this.createdUncatchableObjects.Add(newFolliage.GetComponent<IUncatchable>());
+            this.createdUncatchableObjects.Add(newFolliage.GetComponent<IUncatchable>());
+
+            if (yPos == yPos1)
+                newFolliage.GetComponent<SpriteRenderer>().sortingOrder = 5; 
+            if (yPos == yPos2)
+                newFolliage.GetComponent<SpriteRenderer>().sortingOrder = 3; 
+            if (yPos == yPos3)
+                newFolliage.GetComponent<SpriteRenderer>().sortingOrder = 2;
+
+            newFolliage.GetComponent<SpriteRenderer>().sprite = folliages[Random.Range(0, folliages.Length)];
         }
     }
 
@@ -379,37 +425,39 @@ public class SimpleSea : MonoBehaviour, ISea
 
         this.createdCatchableObjects.Clear();
 
-		foreach (IUncatchable uncatchable in this.createdUncatchableObjects)
-		{
-			GameObject.Destroy(uncatchable.GameObject);
-		}
+        foreach (IUncatchable uncatchable in this.createdUncatchableObjects)
+        {
+            GameObject.Destroy(uncatchable.GameObject);
+        }
 
-		this.createdUncatchableObjects.Clear();
+        this.createdUncatchableObjects.Clear();
     }
 
-	public void ClearAllCatchable() {
-	
-		foreach (ICatchable catchable in this.createdCatchableObjects)
-		{
-			GameObject.Destroy(catchable.GameObject);
-		}
+    public void ClearAllCatchable()
+    {
 
-		this.createdCatchableObjects.Clear();
-	}
+        foreach (ICatchable catchable in this.createdCatchableObjects)
+        {
+            GameObject.Destroy(catchable.GameObject);
+        }
 
-	public void ClearAllUncatchable() {
-		foreach (IUncatchable uncatchable in this.createdUncatchableObjects)
-		{
-			GameObject.Destroy(uncatchable.GameObject);
-		}
+        this.createdCatchableObjects.Clear();
+    }
 
-		this.createdUncatchableObjects.Clear();
-	}
-		
+    public void ClearAllUncatchable()
+    {
+        foreach (IUncatchable uncatchable in this.createdUncatchableObjects)
+        {
+            GameObject.Destroy(uncatchable.GameObject);
+        }
+
+        this.createdUncatchableObjects.Clear();
+    }
+
     // Use this for initialization
     void Awake()
     {
-		this.center = this.transform.position;
+        this.center = this.transform.position;
 
         if (this.width == 0 || this.depth == 0)
         {
@@ -420,6 +468,7 @@ public class SimpleSea : MonoBehaviour, ISea
                 throw new UnityException("Unable to find out sea size");
             }
 
+           
             this.width = seaSizeCollider.bounds.size.x;
             this.depth = seaSizeCollider.bounds.size.y;
 
@@ -437,85 +486,96 @@ public class SimpleSea : MonoBehaviour, ISea
         {
             this.createdCatchableObjects.Remove(catchableObject);
 
-			if (this.onDestroyCatchableObject != null) {
-				this.onDestroyCatchableObject.Invoke (catchableObject);
-			}
+            if (this.onDestroyCatchableObject != null)
+            {
+                this.onDestroyCatchableObject.Invoke(catchableObject);
+            }
 
-			GameObject.Destroy(catchableObject.GameObject);
+            GameObject.Destroy(catchableObject.GameObject);
 
         }
     }
 
-	public void DestroyObject(IUncatchable uncatchableObject)
-	{
-		if (this.createdUncatchableObjects.Contains(uncatchableObject))
-		{
-			this.createdUncatchableObjects.Remove(uncatchableObject);
+    public void DestroyObject(IUncatchable uncatchableObject)
+    {
+        if (this.createdUncatchableObjects.Contains(uncatchableObject))
+        {
+            this.createdUncatchableObjects.Remove(uncatchableObject);
 
-			if (this.onDestroyUncatchableObject != null) {
-				this.onDestroyUncatchableObject.Invoke (uncatchableObject);
-			}
+            if (this.onDestroyUncatchableObject != null)
+            {
+                this.onDestroyUncatchableObject.Invoke(uncatchableObject);
+            }
 
-			GameObject.Destroy(uncatchableObject.GameObject);
-		}
-	}
+            GameObject.Destroy(uncatchableObject.GameObject);
+        }
+    }
 
-	public void AddObject (ICatchable catchableObject) {
-		if (!this.createdCatchableObjects.Contains(catchableObject))
-		{
-			this.createdCatchableObjects.Add(catchableObject);
+    public void AddObject(ICatchable catchableObject)
+    {
+        if (!this.createdCatchableObjects.Contains(catchableObject))
+        {
+            this.createdCatchableObjects.Add(catchableObject);
 
-			catchableObject.OnUsed += (ICatchable obj) =>
-			{
-				//this.createdCatchableObjects.Remove(obj);
-				//GameObject.Destroy(obj.GameObject);
-				this.DestroyObject(obj);
-			};
-		}
-	}
+            catchableObject.OnUsed += (ICatchable obj) =>
+            {
+                //this.createdCatchableObjects.Remove(obj);
+                //GameObject.Destroy(obj.GameObject);
+                this.DestroyObject(obj);
+            };
+        }
+    }
 
-	public void AddObject (IUncatchable uncatchableObject) {
-		if (!this.createdUncatchableObjects.Contains(uncatchableObject))
-		{
-			this.createdUncatchableObjects.Add(uncatchableObject);
-		}
-	}
+    public void AddObject(IUncatchable uncatchableObject)
+    {
+        if (!this.createdUncatchableObjects.Contains(uncatchableObject))
+        {
+            this.createdUncatchableObjects.Add(uncatchableObject);
+        }
+    }
 
-	public void AddObject (GameObject newGameObject) {
+    public void AddObject(GameObject newGameObject)
+    {
 
-		if (newGameObject.GetComponent<ICatchable>() == null && newGameObject.GetComponent<IUncatchable>() == null) {
-			return;
-		}
+        if (newGameObject.GetComponent<ICatchable>() == null && newGameObject.GetComponent<IUncatchable>() == null)
+        {
+            return;
+        }
 
-		ICatchable catchable = newGameObject.GetComponent<ICatchable> ();
+        ICatchable catchable = newGameObject.GetComponent<ICatchable>();
 
-		if (catchable != null) {
+        if (catchable != null)
+        {
 
-			if (!this.createdCatchableObjects.Contains (catchable)) {
-				this.createdCatchableObjects.Add (catchable);
+            if (!this.createdCatchableObjects.Contains(catchable))
+            {
+                this.createdCatchableObjects.Add(catchable);
 
-				catchable.OnUsed += (ICatchable obj) => {
-					//this.createdCatchableObjects.Remove (obj);
-					//GameObject.Destroy (obj.GameObject);
-					this.DestroyObject(obj);
-				};
+                catchable.OnUsed += (ICatchable obj) =>
+                {
+                    //this.createdCatchableObjects.Remove (obj);
+                    //GameObject.Destroy (obj.GameObject);
+                    this.DestroyObject(obj);
+                };
 
-			}
+            }
 
-			return;
-		}
+            return;
+        }
 
-		IUncatchable uncatchable = newGameObject.GetComponent<IUncatchable> ();
+        IUncatchable uncatchable = newGameObject.GetComponent<IUncatchable>();
 
-		if (uncatchable != null) {
+        if (uncatchable != null)
+        {
 
-			if (!this.createdUncatchableObjects.Contains (uncatchable)) {
-				this.createdUncatchableObjects.Add (uncatchable);
-			}
+            if (!this.createdUncatchableObjects.Contains(uncatchable))
+            {
+                this.createdUncatchableObjects.Add(uncatchable);
+            }
 
-			return;
-		}
-	}
+            return;
+        }
+    }
 
     void Start()
     {
@@ -534,69 +594,85 @@ public class SimpleSea : MonoBehaviour, ISea
         return copy;
     }
 
-	public HashSet<IUncatchable> GetAllUncatchableObjectInSea()
-	{
-		HashSet<IUncatchable> copy = new HashSet<IUncatchable>();
+    public HashSet<IUncatchable> GetAllUncatchableObjectInSea()
+    {
+        HashSet<IUncatchable> copy = new HashSet<IUncatchable>();
 
-		foreach (IUncatchable uncatchable in this.createdUncatchableObjects)
-		{
-			copy.Add(uncatchable);
-		}
+        foreach (IUncatchable uncatchable in this.createdUncatchableObjects)
+        {
+            copy.Add(uncatchable);
+        }
 
-		return copy;
-	}
+        return copy;
+    }
 
-	public int CountOfCatchableObjects {
-		get {
-			return this.createdCatchableObjects.Count;
-		}
-	}
+    public int CountOfCatchableObjects
+    {
+        get
+        {
+            return this.createdCatchableObjects.Count;
+        }
+    }
 
-	public int CountOfUncatchableObjects {
-		get {
-			return this.createdUncatchableObjects.Count;
-		}
-	}
+    public int CountOfUncatchableObjects
+    {
+        get
+        {
+            return this.createdUncatchableObjects.Count;
+        }
+    }
 
-	public int CountOfAllObjects {
-		get {
-			return (this.createdCatchableObjects.Count + this.createdUncatchableObjects.Count);
-		}
-	}
+    public int CountOfAllObjects
+    {
+        get
+        {
+            return (this.createdCatchableObjects.Count + this.createdUncatchableObjects.Count);
+        }
+    }
 
-	event System.Action<ICatchable> onDestroyCatchableObject;
+    event System.Action<ICatchable> onDestroyCatchableObject;
 
-	public event System.Action<ICatchable> OnDestroyCatchableObject {	// Событие происходит, когда уничтожается ICatchable объект
-		add {
-			this.onDestroyCatchableObject += value;
-		}
+    public event System.Action<ICatchable> OnDestroyCatchableObject
+    {	// Событие происходит, когда уничтожается ICatchable объект
+        add
+        {
+            this.onDestroyCatchableObject += value;
+        }
 
-		remove {
-			this.onDestroyCatchableObject -= value;
-		}
-	}
+        remove
+        {
+            this.onDestroyCatchableObject -= value;
+        }
+    }
 
-	event System.Action<IUncatchable> onDestroyUncatchableObject;
+    event System.Action<IUncatchable> onDestroyUncatchableObject;
 
-	public event System.Action<IUncatchable> OnDestroyUncatchableObject {	// Событие происходит, когда уничтожается Iuncatchable объект
-		add {
-			this.onDestroyUncatchableObject += value;
-		}
+    public event System.Action<IUncatchable> OnDestroyUncatchableObject
+    {	// Событие происходит, когда уничтожается Iuncatchable объект
+        add
+        {
+            this.onDestroyUncatchableObject += value;
+        }
 
-		remove {
-			this.onDestroyUncatchableObject -= value;
-		}
-	}
+        remove
+        {
+            this.onDestroyUncatchableObject -= value;
+        }
+    }
 
-	public void OnEveryCatchableObject (System.Action<ICatchable> foo) {	// В этой функции нельзя удалять!
-		foreach (ICatchable catchable in this.createdCatchableObjects) {
-			foo (catchable);
-		}
-	}
+    public void OnEveryCatchableObject(System.Action<ICatchable> foo)
+    {	// В этой функции нельзя удалять!
+        foreach (ICatchable catchable in this.createdCatchableObjects)
+        {
+            foo(catchable);
+        }
+    }
 
-	public void OnEveryUncatchableObject (System.Action<IUncatchable> foo) {	// В этой функции нельзя удалять!
-		foreach (IUncatchable uncatchable in this.createdUncatchableObjects) {
-			foo (uncatchable);
-		}
-	}
+    public void OnEveryUncatchableObject(System.Action<IUncatchable> foo)
+    {	// В этой функции нельзя удалять!
+        foreach (IUncatchable uncatchable in this.createdUncatchableObjects)
+        {
+            foo(uncatchable);
+        }
+    }
 }

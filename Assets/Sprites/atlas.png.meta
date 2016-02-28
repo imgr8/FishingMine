@@ -1,0 +1,2441 @@
+fileFormatVersion: 2
+guid: bd5ce948878d75e4bb500dc750f2575a
+timeCreated: 1456628420
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: atlas_0
+    21300002: atlas_1
+    21300004: atlas_2
+    21300006: atlas_3
+    21300008: atlas_4
+    21300010: atlas_5
+    21300012: atlas_6
+    21300014: atlas_7
+    21300016: atlas_8
+    21300018: atlas_9
+    21300020: atlas_10
+    21300022: atlas_11
+    21300024: atlas_12
+    21300026: atlas_13
+    21300028: atlas_14
+    21300030: atlas_15
+    21300032: atlas_16
+    21300034: atlas_17
+    21300036: atlas_18
+    21300038: atlas_19
+    21300040: atlas_20
+    21300042: atlas_21
+    21300044: atlas_22
+    21300046: atlas_23
+    21300048: atlas_24
+    21300050: atlas_25
+    21300052: atlas_26
+    21300054: atlas_27
+    21300056: atlas_28
+    21300058: atlas_29
+    21300060: atlas_30
+    21300062: atlas_31
+    21300064: atlas_32
+    21300066: atlas_33
+    21300068: atlas_34
+    21300070: atlas_35
+    21300072: atlas_36
+    21300074: atlas_37
+    21300076: atlas_38
+    21300078: atlas_39
+    21300080: atlas_40
+    21300082: atlas_41
+    21300084: atlas_42
+    21300086: atlas_43
+    21300088: atlas_44
+    21300090: atlas_45
+    21300092: atlas_46
+    21300094: atlas_47
+    21300096: atlas_48
+    21300098: atlas_49
+    21300100: atlas_50
+    21300102: atlas_51
+    21300104: atlas_52
+    21300106: atlas_53
+    21300108: atlas_54
+    21300110: atlas_55
+    21300112: atlas_56
+    21300114: atlas_57
+    21300116: atlas_58
+    21300118: atlas_59
+    21300120: atlas_60
+    21300122: atlas_61
+    21300124: atlas_62
+    21300126: atlas_63
+    21300128: atlas_64
+    21300130: atlas_65
+    21300132: atlas_66
+    21300134: atlas_67
+    21300136: atlas_68
+    21300138: atlas_69
+    21300140: atlas_70
+    21300142: atlas_71
+    21300144: atlas_72
+    21300146: atlas_73
+    21300148: atlas_74
+    21300150: atlas_75
+    21300152: atlas_76
+    21300154: atlas_77
+    21300156: atlas_78
+    21300158: atlas_79
+    21300160: atlas_80
+    21300162: atlas_81
+    21300164: atlas_82
+    21300166: atlas_83
+    21300168: atlas_84
+    21300170: atlas_85
+    21300172: atlas_86
+    21300174: atlas_87
+    21300176: atlas_88
+    21300178: atlas_89
+    21300180: atlas_90
+    21300182: atlas_91
+    21300184: atlas_92
+    21300186: atlas_93
+    21300188: atlas_94
+    21300190: atlas_95
+    21300192: atlas_96
+    21300194: atlas_97
+    21300196: atlas_98
+    21300198: atlas_99
+    21300200: atlas_100
+    21300202: atlas_101
+    21300204: atlas_102
+    21300206: atlas_103
+    21300208: atlas_104
+    21300210: atlas_105
+    21300212: atlas_106
+    21300214: atlas_107
+    21300216: atlas_108
+    21300218: atlas_109
+    21300220: atlas_110
+    21300222: atlas_111
+    21300224: atlas_112
+    21300226: atlas_113
+    21300228: atlas_114
+    21300230: atlas_115
+    21300232: atlas_116
+    21300234: atlas_117
+    21300236: atlas_118
+    21300238: atlas_119
+    21300240: atlas_120
+    21300242: atlas_121
+    21300244: foliage 1
+    21300246: foliage 2
+    21300248: foliage 3
+    21300250: atlas_125
+    21300252: foliage 4
+    21300254: foliage 5
+    21300256: foliage 6
+    21300258: foliage 7
+    21300260: foliage 8
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 85
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: atlas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1895
+        width: 577
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 1780
+        width: 115
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 57.5, y: 49.5}
+        - {x: 51.5, y: 53.5}
+        - {x: -32.5, y: 53.5}
+        - {x: -57.5, y: 29.5}
+        - {x: -57.5, y: -19.5}
+        - {x: -41.5, y: -53.5}
+        - {x: 37.5, y: -53.5}
+        - {x: 57.5, y: -32.5}
+        - {x: 56.5, y: -24.5}
+        - {x: 57.5, y: -23.5}
+    - name: atlas_2
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1769
+        width: 129
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29.5, y: 43}
+        - {x: -35.5, y: 43}
+        - {x: -64.5, y: 13}
+        - {x: -64.5, y: -31}
+        - {x: -34.5, y: -43}
+        - {x: 45.5, y: -43}
+        - {x: 64.5, y: -29}
+        - {x: 64.5, y: 21}
+        - {x: 59.5, y: 32}
+    - name: atlas_3
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1783
+        width: 129
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 57.5, y: 18.5}
+        - {x: 49.5, y: 19.5}
+        - {x: 35.5, y: 9.5}
+        - {x: 41.5, y: 14.5}
+        - {x: 50.5, y: 20.5}
+        - {x: 43.5, y: 43.5}
+        - {x: -40.5, y: 43.5}
+        - {x: -64.5, y: 6.5}
+        - {x: -64.5, y: -19.5}
+        - {x: -30.5, y: -43.5}
+        - {x: 26.5, y: -43.5}
+        - {x: 64.5, y: -25.5}
+        - {x: 64.5, y: 15.5}
+    - name: atlas_4
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 1635
+        width: 115
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 49.5, y: -25.5}
+        - {x: 57.5, y: 5.5}
+        - {x: 57.5, y: 53.5}
+        - {x: -46.5, y: 53.5}
+        - {x: -57.5, y: 51.5}
+        - {x: -57.5, y: -45.5}
+        - {x: -32.5, y: -51.5}
+        - {x: -29.5, y: -48.5}
+        - {x: -29.5, y: -45.5}
+        - {x: -27.5, y: -49.5}
+        - {x: -23.5, y: -53.5}
+        - {x: -13.5, y: -53.5}
+        - {x: 40.5, y: -46.5}
+        - {x: 57.5, y: -30.5}
+        - {x: 52.5, y: -24.5}
+      - - {x: 42.5, y: 12.5}
+        - {x: 24.5, y: 2.5}
+        - {x: 24.5, y: -22.5}
+        - {x: 56.5, y: -22.5}
+        - {x: 56.5, y: 12.5}
+      - - {x: 50.5, y: 25.5}
+        - {x: 50.5, y: 16.5}
+        - {x: 54.5, y: 11.5}
+        - {x: 57.5, y: 11.5}
+        - {x: 57.5, y: 30.5}
+        - {x: 53.5, y: 29.5}
+      - - {x: -57.5, y: 48.5}
+        - {x: -57.5, y: 34.5}
+        - {x: -55.5, y: 33.5}
+        - {x: -48.5, y: 33.5}
+        - {x: -47.5, y: 35.5}
+        - {x: -47.5, y: 47.5}
+        - {x: -49.5, y: 48.5}
+    - name: atlas_5
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 1727
+        width: 31
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_6
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1667
+        width: 108
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -54, y: -30.5}
+        - {x: -54, y: -42.5}
+        - {x: -48, y: -42.5}
+        - {x: -43, y: -39.5}
+        - {x: -43, y: -32.5}
+        - {x: -46, y: -28.5}
+        - {x: -51, y: -28.5}
+      - - {x: 39, y: 42.5}
+        - {x: -39, y: 42.5}
+        - {x: -50, y: 40.5}
+        - {x: -54, y: 32.5}
+        - {x: -54, y: -21.5}
+        - {x: -31, y: -42.5}
+        - {x: 32, y: -42.5}
+        - {x: 54, y: -17.5}
+        - {x: 54, y: 11.5}
+        - {x: 47, y: 29.5}
+      - - {x: 43, y: 27.5}
+        - {x: 43, y: 16.5}
+        - {x: 49, y: 11.5}
+        - {x: 54, y: 11.5}
+        - {x: 54, y: 32.5}
+        - {x: 46, y: 31.5}
+      - - {x: -36, y: 36.5}
+        - {x: -49, y: 36.5}
+        - {x: -52, y: 34.5}
+        - {x: -54, y: 33.5}
+        - {x: -54, y: 16.5}
+        - {x: -46, y: 16.5}
+        - {x: -40, y: 17.5}
+        - {x: -35, y: 30.5}
+        - {x: -35, y: 35.5}
+    - name: atlas_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 1718
+        width: 33
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_8
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1659
+        width: 110
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -48, y: -32}
+        - {x: -55, y: -38}
+        - {x: -55, y: -43}
+        - {x: -31, y: -43}
+        - {x: -31, y: -34}
+        - {x: -36, y: -32}
+      - - {x: -28, y: 43}
+        - {x: -55, y: 15}
+        - {x: -55, y: -37}
+        - {x: -37, y: -43}
+        - {x: 55, y: -43}
+        - {x: 55, y: 43}
+      - - {x: 48, y: 3}
+        - {x: 47, y: 0}
+        - {x: 47, y: -7}
+        - {x: 48, y: -10}
+        - {x: 54, y: -15}
+        - {x: 55, y: -15}
+        - {x: 55, y: 8}
+        - {x: 54, y: 8}
+      - - {x: -53, y: 33}
+        - {x: -55, y: 33}
+        - {x: -55, y: 16}
+        - {x: -51, y: 16}
+        - {x: -47, y: 19}
+        - {x: -47, y: 27}
+        - {x: -49, y: 32}
+      - - {x: -46, y: 43}
+        - {x: -47, y: 41}
+        - {x: -47, y: 34}
+        - {x: -45, y: 31}
+        - {x: -33, y: 31}
+        - {x: -31, y: 34}
+        - {x: -31, y: 43}
+    - name: atlas_9
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 1735
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_10
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 1724
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_11
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 1720
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_12
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1703
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_13
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1689
+        width: 23
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_14
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 1712
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_15
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 1677
+        width: 35
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.5, y: -22.5}
+        - {x: -12.5, y: -22.5}
+        - {x: -12.5, y: -20.5}
+        - {x: -16.5, y: -16.5}
+        - {x: -17.5, y: -16.5}
+      - - {x: -5.5, y: 22.5}
+        - {x: -17.5, y: 6.5}
+        - {x: -17.5, y: -8.5}
+        - {x: -2.5, y: -22.5}
+        - {x: 12.5, y: -22.5}
+        - {x: 17.5, y: -15.5}
+        - {x: 17.5, y: 15.5}
+        - {x: 13.5, y: 22.5}
+      - - {x: -17.5, y: 22.5}
+        - {x: -17.5, y: 18.5}
+        - {x: -14.5, y: 18.5}
+        - {x: -11.5, y: 21.5}
+        - {x: -11.5, y: 22.5}
+    - name: atlas_16
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 1698
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_17
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 1682
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_18
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 1668
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_19
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1651
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_20
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 1534
+        width: 137
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -45.5, y: 36.5}
+        - {x: -68.5, y: 22.5}
+        - {x: -68.5, y: -36.5}
+        - {x: 68.5, y: -36.5}
+        - {x: 68.5, y: 28.5}
+        - {x: 26.5, y: 36.5}
+    - name: atlas_21
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 1536
+        width: 197
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -85.5, y: 48.5}
+        - {x: -90.5, y: 47.5}
+        - {x: -98.5, y: 16.5}
+        - {x: -98.5, y: -23.5}
+        - {x: -60.5, y: -44.5}
+        - {x: -53.5, y: -48.5}
+        - {x: 29.5, y: -48.5}
+        - {x: 36.5, y: -47.5}
+        - {x: 98.5, y: -3.5}
+        - {x: 98.5, y: 27.5}
+        - {x: 92.5, y: 48.5}
+    - name: atlas_22
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 1519
+        width: 74
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21, y: 52}
+        - {x: -33, y: 52}
+        - {x: -37, y: 42}
+        - {x: -37, y: -2}
+        - {x: -31, y: -12}
+        - {x: -19, y: -23}
+        - {x: -11, y: -26}
+        - {x: -17, y: -25}
+        - {x: -22, y: -30}
+        - {x: -25, y: -46}
+        - {x: -18, y: -52}
+        - {x: 9, y: -52}
+        - {x: 37, y: -26}
+        - {x: 37, y: 18}
+        - {x: 28, y: 50}
+    - name: atlas_23
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1491
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_24
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 1434
+        width: 106
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 36.5}
+        - {x: -39, y: 34.5}
+        - {x: -53, y: 12.5}
+        - {x: -53, y: -8.5}
+        - {x: -20, y: -36.5}
+        - {x: 45, y: -36.5}
+        - {x: 53, y: -19.5}
+        - {x: 53, y: 36.5}
+      - - {x: 49, y: -22.5}
+        - {x: 44, y: -30.5}
+        - {x: 44, y: -36.5}
+        - {x: 53, y: -36.5}
+        - {x: 53, y: -22.5}
+      - - {x: -52, y: 36.5}
+        - {x: -53, y: 34.5}
+        - {x: -53, y: 20.5}
+        - {x: -51, y: 18.5}
+        - {x: -43, y: 18.5}
+        - {x: -39, y: 23.5}
+        - {x: -39, y: 32.5}
+        - {x: -45, y: 36.5}
+      - - {x: -39, y: 36.5}
+        - {x: -39, y: 34.5}
+        - {x: -37, y: 30.5}
+        - {x: -32, y: 28.5}
+        - {x: -26, y: 29.5}
+        - {x: -23, y: 32.5}
+        - {x: -22, y: 36.5}
+    - name: atlas_25
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 1501
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_26
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 1491
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_27
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 1429
+        width: 167
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20.5, y: 18}
+        - {x: 20.5, y: 43}
+        - {x: 10.5, y: 43}
+        - {x: 0.5, y: 38}
+        - {x: -6.5, y: 33}
+        - {x: -65.5, y: 27}
+        - {x: -83.5, y: 8}
+        - {x: -83.5, y: -25}
+        - {x: -72.5, y: -43}
+        - {x: 52.5, y: -43}
+        - {x: 83.5, y: -27}
+        - {x: 83.5, y: 28}
+        - {x: 82.5, y: 28}
+        - {x: 65.5, y: 33}
+        - {x: 25.5, y: 22}
+      - - {x: -83.5, y: 40}
+        - {x: -83.5, y: 18}
+        - {x: -76.5, y: 18}
+        - {x: -72.5, y: 24}
+        - {x: -72.5, y: 34}
+        - {x: -78.5, y: 40}
+    - name: atlas_28
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1477
+        width: 36
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 21}
+        - {x: -18, y: -16}
+        - {x: -15, y: -21}
+        - {x: 18, y: -21}
+        - {x: 18, y: 10}
+        - {x: 11, y: 21}
+    - name: atlas_29
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 1406
+        width: 58
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 52.5}
+        - {x: -29, y: 48.5}
+        - {x: -29, y: -18.5}
+        - {x: -10, y: -24.5}
+        - {x: -4, y: -26.5}
+        - {x: -10, y: -25.5}
+        - {x: -17, y: -33.5}
+        - {x: -15, y: -52.5}
+        - {x: 23, y: -52.5}
+        - {x: 29, y: -43.5}
+        - {x: 29, y: 48.5}
+        - {x: 22, y: 52.5}
+    - name: atlas_30
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 1495
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_31
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 1457
+        width: 39
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 21}
+        - {x: -19.5, y: -12}
+        - {x: -9.5, y: -21}
+        - {x: 15.5, y: -21}
+        - {x: 19.5, y: -18}
+        - {x: 19.5, y: 21}
+    - name: atlas_32
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 1464
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_33
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 1478
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_34
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 1445
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_35
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 1460
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_36
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 1423
+        width: 28
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_37
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 1397
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_38
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 1295
+        width: 223
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -111.5, y: 51.5}
+        - {x: -111.5, y: -17.5}
+        - {x: -72.5, y: -51.5}
+        - {x: 47.5, y: -51.5}
+        - {x: 108.5, y: -15.5}
+        - {x: 111.5, y: -9.5}
+        - {x: 111.5, y: 5.5}
+        - {x: 80.5, y: 51.5}
+    - name: atlas_39
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 1355
+        width: 42
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 20.5}
+        - {x: -21, y: 14.5}
+        - {x: -21, y: -14.5}
+        - {x: -14, y: -20.5}
+        - {x: 17, y: -20.5}
+        - {x: 21, y: -15.5}
+        - {x: 21, y: 12.5}
+        - {x: 18, y: 20.5}
+    - name: atlas_40
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 1303
+        width: 182
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22, y: -42.5}
+        - {x: 20, y: -45.5}
+        - {x: 19, y: -50.5}
+        - {x: 57, y: -50.5}
+        - {x: 82, y: -44.5}
+        - {x: 91, y: -36.5}
+        - {x: 91, y: 7.5}
+        - {x: 81, y: 33.5}
+        - {x: 73, y: 50.5}
+        - {x: -91, y: 50.5}
+        - {x: -91, y: -35.5}
+        - {x: -53, y: -50.5}
+        - {x: 17, y: -50.5}
+        - {x: 21, y: -42.5}
+        - {x: 26, y: -41.5}
+    - name: atlas_41
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 1293
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_42
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1277
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_43
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 1214
+        width: 104
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -52, y: 30.5}
+        - {x: -52, y: -27.5}
+        - {x: -40, y: -30.5}
+        - {x: 48, y: -30.5}
+        - {x: 52, y: -24.5}
+        - {x: 52, y: -0.5}
+        - {x: 30, y: 30.5}
+    - name: atlas_44
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 1220
+        width: 119
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30.5, y: 27}
+        - {x: -59.5, y: 1}
+        - {x: -59.5, y: -12}
+        - {x: -35.5, y: -27}
+        - {x: 52.5, y: -27}
+        - {x: 59.5, y: -19}
+        - {x: 59.5, y: 6}
+        - {x: 31.5, y: 27}
+    - name: atlas_45
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 1262
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_46
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 1244
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_47
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 1154
+        width: 185
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19.5, y: 59}
+        - {x: 10.5, y: 49}
+        - {x: -8.5, y: 59}
+        - {x: -46.5, y: 59}
+        - {x: -92.5, y: -3}
+        - {x: -92.5, y: -47}
+        - {x: -80.5, y: -59}
+        - {x: -27.5, y: -59}
+        - {x: 92.5, y: -27}
+        - {x: 92.5, y: 2}
+        - {x: 50.5, y: 59}
+      - - {x: -54.5, y: -59}
+        - {x: -55.5, y: -56}
+        - {x: -62.5, y: -56}
+        - {x: -63.5, y: -59}
+      - - {x: -32.5, y: -41}
+        - {x: -40.5, y: -44}
+        - {x: -40.5, y: -59}
+        - {x: -7.5, y: -59}
+        - {x: -7.5, y: -52}
+        - {x: -15.5, y: -41}
+      - - {x: -92.5, y: 26}
+        - {x: -92.5, y: 6}
+        - {x: -90.5, y: 6}
+        - {x: -85.5, y: 12}
+        - {x: -85.5, y: 19}
+        - {x: -89.5, y: 26}
+      - - {x: 41.5, y: 50}
+        - {x: 40.5, y: 46}
+        - {x: 40.5, y: 29}
+        - {x: 45.5, y: 23}
+        - {x: 57.5, y: 23}
+        - {x: 63.5, y: 27}
+        - {x: 63.5, y: 43}
+        - {x: 55.5, y: 50}
+      - - {x: 89.5, y: 30}
+        - {x: 91.5, y: 28}
+        - {x: 92.5, y: 28}
+        - {x: 92.5, y: 42}
+        - {x: 89.5, y: 41}
+      - - {x: -92.5, y: 59}
+        - {x: -92.5, y: 29}
+        - {x: -80.5, y: 29}
+        - {x: -74.5, y: 31}
+        - {x: -74.5, y: 48}
+        - {x: -78.5, y: 59}
+      - - {x: -38.5, y: 56}
+        - {x: -41.5, y: 55}
+        - {x: -39.5, y: 56}
+        - {x: -37.5, y: 58}
+        - {x: -37.5, y: 59}
+        - {x: -58.5, y: 59}
+        - {x: -58.5, y: 43}
+        - {x: -53.5, y: 42}
+        - {x: -38.5, y: 42}
+        - {x: -36.5, y: 47}
+        - {x: -36.5, y: 54}
+      - - {x: 6.5, y: 49}
+        - {x: 13.5, y: 52}
+        - {x: 13.5, y: 59}
+        - {x: -8.5, y: 59}
+        - {x: -9.5, y: 54}
+        - {x: -9.5, y: 46}
+        - {x: -3.5, y: 42}
+        - {x: 3.5, y: 42}
+        - {x: 8.5, y: 46}
+        - {x: 7.5, y: 49}
+        - {x: 4.5, y: 49}
+    - name: atlas_48
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 1263
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_49
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 1263
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_50
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 1236
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_51
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 1229
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_52
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 1232
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_53
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 1220
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_54
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 1238
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_55
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 1219
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_56
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 1202
+        width: 15
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_57
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 1204
+        width: 36
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_58
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 1139
+        width: 36
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 35}
+        - {x: -18, y: 14}
+        - {x: -18, y: -16}
+        - {x: 0, y: -35}
+        - {x: 18, y: -35}
+        - {x: 18, y: 35}
+    - name: atlas_59
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 1147
+        width: 31
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_60
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 1178
+        width: 109
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.5, y: 16.5}
+        - {x: -54.5, y: 12.5}
+        - {x: -54.5, y: 2.5}
+        - {x: -30.5, y: -16.5}
+        - {x: 36.5, y: -16.5}
+        - {x: 54.5, y: -7.5}
+        - {x: 54.5, y: 10.5}
+        - {x: 51.5, y: 16.5}
+    - name: atlas_61
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 1148
+        width: 51
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_62
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 1156
+        width: 46
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_63
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 1133
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_64
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 1138
+        width: 27
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_65
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 1006
+        width: 90
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 49}
+        - {x: -45, y: 22}
+        - {x: -45, y: -26}
+        - {x: -43, y: -31}
+        - {x: -14, y: -49}
+        - {x: 28, y: -49}
+        - {x: 45, y: -40}
+        - {x: 45, y: 39}
+        - {x: 37, y: 49}
+    - name: atlas_66
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 1033
+        width: 15
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_67
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 999
+        width: 140
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56, y: -55.5}
+        - {x: -61, y: -59.5}
+        - {x: -61, y: -60.5}
+        - {x: -36, y: -60.5}
+        - {x: -36, y: -56.5}
+        - {x: -40, y: -55.5}
+      - - {x: 20, y: -47.5}
+        - {x: 26, y: -48.5}
+        - {x: 34, y: -47.5}
+        - {x: 45, y: -42.5}
+        - {x: 70, y: -25.5}
+        - {x: 70, y: 27.5}
+        - {x: -16, y: 60.5}
+        - {x: -61, y: 60.5}
+        - {x: -66, y: 54.5}
+        - {x: -70, y: 40.5}
+        - {x: -70, y: 1.5}
+        - {x: -58, y: -34.5}
+        - {x: -7, y: -60.5}
+        - {x: 37, y: -60.5}
+        - {x: 39, y: -55.5}
+        - {x: 33, y: -48.5}
+        - {x: 28, y: -48.5}
+    - name: atlas_68
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 1012
+        width: 139
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.5, y: 47.5}
+        - {x: -24.5, y: 33.5}
+        - {x: -69.5, y: -4.5}
+        - {x: -69.5, y: -27.5}
+        - {x: -18.5, y: -47.5}
+        - {x: 63.5, y: -47.5}
+        - {x: 69.5, y: -30.5}
+        - {x: 69.5, y: 39.5}
+        - {x: 60.5, y: 47.5}
+    - name: atlas_69
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 962
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_70
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 973
+        width: 57
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_71
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 942
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 17}
+        - {x: -16, y: 13}
+        - {x: -16, y: -15}
+        - {x: -12, y: -17}
+        - {x: 16, y: -17}
+        - {x: 16, y: 17}
+    - name: atlas_72
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 881
+        width: 117
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -49.5, y: -24.5}
+        - {x: -50.5, y: -29.5}
+        - {x: -50.5, y: -37.5}
+        - {x: -39.5, y: -47.5}
+        - {x: -25.5, y: -47.5}
+        - {x: -23.5, y: -41.5}
+        - {x: -23.5, y: -35.5}
+        - {x: -38.5, y: -24.5}
+      - - {x: 5.5, y: 47.5}
+        - {x: -58.5, y: 2.5}
+        - {x: -58.5, y: -17.5}
+        - {x: 15.5, y: -47.5}
+        - {x: 58.5, y: -47.5}
+        - {x: 58.5, y: 47.5}
+      - - {x: -48.5, y: 34.5}
+        - {x: -51.5, y: 31.5}
+        - {x: -52.5, y: 23.5}
+        - {x: -52.5, y: 17.5}
+        - {x: -50.5, y: 14.5}
+        - {x: -40.5, y: 14.5}
+        - {x: -35.5, y: 16.5}
+        - {x: -35.5, y: 28.5}
+        - {x: -38.5, y: 34.5}
+    - name: atlas_73
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 955
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_74
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 873
+        width: 90
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 49.5}
+        - {x: -27, y: 47.5}
+        - {x: -45, y: 29.5}
+        - {x: -45, y: -22.5}
+        - {x: -32, y: -49.5}
+        - {x: 33, y: -49.5}
+        - {x: 45, y: -43.5}
+        - {x: 45, y: 39.5}
+        - {x: 38, y: 49.5}
+      - - {x: -45, y: -22.5}
+        - {x: -45, y: -35.5}
+        - {x: -44, y: -35.5}
+        - {x: -41, y: -32.5}
+        - {x: -41, y: -25.5}
+        - {x: -44, y: -22.5}
+    - name: atlas_75
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 893
+        width: 89
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -44.5, y: 39.5}
+        - {x: -44.5, y: -29.5}
+        - {x: -40.5, y: -38.5}
+        - {x: -37.5, y: -39.5}
+        - {x: 25.5, y: -39.5}
+        - {x: 44.5, y: -30.5}
+        - {x: 44.5, y: 39.5}
+    - name: atlas_76
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 919
+        width: 28
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_77
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 910
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_78
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 923
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_79
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 903
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_80
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 897
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_81
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 882
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_82
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 891
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_83
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 887
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_84
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 868
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_85
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 872
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_86
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 853
+        width: 47
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_87
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 865
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_88
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 725
+        width: 73
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.5, y: -20}
+        - {x: -8.5, y: -20}
+        - {x: 1.5, y: -20}
+        - {x: 27.5, y: -15}
+        - {x: 36.5, y: 4}
+        - {x: 36.5, y: 28}
+        - {x: 4.5, y: 54}
+        - {x: -26.5, y: 54}
+        - {x: -36.5, y: 17}
+        - {x: -36.5, y: -38}
+        - {x: -19.5, y: -54}
+        - {x: -0.5, y: -54}
+        - {x: 10.5, y: -40}
+        - {x: 11.5, y: -36}
+        - {x: 1.5, y: -22}
+    - name: atlas_89
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 650
+        width: 224
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -61, y: 86.5}
+        - {x: -71, y: 80.5}
+        - {x: -81, y: 65.5}
+        - {x: -76, y: 65.5}
+        - {x: -69, y: 70.5}
+        - {x: -72, y: 68.5}
+        - {x: -80, y: 61.5}
+        - {x: -91, y: 57.5}
+        - {x: -112, y: 9.5}
+        - {x: -112, y: -73.5}
+        - {x: -103, y: -86.5}
+        - {x: 61, y: -86.5}
+        - {x: 112, y: -61.5}
+        - {x: 112, y: 69.5}
+        - {x: 80, y: 86.5}
+    - name: atlas_90
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 749
+        width: 117
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 58.5, y: -36}
+        - {x: 58.5, y: 36}
+        - {x: -55.5, y: 36}
+        - {x: -58.5, y: 35}
+        - {x: -58.5, y: -33}
+        - {x: -40.5, y: -36}
+        - {x: 42.5, y: -36}
+        - {x: 40.5, y: -29}
+        - {x: 39.5, y: -26}
+        - {x: 56.5, y: -36}
+    - name: atlas_91
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 687
+        width: 38
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_92
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 694
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_93
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 691
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_94
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 696
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_95
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 652
+        width: 96
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 36}
+        - {x: -48, y: 32}
+        - {x: -48, y: -24}
+        - {x: -22, y: -36}
+        - {x: 41, y: -36}
+        - {x: 48, y: -34}
+        - {x: 48, y: 36}
+    - name: atlas_96
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 665
+        width: 32
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 26.5}
+        - {x: -16, y: 16.5}
+        - {x: -16, y: -20.5}
+        - {x: 0, y: -26.5}
+        - {x: 16, y: -26.5}
+        - {x: 16, y: 24.5}
+        - {x: 13, y: 26.5}
+    - name: atlas_97
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 648
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -16, y: 9}
+        - {x: -16, y: -13}
+        - {x: -13, y: -16}
+        - {x: 4, y: -16}
+        - {x: 16, y: -5}
+        - {x: 16, y: 16}
+    - name: atlas_98
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 656
+        width: 53
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.5, y: 16}
+        - {x: -24.5, y: 16}
+        - {x: -26.5, y: 13}
+        - {x: -26.5, y: -13}
+        - {x: -18.5, y: -16}
+        - {x: 19.5, y: -16}
+        - {x: 26.5, y: -3}
+        - {x: 26.5, y: 10}
+        - {x: 25.5, y: 11}
+    - name: atlas_99
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 668
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_100
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 618
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_101
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 636
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_102
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 634
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_103
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 641
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_104
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 637
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_105
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 625
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_106
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 622
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_107
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 610
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_108
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 534
+        width: 104
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -52, y: -46.5}
+        - {x: 52, y: -46.5}
+        - {x: 52, y: 34.5}
+        - {x: 50, y: 46.5}
+        - {x: -38, y: 46.5}
+        - {x: -52, y: 31.5}
+    - name: atlas_109
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 533
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3, y: 47.5}
+        - {x: -6, y: 49.5}
+        - {x: -34, y: 49.5}
+        - {x: -49, y: 20.5}
+        - {x: -49, y: -42.5}
+        - {x: -31, y: -49.5}
+        - {x: 49, y: -49.5}
+        - {x: 49, y: 27.5}
+        - {x: 41, y: 32.5}
+    - name: atlas_110
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 469
+        width: 142
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 34, y: 34.5}
+        - {x: 41, y: 45.5}
+        - {x: 40, y: 54.5}
+        - {x: 37, y: 59.5}
+        - {x: 16, y: 59.5}
+        - {x: 17, y: 56.5}
+        - {x: 31, y: 56.5}
+        - {x: 17, y: 55.5}
+        - {x: 16, y: 57.5}
+        - {x: 14, y: 59.5}
+        - {x: 8, y: 59.5}
+        - {x: 12, y: 40.5}
+        - {x: 13, y: 36.5}
+        - {x: 5, y: 39.5}
+        - {x: -19, y: 58.5}
+        - {x: -71, y: 36.5}
+        - {x: -71, y: 13.5}
+        - {x: -63, y: 16.5}
+        - {x: -64, y: 10.5}
+        - {x: -66, y: -7.5}
+        - {x: -29, y: -57.5}
+        - {x: -26, y: -59.5}
+        - {x: 44, y: -59.5}
+        - {x: 71, y: -16.5}
+        - {x: 71, y: 26.5}
+        - {x: 36, y: 36.5}
+      - - {x: -4, y: 8.5}
+        - {x: 4, y: 0.5}
+        - {x: 7, y: 1.5}
+        - {x: 7, y: 3.5}
+        - {x: -1, y: 11.5}
+        - {x: -3, y: 11.5}
+      - - {x: -6, y: 56.5}
+        - {x: -11, y: 54.5}
+        - {x: -11, y: 36.5}
+        - {x: 1, y: 36.5}
+        - {x: 3, y: 43.5}
+        - {x: 3, y: 53.5}
+        - {x: -1, y: 56.5}
+    - name: atlas_111
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 587
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_112
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 480
+        width: 60
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: 57.5}
+        - {x: -9, y: 53.5}
+        - {x: -30, y: -12.5}
+        - {x: -30, y: -54.5}
+        - {x: -21, y: -57.5}
+        - {x: 17, y: -57.5}
+        - {x: 29, y: -33.5}
+        - {x: 30, y: -25.5}
+        - {x: 30, y: 57.5}
+    - name: atlas_113
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 512
+        width: 95
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -47.5, y: 18.5}
+        - {x: -47.5, y: -5.5}
+        - {x: -44.5, y: -16.5}
+        - {x: -22.5, y: -18.5}
+        - {x: 33.5, y: -18.5}
+        - {x: 47.5, y: -4.5}
+        - {x: 47.5, y: 18.5}
+    - name: atlas_114
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 464
+        width: 77
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 38.5, y: 32}
+        - {x: -34.5, y: 32}
+        - {x: -38.5, y: 20}
+        - {x: -38.5, y: -26}
+        - {x: -29.5, y: -32}
+        - {x: 13.5, y: -32}
+        - {x: 28.5, y: -22}
+        - {x: 36.5, y: -3}
+        - {x: 38.5, y: 10}
+    - name: atlas_115
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 365
+        width: 152
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -48, y: -38.5}
+        - {x: -49, y: -35.5}
+        - {x: -55, y: -35.5}
+        - {x: -56, y: -38.5}
+      - - {x: -20, y: -33.5}
+        - {x: -23, y: -35.5}
+        - {x: -25, y: -37.5}
+        - {x: -25, y: -38.5}
+        - {x: 24, y: -38.5}
+        - {x: 24, y: -33.5}
+      - - {x: -76, y: 38.5}
+        - {x: -76, y: 9.5}
+        - {x: 16, y: -38.5}
+        - {x: 64, y: -38.5}
+        - {x: 76, y: -10.5}
+        - {x: 76, y: 38.5}
+      - - {x: 56, y: -38.5}
+        - {x: 55, y: -35.5}
+        - {x: 50, y: -35.5}
+        - {x: 49, y: -38.5}
+      - - {x: -55, y: -27.5}
+        - {x: -52, y: -26.5}
+        - {x: -52, y: -23.5}
+        - {x: -55, y: -22.5}
+        - {x: -57, y: -24.5}
+      - - {x: -18, y: 14.5}
+        - {x: -18, y: 13.5}
+        - {x: -16, y: 11.5}
+        - {x: -15, y: 11.5}
+        - {x: -12, y: 14.5}
+        - {x: -12, y: 16.5}
+        - {x: -15, y: 17.5}
+    - name: atlas_116
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 373
+        width: 90
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 49}
+        - {x: -45, y: 46}
+        - {x: -45, y: -31}
+        - {x: -34, y: -49}
+        - {x: 26, y: -49}
+        - {x: 45, y: -43}
+        - {x: 45, y: 32}
+        - {x: 37, y: 49}
+    - name: atlas_117
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 376
+        width: 101
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50.5, y: 58}
+        - {x: -50.5, y: -35}
+        - {x: -31.5, y: -58}
+        - {x: 32.5, y: -58}
+        - {x: 50.5, y: -41}
+        - {x: 50.5, y: 55}
+        - {x: 37.5, y: 58}
+      - - {x: 34.5, y: 58}
+        - {x: 34.5, y: 43}
+        - {x: 38.5, y: 29}
+        - {x: 50.5, y: 29}
+        - {x: 50.5, y: 58}
+    - name: atlas_118
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 396
+        width: 115
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -57.5, y: 22.5}
+        - {x: -57.5, y: -18.5}
+        - {x: -42.5, y: -22.5}
+        - {x: 57.5, y: -22.5}
+        - {x: 57.5, y: 22.5}
+    - name: atlas_119
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 352
+        width: 117
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_120
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 362
+        width: 60
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: atlas_121
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 309
+        width: 121
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 39.5, y: 34.5}
+        - {x: -44.5, y: 34.5}
+        - {x: -60.5, y: 21.5}
+        - {x: -60.5, y: -32.5}
+        - {x: -43.5, y: -34.5}
+        - {x: 51.5, y: -34.5}
+        - {x: 60.5, y: -32.5}
+        - {x: 60.5, y: 1.5}
+        - {x: 42.5, y: 33.5}
+    - name: foliage 1
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 143
+        width: 121
+        height: 189
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0047923094}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1.5, y: 188.09425}
+        - {x: -36.5, y: 188.09425}
+        - {x: -56.5, y: 169.09425}
+        - {x: -60.5, y: 106.09425}
+        - {x: -60.5, y: 1.0942535}
+        - {x: -51.5, y: 0.09425354}
+        - {x: 60.5, y: 0.09425354}
+        - {x: 60.5, y: 147.09425}
+        - {x: 34.5, y: 173.09425}
+    - name: foliage 2
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 146
+        width: 116
+        height: 188
+      alignment: 9
+      pivot: {x: 0.48295397, y: 0.0021582257}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 59.97734, y: 132.59425}
+        - {x: 58.97734, y: 138.59425}
+        - {x: 55.97734, y: 143.59425}
+        - {x: 52.97734, y: 142.59425}
+        - {x: 26.97734, y: 187.59425}
+        - {x: 20.97734, y: 187.59425}
+        - {x: 14.977341, y: 175.59425}
+        - {x: 11.977341, y: 168.59425}
+        - {x: 7.9773407, y: 155.59425}
+        - {x: 6.9773407, y: 150.59425}
+        - {x: 6.9773407, y: 128.59425}
+        - {x: 9.977341, y: 116.59425}
+        - {x: 20.97734, y: 86.59425}
+        - {x: 22.97734, y: 79.59425}
+        - {x: 23.97734, y: 78.59425}
+        - {x: 22.97734, y: 78.59425}
+        - {x: 20.97734, y: 85.59425}
+        - {x: 15.977341, y: 96.59425}
+        - {x: 4.9773407, y: 123.59425}
+        - {x: 4.9773407, y: 137.59425}
+        - {x: 7.9773407, y: 156.59425}
+        - {x: 5.9773407, y: 166.59425}
+        - {x: -26.02266, y: 180.59425}
+        - {x: -46.02266, y: 172.59425}
+        - {x: -56.02266, y: 103.59425}
+        - {x: -56.02266, y: 3.5942535}
+        - {x: -34.02266, y: -0.40574646}
+        - {x: 37.97734, y: -0.40574646}
+        - {x: 58.97734, y: 4.5942535}
+        - {x: 59.97734, y: 6.5942535}
+    - name: foliage 3
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 146
+        width: 138
+        height: 179
+      alignment: 9
+      pivot: {x: 0.50477624, y: 0.006584551}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 64.34088, y: 109.821365}
+        - {x: 49.34088, y: 140.82137}
+        - {x: 45.34088, y: 143.82137}
+        - {x: 32.34088, y: 127.821365}
+        - {x: 21.340881, y: 176.82137}
+        - {x: 18.340881, y: 177.82137}
+        - {x: 14.340881, y: 173.82137}
+        - {x: 8.340881, y: 164.82137}
+        - {x: 5.3408813, y: 160.82137}
+        - {x: -18.659119, y: 177.82137}
+        - {x: -29.659119, y: 177.82137}
+        - {x: -18.659119, y: 143.82137}
+        - {x: -40.65912, y: 171.82137}
+        - {x: -63.65912, y: 177.82137}
+        - {x: -69.65912, y: 177.82137}
+        - {x: -69.65912, y: -1.1786346}
+        - {x: 55.34088, y: -1.1786346}
+        - {x: 68.34088, y: 88.821365}
+        - {x: 68.34088, y: 111.821365}
+        - {x: 67.34088, y: 111.821365}
+    - name: atlas_125
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 173
+        width: 119
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.5, y: 33}
+        - {x: -59.5, y: 15}
+        - {x: -59.5, y: -33}
+        - {x: 54.5, y: -33}
+        - {x: 59.5, y: -20}
+        - {x: 59.5, y: 10}
+        - {x: 19.5, y: 33}
+    - name: foliage 4
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 4
+        width: 112
+        height: 120
+      alignment: 9
+      pivot: {x: 0.49411494, y: 0.016649242}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.3408737, y: 118.00209}
+        - {x: -9.340874, y: 113.00209}
+        - {x: -14.340874, y: 102.00209}
+        - {x: -13.340874, y: 76.00209}
+        - {x: -14.340874, y: 91.00209}
+        - {x: -20.340874, y: 95.00209}
+        - {x: -23.340874, y: 96.00209}
+        - {x: -39.340874, y: 100.00209}
+        - {x: -55.340874, y: 83.00209}
+        - {x: -55.340874, y: 17.00209}
+        - {x: -52.340874, y: 4.0020905}
+        - {x: -50.340874, y: -1.9979095}
+        - {x: 56.659126, y: -1.9979095}
+        - {x: 56.659126, y: 106.00209}
+        - {x: 3.6591263, y: 118.00209}
+    - name: foliage 5
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 4
+        width: 113
+        height: 118
+      alignment: 9
+      pivot: {x: 0.4941671, y: 0.008456719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.1591187, y: 117.002106}
+        - {x: -14.840881, y: 117.002106}
+        - {x: -55.84088, y: 107.002106}
+        - {x: -55.84088, y: 2.0021057}
+        - {x: -43.84088, y: -0.9978943}
+        - {x: 35.15912, y: -0.9978943}
+        - {x: 57.15912, y: 75.002106}
+        - {x: 57.15912, y: 86.002106}
+        - {x: 51.15912, y: 86.002106}
+    - name: foliage 6
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 4
+        width: 99
+        height: 110
+      alignment: 9
+      pivot: {x: 0.48668447, y: 0.008659952}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.818237, y: 109.04741}
+        - {x: -4.1817627, y: 66.04741}
+        - {x: -4.1817627, y: 48.047405}
+        - {x: -7.1817627, y: 91.04741}
+        - {x: -15.181763, y: 101.04741}
+        - {x: -33.181763, y: 109.04741}
+        - {x: -43.181763, y: 109.04741}
+        - {x: -48.181763, y: 100.04741}
+        - {x: -48.181763, y: -0.95259476}
+        - {x: 49.818237, y: -0.95259476}
+        - {x: 50.818237, y: 10.047405}
+        - {x: 50.818237, y: 92.04741}
+        - {x: 40.818237, y: 109.04741}
+    - name: foliage 7
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 20
+        width: 33
+        height: 84
+      alignment: 9
+      pivot: {x: 0.50987476, y: -0.06524725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.825867, y: 89.480774}
+        - {x: -16.825867, y: 7.48077}
+        - {x: -13.825867, y: 5.48077}
+        - {x: 10.174133, y: 5.48077}
+        - {x: 16.174133, y: 8.48077}
+        - {x: 16.174133, y: 76.480774}
+        - {x: -2.8258667, y: 89.480774}
+    - name: foliage 8
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 10
+        width: 41
+        height: 113
+      alignment: 9
+      pivot: {x: 0.47579435, y: -0.057267297}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.492432, y: 43.471207}
+        - {x: 21.492432, y: 48.471207}
+        - {x: 21.492432, y: 80.47121}
+        - {x: 15.492432, y: 80.47121}
+        - {x: 21.492432, y: 87.47121}
+        - {x: 21.492432, y: 119.47121}
+        - {x: -2.5075684, y: 119.47121}
+        - {x: -19.507568, y: 90.47121}
+        - {x: -19.507568, y: 6.4712067}
+        - {x: 16.492432, y: 6.4712067}
+        - {x: 21.492432, y: 11.471207}
+        - {x: 21.492432, y: 41.471207}
+        - {x: 19.492432, y: 42.471207}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

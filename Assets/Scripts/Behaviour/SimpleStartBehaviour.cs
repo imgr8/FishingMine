@@ -26,9 +26,9 @@ public class SimpleStarBehaviour : IBehaviour {
 			obj.position += Vector3.up * Time.deltaTime * this.speed;
 		} else if (this.moveDirection == MoveDirection.Up && this.obj.position.y >= this.sea.Center.y) {
 			this.moveDirection = MoveDirection.Down;
-		} else if (this.moveDirection == MoveDirection.Down && this.obj.position.y > this.sea.Center.y - this.sea.Depth / 2) {
+		} else if (this.moveDirection == MoveDirection.Down && this.obj.position.y > this.sea.Center.y - this.sea.Depth / 2 + 0.2f) {
 			obj.position += Vector3.down * Time.deltaTime * this.speed;
-		} else if (this.moveDirection == MoveDirection.Down && this.obj.position.y <= this.sea.Center.y - this.sea.Depth / 2) {
+		} else if (this.moveDirection == MoveDirection.Down && this.obj.position.y <= this.sea.Center.y - this.sea.Depth / 2 + 0.2f) {
 			this.moveDirection = MoveDirection.Up;
 		}
 
