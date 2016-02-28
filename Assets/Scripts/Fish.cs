@@ -109,6 +109,10 @@ public class Fish : MonoBehaviour, ICatchable, IMovable, ISaveFromEditor {
 
 	void Start() {
 		this.moveBehaviour = this.GetComponent<IMove> ();
+		if (this.moveBehaviour == null) {
+			this.moveBehaviour = this.gameObject.AddComponent<EmptyMove> ();
+		}
+
 		this.moveBehaviour.Init (this.sea);
 	}
 
