@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
 public static class BehaviourCreator {
 	public static IBehaviour CreateBehaviour(string behaviourName, ICatchable catchable, object data = null) {
 		IBehaviour behaviour;
@@ -27,3 +28,4 @@ public static class BehaviourCreator {
 		}
 	}
 }
+*/

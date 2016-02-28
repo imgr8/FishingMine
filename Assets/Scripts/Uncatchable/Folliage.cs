@@ -29,31 +29,6 @@ public class Folliage : MonoBehaviour, IUncatchable, ISaveFromEditor {
 		}
 	}
 
-	public string defaultAction = "";
-
-	public string DefaultAction {
-		get {
-			return this.defaultAction;
-		}
-	}
-
-	public virtual void SetAction (string actionName, object data = null) {
-		// Можно сделать проигрывание анимации, например покачивание водорослей
-	}
-
-	public virtual void ChangeAction (object data) {
-
-	}
-
-	public virtual void StopAction () {
-
-	}
-
-	public virtual void ResumeAction() {
-
-	}
-
-
 	// Use this for initialization
 	void Start () {
 	

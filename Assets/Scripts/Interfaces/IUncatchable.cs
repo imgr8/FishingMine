@@ -3,7 +3,7 @@ using System.Collections;
 
 // Объекты, которые нельзя поймать, но либо с ними можно как-то взаимодействовать, либо они выполняют функцию декора
 
-public interface IUncatchable : IActionable {
+public interface IUncatchable {
 	GameObject GameObject {
 		get;
 	}

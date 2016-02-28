@@ -190,7 +190,7 @@ public class SimpleFishingWithManual : MonoBehaviour, IFishing {
 		earnedInCurrentLevel = 0;
 		this.NumLevel++;
 
-		this.currentManualLevel = this.levelLoader.LoadLevel ("MyLevel_Bonus_4", null);
+		this.currentManualLevel = this.levelLoader.LoadLevel ("Bonus_1", null);
 		this.currentManualLevel.Init (this, this.sea, this.fisher, null);
 
 		this.sea.MakeLive (null);

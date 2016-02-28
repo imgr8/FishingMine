@@ -19,14 +19,14 @@ public class SimpleLevelLoader : ILevelLoader {
 			return null;
 		}
 
-		ILevel levelLogic = LevelLogicLoader.Load (levelLines [0].Trim());
+		ILevel levelLogic = LevelLogicLoader.Load (levelLines [0]);
 
 		for (int i = 1; i < levelLines.Length; i++) {
 			string line = levelLines [i].Trim ();
 
 			if (line != "") {
 				string[] splitLine = line.Split (new char []{ '|' });
-				GameObject newGameObject = GameObject.Instantiate (Resources.Load (splitLine [0].Trim()) as GameObject);
+				GameObject newGameObject = GameObject.Instantiate (Resources.Load (splitLine [0]) as GameObject);
 
 				string[] coordinates = splitLine [1].Split (new char []{ ':' });
 
@@ -40,7 +40,7 @@ public class SimpleLevelLoader : ILevelLoader {
 
 				newGameObject.transform.Rotate(newEulerAngle);
 
-				newGameObject.GetComponent<ISaveFromEditor> ().Load (this.sea, splitLine [3].Trim());
+				newGameObject.GetComponent<ISaveFromEditor> ().Load (this.sea, splitLine [3]);
 
 				this.sea.AddObject (newGameObject);
 			}

@@ -22,4 +22,6 @@ public interface IActionable {
 	void ChangeAction (object data);
 	void StopAction ();
 	void ResumeAction();
+
+	void ChangeSpeed (float ratio = 1.0f);
 }

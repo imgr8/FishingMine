@@ -39,23 +39,34 @@ public class LevelEditorWindow : EditorWindow
 
 			string level = "";
 
-			level += this.levelLogicName + "\n";
+			level += "<level>\n";
+			level += "<info>\n";
+
+			level += this.levelLogicName;
+
+			//level += "<"
 
 			for (int i = 0; i < objects.Length; i++) {
 				ISaveFromEditor saveObject = objects [i] as ISaveFromEditor;
 				if (saveObject != null) {
-					level += saveObject.Path + "|" + 
-						saveObject.GameObject.transform.position.x.ToString() + ":" + 
-						saveObject.GameObject.transform.position.y.ToString() + ":" +
-						saveObject.GameObject.transform.position.z.ToString() + "|" + 
+					level += "<object>\n";
 
-						saveObject.GameObject.transform.rotation.eulerAngles.x.ToString() + ":" + 
-						saveObject.GameObject.transform.rotation.eulerAngles.y.ToString() + ":" +
-						saveObject.GameObject.transform.rotation.eulerAngles.z.ToString() + "|" + 
+					level += saveObject.Path + "|" +
+					saveObject.GameObject.transform.position.x.ToString () + ":" +
+					saveObject.GameObject.transform.position.y.ToString () + ":" +
+					saveObject.GameObject.transform.position.z.ToString () + "|" +
 
-						saveObject.Save() + "\n";
+					saveObject.GameObject.transform.rotation.eulerAngles.x.ToString () + ":" +
+					saveObject.GameObject.transform.rotation.eulerAngles.y.ToString () + ":" +
+					saveObject.GameObject.transform.rotation.eulerAngles.z.ToString () + "\n"; 
+
+					level += "<data>\n" + saveObject.Save() + "\n<\\data>";
+
+					level += "\n<\\object>\n";
 				}
 			}
+
+			level += "<\\level>";
 
 			this.SaveLevelToFile (this.folderToSave + "/" + directory + "/" + this.fileSaveName + ".txt", level);
 

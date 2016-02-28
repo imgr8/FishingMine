@@ -15,7 +15,7 @@ public class SimpleStarBehaviour : IBehaviour {
 		this.catchable = obj;
 		this.obj = obj.GameObject.transform;
 		this.sea = obj.Sea;
-		this.speed = obj.GameObject.GetComponent<Fish>().speed;
+//		this.speed = obj.GameObject.GetComponent<Fish>().speed;
 
 		this.moveDirection = (UnityEngine.Random.Range (0, 2) == 1 ? MoveDirection.Up : MoveDirection.Down);
 
